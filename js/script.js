@@ -66,7 +66,7 @@ function setupBackToTop() {
 }
 
 const typed = new Typed(".multiple-text", {
-    strings: ["Fullstack Developer", "Software Developer", "Designer", "Software Engineer", "Cyber Protecter"],
+    strings: ["Junior Fullstack Developer", "Junior Software Developer", "Associative Designer", "Associative Software Engineer", "Junior Cyber Protecter"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -97,7 +97,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const yourMessage = document.getElementById('yourMessage').value;
 
     // Construct mailto URL
-    const recipientEmail = 'ruzni2003@gmail.com'; // Replace with your email
+    const recipientEmail = 'ruzni.dev@gmail.com'; // Replace with your email
     const subject = encodeURIComponent(emailSubject);
     const body = encodeURIComponent(
         `Name: ${fullName}\nEmail: ${emailAddress}\nPhone: ${mobileNumber}\n\nMessage:\n${yourMessage}`
