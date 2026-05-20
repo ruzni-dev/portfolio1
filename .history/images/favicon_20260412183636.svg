@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="R logo favicon">
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+  </defs>
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="700" fill="url(#faviconGradient)">&lt;R/&gt;</text>
+</svg>
