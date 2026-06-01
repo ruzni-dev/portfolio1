@@ -26,9 +26,14 @@ if (window.ScrollReveal && !prefersReducedMotion) {
 const themeSwitch = document.getElementById('themeSwitch');
 const modeLabel = document.getElementById('modeLabel');
 if (themeSwitch) {
-    // set initial state: checked means dark visuals (convention from this project)
+    // Initialize page theme from the checkbox state and listen for changes
+    // Current CSS uses `body.light` to enable the light theme, so keep parity.
+    document.body.classList.toggle('dark', !!themeSwitch.checked);
+    if (modeLabel) modeLabel.textContent = themeSwitch.checked ? 'LIGHT MODE' : 'DARK MODE';
+
     themeSwitch.addEventListener('change', () => {
-        document.body.classList.toggle('light', themeSwitch.checked === false);
+        document.body.classList.toggle('dark', !!themeSwitch.checked);
+        if (modeLabel) modeLabel.textContent = themeSwitch.checked ? 'LIGHT MODE' : 'DARK MODE';
     });
 }
 

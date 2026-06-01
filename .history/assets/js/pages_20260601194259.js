@@ -28,7 +28,8 @@ const modeLabel = document.getElementById('modeLabel');
 if (themeSwitch) {
     // set initial state: checked means dark visuals (convention from this project)
     themeSwitch.addEventListener('change', () => {
-        document.body.classList.toggle('light', themeSwitch.checked === false);
+        document.body.classList.toggle('dark', themeSwitch.checked === false);
+        if (modeLabel) modeLabel.textContent = themeSwitch.checked ? 'DARK MODE' : 'LIGHT MODE';
     });
 }
 

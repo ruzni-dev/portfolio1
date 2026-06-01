@@ -1,43 +1,38 @@
-/* pages.js — refined interactions for a professional, subtle UX */
+// Softer reveal animations for a professional feel
+const sr = ScrollReveal({
+    reset: false,
+    distance: '40px',
+    duration: 900,
+    delay: 120,
+    easing: 'cubic-bezier(.2,.8,.2,1)'
+});
 
-// Respect reduced motion preference
-const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+sr.reveal('.top', { origin: 'top' });
+sr.reveal('.bot', { origin: 'bottom' });
+sr.reveal('.left', { origin: 'left' });
+sr.reveal('.right', { origin: 'right' });
 
-// Initialize ScrollReveal if present, with softer defaults
-if (window.ScrollReveal && !prefersReducedMotion) {
-    const sr = ScrollReveal({
-        reset: false,
-        distance: '36px',
-        duration: 800,
-        delay: 100,
-        easing: 'cubic-bezier(.2,.8,.2,1)'
-    });
-
-    sr.reveal('.top', { origin: 'top' });
-    sr.reveal('.bot', { origin: 'bottom' });
-    sr.reveal('.left', { origin: 'left' });
-    sr.reveal('.right', { origin: 'right' });
-} else if (window.ScrollReveal && prefersReducedMotion) {
-    // minimal reveals for reduced-motion users
-    ScrollReveal({ reset: false, distance: '0px', duration: 0 }).reveal('.top, .bot, .left, .right');
-}
-
-// Theme toggle handling (graceful if elements are missing)
 const themeSwitch = document.getElementById('themeSwitch');
+// Optional label element — only update if present
 const modeLabel = document.getElementById('modeLabel');
+
 if (themeSwitch) {
-    // set initial state: checked means dark visuals (convention from this project)
     themeSwitch.addEventListener('change', () => {
-        document.body.classList.toggle('light', themeSwitch.checked === false);
+        // Use 'dark' class for the refined theme handling
+        document.body.classList.toggle('dark', themeSwitch.checked === false);
+        if (modeLabel) modeLabel.textContent = themeSwitch.checked ? 'DARK MODE' : 'LIGHT MODE';
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {    
+    // Setup scroll progress bar
     setupProgressBar();
+    
+    // Setup back to top button
     setupBackToTop();
 });
 
-// Smooth progress bar using requestAnimationFrame for easing
+// Setup scroll progress bar
 function setupProgressBar() {
     const bar = document.getElementById('myBar');
     if (!bar) return;
@@ -53,8 +48,9 @@ function setupProgressBar() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
+    // animate width smoothly
     function animate() {
-        current += (target - current) * 0.12; // easing factor
+        current += (target - current) * 0.12; // easing
         bar.style.width = current.toFixed(2) + '%';
         requestAnimationFrame(animate);
     }
@@ -62,31 +58,29 @@ function setupProgressBar() {
     requestAnimationFrame(animate);
 }
 
-// Back-to-top with fade and accessible focus handling
+// Setup back to top button
 function setupBackToTop() {
     const backToTopBtn = document.getElementById('backToTop');
     if (!backToTopBtn) return;
 
     let visible = false;
-    function onScroll() {
+    window.addEventListener('scroll', () => {
         const show = window.pageYOffset > 300;
         if (show !== visible) {
             visible = show;
             backToTopBtn.classList.toggle('active', show);
         }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }, { passive: true });
 
     backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         backToTopBtn.blur();
     });
 }
 
-// Smooth, low-impact cursor outline follow (disabled for reduced motion)
 const curserOutline = document.querySelector('[data-curser-out-line]');
-if (curserOutline && !prefersReducedMotion) {
+if (curserOutline) {
+    // smooth follow using lerp
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
 

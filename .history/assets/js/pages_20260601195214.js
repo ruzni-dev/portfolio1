@@ -26,9 +26,29 @@ if (window.ScrollReveal && !prefersReducedMotion) {
 const themeSwitch = document.getElementById('themeSwitch');
 const modeLabel = document.getElementById('modeLabel');
 if (themeSwitch) {
-    // set initial state: checked means dark visuals (convention from this project)
+    // Initialize page theme from the checkbox state and listen for changes
+    // Current CSS uses `body.light` to enable the light theme, so keep parity.
+    // Load persisted preference if present
+    try {
+        const stored = localStorage.getItem('site-theme'); // 'light' or 'dark'
+        if (stored === 'light') {
+            themeSwitch.checked = true;
+        } else if (stored === 'dark') {
+            themeSwitch.checked = false;
+        }
+    } catch (e) {
+        // ignore localStorage errors (e.g., private mode)
+    }
+
+    // Apply initial theme from checkbox state
+    document.body.classList.toggle('light', !!themeSwitch.checked);
+    if (modeLabel) modeLabel.textContent = themeSwitch.checked ? 'LIGHT MODE' : 'DARK MODE';
+
     themeSwitch.addEventListener('change', () => {
-        document.body.classList.toggle('light', themeSwitch.checked === false);
+        const isLight = !!themeSwitch.checked;
+        document.body.classList.toggle('light', isLight);
+        if (modeLabel) modeLabel.textContent = isLight ? 'LIGHT MODE' : 'DARK MODE';
+        try { localStorage.setItem('site-theme', isLight ? 'light' : 'dark'); } catch (e) {}
     });
 }
 
