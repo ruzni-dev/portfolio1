@@ -300,16 +300,38 @@ document.addEventListener("scroll", () => {
   });
 });
 
+// Modal interactions
 document.addEventListener('DOMContentLoaded', () => {
-    // Close modal when clicking outside content
-    const modal = document.getElementById('project-modal');
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+    // Bind click events to all portfolio boxes
+    const portfolioBoxes = document.querySelectorAll('.portfolio-box');
+    portfolioBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            openProjectModal(box);
+        });
     });
+
+    // Close certificate modal when clicking outside content
+    const certModal = document.getElementById('certificate-modal');
+    if (certModal) {
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) closeModal();
+        });
+    }
+
+    // Close project modal when clicking outside content
+    const projectModal = document.getElementById('project-modal');
+    if (projectModal) {
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) closeProjectModal();
+        });
+    }
     
-    // Close modal with Escape key
+    // Close modals with Escape key
     document.addEventListener('keydown', (e) => { 
-        if (e.key === 'Escape') closeModal(); 
+        if (e.key === 'Escape') {
+            closeModal();
+            closeProjectModal();
+        }
     });
 });
 
@@ -317,6 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function openCertificateModal(pdfUrl) {
     const modal = document.getElementById('certificate-modal');
     const modalBody = document.getElementById('modal-body');
+    if (!modal || !modalBody) return;
     
     modal.classList.add('show');
     modal.setAttribute('aria-hidden', 'false');
@@ -324,25 +347,60 @@ function openCertificateModal(pdfUrl) {
     // Create modal content with PDF viewer
     modalBody.innerHTML = `
         <div class="pdf-viewer">
-            <iframe src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0"  frameborder="0"></iframe>
+            <iframe src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
         </div>
     `;
+    document.body.style.overflow = 'hidden';
 }
 
-// Close modal function
+// Close certificate modal function
 function closeModal() {
     const modal = document.getElementById('certificate-modal');
+    if (!modal) return;
     modal.classList.remove('show');
     modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
 }
 
-// Close modal when clicking outside content
-const modal = document.getElementById('certificate-modal');
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-});
+// Function to open project details modal dynamically
+function openProjectModal(card) {
+    const modal = document.getElementById('project-modal');
+    const modalBody = document.getElementById('project-modal-body');
+    if (!modal || !modalBody) return;
+    
+    // Extract metadata from card
+    const title = card.getAttribute('data-project-title') || 'Project Details';
+    const badge = card.getAttribute('data-project-badge') || 'Project';
+    const badgeIcon = card.getAttribute('data-project-badge-icon') || 'fa-cube';
+    const longDesc = card.getAttribute('data-project-long-desc') || '';
+    const techStack = card.getAttribute('data-project-tech') || '';
+    const demoUrl = card.getAttribute('data-project-demo-url') || '#';
+    
+    // Build modal content html
+    modalBody.innerHTML = `
+        <h2>${title}</h2>
+        <span class="modal-badge"><i class="fa-solid ${badgeIcon}"></i> ${badge}</span>
+        <p>${longDesc}</p>
+        <div class="modal-tech-stack">
+            <i class="fa-solid fa-microchip"></i>
+            <span><strong>Tech stack:</strong> ${techStack}</span>
+        </div>
+        <div class="modal-buttons">
+            <a href="${demoUrl}" target="_blank" class="modal-btn primary"><i class="fa-solid fa-up-right-from-square"></i> Live Preview</a>
+            <button onclick="closeProjectModal()" class="modal-btn outline">Close</button>
+        </div>
+    `;
+    
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
 
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => { 
-    if (e.key === 'Escape') closeModal(); 
-});
+// Close project modal function
+function closeProjectModal() {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
