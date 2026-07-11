@@ -349,26 +349,21 @@ button:hover {
     transition: width 2s ease-in-out;
 }
 
-.certifications h2,
-.simulations h2 {
+.certifications h2 {
     margin-bottom: 5rem;
 }
 
-.certifications,
-.services,
-.contact {
+.certifications, .services, .contact {
     background: var(--second-bg-color);
 }
 
-.certifications-container,
-.simulations-container {
+.certifications-container {
     position: relative;
     max-width: 100%;
     margin: 0 auto 7rem;
 }
 
-.certifications-container::before,
-.simulations-container::before {
+.certifications-container::before {
     content: '';
     position: absolute;
     left: 30px;
@@ -534,10 +529,10 @@ button:hover {
 
 .services-container .services-box {
     flex: 1 1 30rem;
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     text-align: center;
-    border: .2rem solid var(--second-bg-color);
+    border: .2rem solid var(--bg-color);
     border-radius: 2rem;
     transition: .5s ease;
 }
@@ -813,7 +808,7 @@ body.light .project-tags span {
     width: 100%;
     margin: 0;
     padding: 2.2rem;
-    background: linear-gradient(160deg, var(--second-bg-color), var(--bg-color));
+    background: var(--bg-color);
     border-radius: 1.2rem;
     border: 1px solid rgba(1, 198, 252, 0.2);
     box-shadow: var(--box-shadow);

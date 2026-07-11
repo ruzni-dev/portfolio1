@@ -355,6 +355,7 @@ button:hover {
 }
 
 .certifications,
+.simulations,
 .services,
 .contact {
     background: var(--second-bg-color);
