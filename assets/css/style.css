@@ -55,7 +55,7 @@ body.light {
     z-index: -1;
 }
 
-section  {
+section {
     min-height: 100vh;
     padding: 10rem 9% 8rem 9%;
 }
@@ -152,9 +152,11 @@ section  {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-2.4rem);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -238,6 +240,7 @@ button {
 .btn:hover {
     box-shadow: none;
 }
+
 button:hover {
     box-shadow: none;
 }
@@ -415,14 +418,15 @@ button:hover {
 }
 
 .experience-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 80px;
-  width: 6px; /* bar thickness */
-  height: 100%;
-  background: var(--main-color);
-  border-radius: 6px 0 0 6px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 6px;
+    /* bar thickness */
+    height: 100%;
+    background: var(--main-color);
+    border-radius: 6px 0 0 6px;
 }
 
 .experience-content .content {
@@ -541,7 +545,7 @@ button:hover {
 .services-box:hover i {
     transform: rotate(10deg) scale(1.1);
 }
- 
+
 .services-box i {
     font-size: 6rem;
     padding: 1rem;
@@ -855,11 +859,11 @@ body.light .project-tags span {
 .form-row-full select {
     width: 100% !important;
 }
-            
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .contact form textarea {
@@ -987,17 +991,17 @@ input[type=number]::-webkit-inner-spin-button {
 ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.04);
     border-radius: 999px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(1,198,252,0.85), rgba(0,133,169,0.85));
+    background: linear-gradient(180deg, rgba(1, 198, 252, 0.85), rgba(0, 133, 169, 0.85));
     border-radius: 999px;
-    border: 3px solid rgba(21,24,30,0.7);
+    border: 3px solid rgba(21, 24, 30, 0.7);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(1,198,252,1), rgba(0,133,169,1));
+    background: linear-gradient(180deg, rgba(1, 198, 252, 1), rgba(0, 133, 169, 1));
 }
 
 ::-webkit-scrollbar-corner {
@@ -1006,7 +1010,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: rgba(1,198,252,0.85) rgba(255,255,255,0.06);
+    scrollbar-color: rgba(1, 198, 252, 0.85) rgba(255, 255, 255, 0.06);
 }
 
 
@@ -1090,7 +1094,7 @@ html {
     }
 
     .footer-column {
-    width: 48%;
+        width: 48%;
     }
 }
 
@@ -1188,14 +1192,14 @@ html {
     }
 
     .footer-column {
-    width: 100%;
+        width: 100%;
     }
 }
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
-    } 
+    }
 }
 
 @media (max-width: 365px) {
@@ -1228,24 +1232,28 @@ html {
 }
 
 .preloader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    z-index: 1000;
 }
 
-.mlt-load, .mlt-load1, .mlt-load2 {
+.mlt-load,
+.mlt-load1,
+.mlt-load2 {
     color: var(--text-color);
 }
 
-#themeSwitch { display: none; }
+#themeSwitch {
+    display: none;
+}
 
 /* Refined theme toggle: sleeker track and knob, theme-aware colors */
 .toggle {
@@ -1255,11 +1263,11 @@ html {
     width: 60px;
     height: 34px;
     padding: 4px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.04));
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     transition: background 0.35s ease, box-shadow 0.35s ease;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.45);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45);
     overflow: visible;
 }
 
@@ -1271,7 +1279,7 @@ html {
     height: 26px;
     border-radius: 50%;
     background: var(--bg-color);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.45);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
     transition: transform .35s ease, background .35s ease, box-shadow .35s ease;
     display: flex;
     align-items: center;
@@ -1289,36 +1297,52 @@ html {
     opacity: 0.95;
 }
 
-.dot, .star { opacity: 0.06; transition: opacity .4s ease, transform .4s ease; }
-
-.star { pointer-events: none; }
-
-#themeSwitch:checked + .toggle {
-    background: linear-gradient(90deg, var(--main-color), var(--main-color2));
-    box-shadow: 0 6px 20px rgba(1,198,252,0.14);
+.dot,
+.star {
+    opacity: 0.06;
+    transition: opacity .4s ease, transform .4s ease;
 }
 
-#themeSwitch:checked + .toggle .btnToggle {
+.star {
+    pointer-events: none;
+}
+
+#themeSwitch:checked+.toggle {
+    background: linear-gradient(90deg, var(--main-color), var(--main-color2));
+    box-shadow: 0 6px 20px rgba(1, 198, 252, 0.14);
+}
+
+#themeSwitch:checked+.toggle .btnToggle {
     transform: translateX(26px);
     background: var(--second-bg-color);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-#themeSwitch:checked + .toggle .btnToggle::before {
+#themeSwitch:checked+.toggle .btnToggle::before {
     /* subtle bright knob for checked state */
     background: radial-gradient(circle at 55% 45%, #ffffff 0%, #ffffff 30%, transparent 31%);
     transform: scale(.98);
 }
 
 /* Accessible focus ring for keyboard users */
-#themeSwitch:focus + .toggle,
-#themeSwitch:focus-visible + .toggle {
-    box-shadow: 0 0 0 6px rgba(1,198,252,0.12);
+#themeSwitch:focus+.toggle,
+#themeSwitch:focus-visible+.toggle {
+    box-shadow: 0 0 0 6px rgba(1, 198, 252, 0.12);
 }
 
-.theme-toggle { display: flex; align-items: center; gap: .6rem; }
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
 
-#modeLabel { margin: 0 6px; font-size: 1.4rem; font-weight: 700; color: var(--main-color); letter-spacing: .02rem; }
+#modeLabel {
+    margin: 0 6px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--main-color);
+    letter-spacing: .02rem;
+}
 
 /* Modal Styles */
 .modal {
@@ -1579,9 +1603,8 @@ body.light .modal-btn.outline:hover {
     background: linear-gradient(135deg, #0f1322, #15182e);
     border: 1px solid rgba(1, 198, 252, 0.25);
 }
+
 body.light #certificate-modal .modal-content {
     background: linear-gradient(135deg, #f0f4ff, #e1e9ff);
     border: 1px solid rgba(0, 133, 169, 0.2);
 }
-
-
