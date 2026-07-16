@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sync percentage fill from badge text to outer skill card
     setupSkillFillBars();
-    setupSkillFillAnimations();
 });
 
 let menuIcon = document.querySelector("#menu-icon");
@@ -83,28 +82,6 @@ function setupSkillFillBars() {
             meta.style.setProperty('--skill-fill', fill);
         }
     });
-}
-
-function setupSkillFillAnimations() {
-    const skillMetas = document.querySelectorAll('.skill-meta');
-
-    if (!skillMetas.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-        skillMetas.forEach(meta => meta.classList.add('is-visible'));
-        return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.35 });
-
-    skillMetas.forEach(meta => observer.observe(meta));
 }
 
 const typed = new Typed(".multiple-text", {
