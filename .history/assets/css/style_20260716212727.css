@@ -12,14 +12,12 @@
     --bg-color: #15181e;
     --second-bg-color: #22262f;
     --text-color: #fff;
-    --text-color2: #000000;
     --main-color: rgb(1, 198, 252);
     --curser-color: rgba(1, 198, 252, .5);
     --box-shadow: 0 4px 6px rgba(1, 198, 252, 0.3);
     --box-shadow-hover: 0 4px 6px rgba(1, 198, 252, 0.6);
     --abc-color: rgba(0, 0, 0, .25);
     --main-color2: rgb(0, 133, 169);
-    --skill-back: #cad9ff;
 }
 
 html {
@@ -37,14 +35,12 @@ body.light {
     --bg-color: #eaf1ff;
     --second-bg-color: #d4e1fa;
     --text-color: #000000;
-    --text-color2: #fff;
-    --main-color: #0085a9;
+    --main-color: rgb(0, 133, 169);
     --main-color2: rgb(1, 198, 252);
     --curser-color: rgba(0, 111, 142, .5);
     --box-shadow: 0 4px 6px rgba(0, 111, 142, 0.3);
     --box-shadow-hover: 0 4px 6px rgba(0, 111, 142, 0.6);
     --abc-color: rgba(255, 255, 255, 0.25);
-    --skill-back: #15181e;
 }
 
 .curser-out-line {
@@ -399,6 +395,7 @@ button:hover {
 }
 
 .skill {
+    color: black;
     margin-bottom: 0.95rem;
     padding: 0;
     border-radius: 1.1rem;
@@ -416,9 +413,9 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.9rem 1rem;
     border-radius: 1.1rem;
-    background: var(--skill-back);
+    background: var(--second-bg-color);
     border: 1px solid var(--main-color);
     overflow: hidden;
 }
@@ -429,6 +426,7 @@ button:hover {
     inset: 0 auto 0 0;
     width: 0;
     background: var(--main-color);
+    border-radius: inherit;
     transition: width 1.8s cubic-bezier(0.15, 0.85, 0.25, 1);
     pointer-events: none;
 }
@@ -441,8 +439,8 @@ button:hover {
     position: relative;
     z-index: 1;
     font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-color2);
+    font-weight: 500;
+    color: var(--text-color);
     line-height: 1.4;
     flex: 1;
 }
@@ -456,7 +454,7 @@ button:hover {
     min-width: auto;
     padding: 0;
     border-radius: 0;
-    color: var(--text-color2);
+    color: var(--text-color);
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 0.04rem;

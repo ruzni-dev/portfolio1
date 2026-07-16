@@ -19,7 +19,7 @@
     --box-shadow-hover: 0 4px 6px rgba(1, 198, 252, 0.6);
     --abc-color: rgba(0, 0, 0, .25);
     --main-color2: rgb(0, 133, 169);
-    --skill-back: #cad9ff;
+    --skill-back: #3d4558;
 }
 
 html {
@@ -38,13 +38,13 @@ body.light {
     --second-bg-color: #d4e1fa;
     --text-color: #000000;
     --text-color2: #fff;
-    --main-color: #0085a9;
+    --main-color: rgb(0, 133, 169);
     --main-color2: rgb(1, 198, 252);
     --curser-color: rgba(0, 111, 142, .5);
     --box-shadow: 0 4px 6px rgba(0, 111, 142, 0.3);
     --box-shadow-hover: 0 4px 6px rgba(0, 111, 142, 0.6);
     --abc-color: rgba(255, 255, 255, 0.25);
-    --skill-back: #15181e;
+    --skill-back: #7b8cb4;
 }
 
 .curser-out-line {
@@ -416,9 +416,9 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.9rem 1rem;
     border-radius: 1.1rem;
-    background: var(--skill-back);
+    background: var(--second-bg-color);
     border: 1px solid var(--main-color);
     overflow: hidden;
 }
@@ -429,6 +429,7 @@ button:hover {
     inset: 0 auto 0 0;
     width: 0;
     background: var(--main-color);
+    border-radius: inherit;
     transition: width 1.8s cubic-bezier(0.15, 0.85, 0.25, 1);
     pointer-events: none;
 }
