@@ -294,65 +294,14 @@ button:hover {
 }
 
 .skills {
-    background: var(--bg-color);
+    background:
+        radial-gradient(circle at top left, rgba(1, 198, 252, 0.14), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(1, 198, 252, 0.12), transparent 25%),
+        var(--bg-color);
 }
 
 .skills-intro {
     margin-bottom: 4rem;
-}
-
-.skills-slider-wrap,
-.simulations-slider-wrap {
-    position: relative;
-}
-
-.skills-slider-controls,
-.simulations-slider-controls {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.4rem;
-    height: 4.4rem;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--main-color);
-    box-shadow: none;
-    backdrop-filter: none;
-    cursor: pointer;
-    pointer-events: auto;
-    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-    z-index: 2;
-}
-
-.skills-prev,
-.simulations-prev {
-    left: -0.8rem;
-}
-
-.skills-next,
-.simulations-next {
-    right: -0.8rem;
-}
-
-.slider-arrow:hover {
-    transform: translateY(-50%) scale(1.04);
-    background: linear-gradient(135deg, rgba(1, 198, 252, 0.38), rgba(1, 198, 252, 0.16));
-    box-shadow: 0 1.4rem 3rem rgba(1, 198, 252, 0.26);
-}
-
-.slider-arrow i {
-    font-size: 1.8rem;
 }
 
 .skills .heading {
@@ -370,7 +319,6 @@ button:hover {
 }
 
 .skills-container {
-    position: relative;
     display: flex;
     gap: 1.8rem;
     align-items: stretch;
@@ -380,18 +328,6 @@ button:hover {
     scroll-snap-type: x proximity;
     scrollbar-width: thin;
     scrollbar-color: var(--main-color) transparent;
-}
-
-
-
-.skills-container::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--bg-color), transparent);
-}
-
-.skills-container::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--bg-color), transparent);
 }
 
 .skills-container::-webkit-scrollbar {
@@ -409,7 +345,7 @@ button:hover {
 
 .skill-category {
     position: relative;
-    background: var(--second-bg-color);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     padding: 2rem 2.1rem;
     border-radius: 1.8rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -430,8 +366,8 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: .8rem;
-    background: var(--main-color);
+    height: 0.3rem;
+    background: linear-gradient(90deg, var(--main-color), transparent);
 }
 
 .skill-category:hover {
@@ -605,22 +541,8 @@ button:hover {
     padding-left: 0;
     min-width: 34rem;
     flex: 0 0 34rem;
-    background: var(--second-bg-color);
-    border-radius: 15px;
     scroll-snap-align: start;
     display: flex;
-    overflow: hidden;
-}
-
-.simulations .experience-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.8rem;
-    height: 100%;
-    background: var(--main-color);
-    overflow: hidden;
 }
 
 .simulations .experience-date {

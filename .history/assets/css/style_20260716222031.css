@@ -609,19 +609,9 @@ button:hover {
     border-radius: 15px;
     scroll-snap-align: start;
     display: flex;
-    overflow: hidden;
 }
 
-.simulations .experience-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.8rem;
-    height: 100%;
-    background: var(--main-color);
-    overflow: hidden;
-}
+.simulations .experience-item
 
 .simulations .experience-date {
     left: auto;

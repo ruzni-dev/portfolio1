@@ -620,7 +620,6 @@ button:hover {
     width: 0.8rem;
     height: 100%;
     background: var(--main-color);
-    overflow: hidden;
 }
 
 .simulations .experience-date {

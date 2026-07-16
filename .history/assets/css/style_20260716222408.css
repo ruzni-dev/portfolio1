@@ -615,12 +615,13 @@ button:hover {
 .simulations .experience-item::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.8rem;
-    height: 100%;
-    background: var(--main-color);
-    overflow: hidden;
+    top: 1rem;
+    right: 0;
+    width: 0.3rem;
+    height: calc(100% - 2rem);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(1, 198, 252, 0.12), var(--main-color), rgba(1, 198, 252, 0.12));
+    box-shadow: 0 0 1.2rem rgba(1, 198, 252, 0.35);
 }
 
 .simulations .experience-date {

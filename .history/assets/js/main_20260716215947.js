@@ -87,31 +87,20 @@ function setupSkillFillBars() {
 }
 
 function setupSkillsSliderControls() {
-    const sliderGroups = [
-        {
-            container: document.querySelector('.skills-container'),
-            prevBtn: document.querySelector('.skills-prev'),
-            nextBtn: document.querySelector('.skills-next')
-        },
-        {
-            container: document.querySelector('.simulations-container'),
-            prevBtn: document.querySelector('.simulations-prev'),
-            nextBtn: document.querySelector('.simulations-next')
-        }
-    ];
+    const skillsContainer = document.querySelector('.skills-container');
+    const prevBtn = document.querySelector('.skills-prev');
+    const nextBtn = document.querySelector('.skills-next');
 
-    sliderGroups.forEach(({ container, prevBtn, nextBtn }) => {
-        if (!container || !prevBtn || !nextBtn) return;
+    if (!skillsContainer || !prevBtn || !nextBtn) return;
 
-        const scrollAmount = () => Math.max(container.clientWidth * 0.8, 320);
+    const scrollAmount = () => Math.max(skillsContainer.clientWidth * 0.8, 320);
 
-        prevBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-        });
+    prevBtn.addEventListener('click', () => {
+        skillsContainer.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
 
-        nextBtn.addEventListener('click', () => {
-            container.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-        });
+    nextBtn.addEventListener('click', () => {
+        skillsContainer.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
     });
 }
 
