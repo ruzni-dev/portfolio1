@@ -630,7 +630,6 @@ button:hover {
     width: 5rem;
     height: 5rem;
     background: transparent;
-    box-shadow: none;
 }
 
 .simulations .experience-content {

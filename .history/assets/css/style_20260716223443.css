@@ -623,14 +623,17 @@ button:hover {
     overflow: hidden;
 }
 
-.simulations .experience-item .experience-date {
+.simulations .experience-date {
     left: auto;
     right: 1.5rem;
     top: 1.5rem;
     width: 5rem;
     height: 5rem;
-    background: transparent;
-    box-shadow: none;
+    border-radius: 1.2rem;
+    background: linear-gradient(135deg, rgba(1, 198, 252, 0.28), rgba(0, 0, 0, 0.32));
+    border: 1px solid rgba(1, 198, 252, 0.45);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 .simulations .experience-content {
@@ -938,7 +941,7 @@ button:hover {
     transform: scale(1.02);
 }
 
-.services-box:hover i, .simulations .experience-item:hover .experience-date {
+.services-box:hover i {
     transform: rotate(10deg) scale(1.1);
 }
 

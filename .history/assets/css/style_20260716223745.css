@@ -623,14 +623,13 @@ button:hover {
     overflow: hidden;
 }
 
-.simulations .experience-item .experience-date {
+.simulations .experience-date {
     left: auto;
     right: 1.5rem;
     top: 1.5rem;
     width: 5rem;
     height: 5rem;
-    background: transparent;
-    box-shadow: none;
+    
 }
 
 .simulations .experience-content {
