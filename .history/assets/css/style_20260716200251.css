@@ -673,19 +673,11 @@ button:hover {
     border-radius: 1rem;
 }
 
-.cert-img-simulations {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    border-radius: 1rem;
-}
-
-.experience-content .cert-img img, .cert-img-simulations img {
+.experience-content .cert-img img {
     width: 100%;
 }
 
-.cert-img .img-layer, .cert-img-simulations .img-layer {
+.cert-img .img-layer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -702,7 +694,7 @@ button:hover {
     transition: 0.5s ease;
 }
 
-.cert-img:hover .img-layer, .cert-img-simulations:hover .img-layer {
+.cert-img:hover .img-layer {
     transform: translateY(0);
 }
 
@@ -720,7 +712,7 @@ button:hover {
     align-items: center;
 }
 
-.experience-content .cert-img a, .experience-content .cert-img-simulations a {
+.experience-content .cert-img a {
     display: none;
 }
 
