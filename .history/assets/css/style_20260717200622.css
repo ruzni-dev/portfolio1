@@ -33,6 +33,10 @@ body {
     overflow-x: hidden;
 }
 
+body.cursor-enabled {
+    cursor: none;
+}
+
 body.light {
     --bg-color: #eaf1ff;
     --second-bg-color: #d4e1fa;
@@ -61,6 +65,8 @@ body.light {
     opacity: 0;
     visibility: hidden;
     mix-blend-mode: screen;
+    transition: transform .18s ease-out, width .18s ease-out, height .18s ease-out, opacity .18s ease-out, background .18s ease-out;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 body {
@@ -78,8 +84,10 @@ body {
 }
 
 .curser-out-line.is-active {
-    transform: translate(-50%, -50%) scale(1.7);
-    background: var(--curser-color);
+    transform: translate(-50%, -50%) scale(1.55);
+    width: 42px;
+    height: 42px;
+    background: rgba(1, 198, 252, 0.45);
 }
 
 @keyframes cursor-show {
