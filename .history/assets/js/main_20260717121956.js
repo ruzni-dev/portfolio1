@@ -383,13 +383,31 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
         cursorOutline.classList.add('is-visible');
     };
 
-    window.addEventListener('pointermove', (e) => {
+    window.addEventListener('mousemove', (e) => {
         updateCursorPosition(e.clientX, e.clientY);
+        if (e.target.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-visible');
+            cursorOutline.classList.add('is-hidden');
+            cursorOutline.classList.add('is-active');
+            return;
+        }
+
+        cursorOutline.classList.remove('is-hidden');
+        cursorOutline.classList.remove('is-active');
+        cursorOutline.classList.add('is-visible');
+    });
+
+    document.addEventListener('mouseover', (e) => {
         setCursorVisibility(e.target);
     });
 
-    document.addEventListener('pointerover', (e) => {
-        setCursorVisibility(e.target);
+    document.addEventListener('mouseout', (e) => {
+        const related = e.relatedTarget;
+        if (!related || !related.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-hidden');
+            cursorOutline.classList.remove('is-active');
+            cursorOutline.classList.add('is-visible');
+        }
     });
 }
 

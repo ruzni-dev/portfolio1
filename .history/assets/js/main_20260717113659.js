@@ -360,36 +360,59 @@ if (themeSwitch) {
 }
 
 const cursorOutline = document.querySelector("[data-curser-out-line]");
+const homeSection = document.querySelector(".home");
 const interactiveCursorTargets = 'a, button, .btn, .portfolio-box, .services-box, .skill-category, .slider-arrow, .experience-item, .cert-img';
 
-if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
-    const updateCursorPosition = (x, y) => {
-        cursorOutline.style.left = `${x}px`;
-        cursorOutline.style.top = `${y}px`;
+if (cursorOutline && homeSection && window.matchMedia('(pointer: fine)').matches) {
+    const setHomeCursorState = (insideHome) => {
+        document.body.classList.toggle('home-cursor-enabled', insideHome);
+        cursorOutline.style.opacity = insideHome ? '1' : '0';
+        cursorOutline.style.visibility = insideHome ? 'visible' : 'hidden';
+
+        if (!insideHome) {
+            cursorOutline.classList.remove('is-active');
+        }
     };
 
-    const setCursorVisibility = (target) => {
-        const isInteractiveTarget = target && target.closest(interactiveCursorTargets);
+    const updateCursorPosition = (x, y) => {
+        cursorOutline.animate({
+            left: `${x}px`,
+            top: `${y}px`
+        }, {
+            duration: 90,
+            fill: 'forwards'
+        });
+    };
 
-        if (isInteractiveTarget) {
-            cursorOutline.classList.remove('is-visible');
-            cursorOutline.classList.add('is-hidden');
-            cursorOutline.classList.add('is-active');
+    homeSection.addEventListener('mouseenter', () => {
+        setHomeCursorState(true);
+    });
+
+    homeSection.addEventListener('mouseleave', () => {
+        setHomeCursorState(false);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!document.body.classList.contains('home-cursor-enabled')) {
             return;
         }
 
-        cursorOutline.classList.remove('is-hidden');
-        cursorOutline.classList.remove('is-active');
-        cursorOutline.classList.add('is-visible');
-    };
-
-    window.addEventListener('pointermove', (e) => {
         updateCursorPosition(e.clientX, e.clientY);
-        setCursorVisibility(e.target);
     });
 
-    document.addEventListener('pointerover', (e) => {
-        setCursorVisibility(e.target);
+    document.addEventListener('mouseover', (e) => {
+        if (!document.body.classList.contains('home-cursor-enabled')) return;
+        if (e.target.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.add('is-active');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (!document.body.classList.contains('home-cursor-enabled')) return;
+        const related = e.relatedTarget;
+        if (!related || !related.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-active');
+        }
     });
 }
 

@@ -383,13 +383,20 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
         cursorOutline.classList.add('is-visible');
     };
 
-    window.addEventListener('pointermove', (e) => {
+    window.addEventListener('mousemove', (e) => {
+        setCursorVisibility(e.target);
         updateCursorPosition(e.clientX, e.clientY);
+    });
+
+    document.addEventListener('mouseover', (e) => {
         setCursorVisibility(e.target);
     });
 
-    document.addEventListener('pointerover', (e) => {
-        setCursorVisibility(e.target);
+    document.addEventListener('mouseout', (e) => {
+        const related = e.relatedTarget;
+        if (!related || !related.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-active');
+        }
     });
 }
 

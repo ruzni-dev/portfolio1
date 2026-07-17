@@ -360,9 +360,10 @@ if (themeSwitch) {
 }
 
 const cursorOutline = document.querySelector("[data-curser-out-line]");
+const homeSection = document.querySelector(".home");
 const interactiveCursorTargets = 'a, button, .btn, .portfolio-box, .services-box, .skill-category, .slider-arrow, .experience-item, .cert-img';
 
-if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
+if (cursorOutline && homeSection && window.matchMedia('(pointer: fine)').matches) {
     const updateCursorPosition = (x, y) => {
         cursorOutline.style.left = `${x}px`;
         cursorOutline.style.top = `${y}px`;
@@ -372,24 +373,38 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
         const isInteractiveTarget = target && target.closest(interactiveCursorTargets);
 
         if (isInteractiveTarget) {
-            cursorOutline.classList.remove('is-visible');
             cursorOutline.classList.add('is-hidden');
-            cursorOutline.classList.add('is-active');
             return;
         }
 
         cursorOutline.classList.remove('is-hidden');
-        cursorOutline.classList.remove('is-active');
-        cursorOutline.classList.add('is-visible');
     };
 
-    window.addEventListener('pointermove', (e) => {
-        updateCursorPosition(e.clientX, e.clientY);
+    window.addEventListener('mousemove', (e) => {
+        if (!homeSection.matches(':hover')) {
+            return;
+        }
+
         setCursorVisibility(e.target);
+        updateCursorPosition(e.clientX, e.clientY);
     });
 
-    document.addEventListener('pointerover', (e) => {
+    document.addEventListener('mouseover', (e) => {
+        if (!homeSection.matches(':hover')) return;
+
         setCursorVisibility(e.target);
+
+        if (e.target.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.add('is-active');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (!homeSection.matches(':hover')) return;
+        const related = e.relatedTarget;
+        if (!related || !related.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-active');
+        }
     });
 }
 

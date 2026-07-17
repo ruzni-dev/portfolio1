@@ -360,36 +360,63 @@ if (themeSwitch) {
 }
 
 const cursorOutline = document.querySelector("[data-curser-out-line]");
+const homeSection = document.querySelector(".home");
 const interactiveCursorTargets = 'a, button, .btn, .portfolio-box, .services-box, .skill-category, .slider-arrow, .experience-item, .cert-img';
 
-if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
-    const updateCursorPosition = (x, y) => {
-        cursorOutline.style.left = `${x}px`;
-        cursorOutline.style.top = `${y}px`;
+if (cursorOutline && homeSection && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorVisible = false;
+
+    const isInsideHome = (x, y) => {
+        const rect = homeSection.getBoundingClientRect();
+        return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
     };
 
-    const setCursorVisibility = (target) => {
-        const isInteractiveTarget = target && target.closest(interactiveCursorTargets);
+    const setCursorActive = (active) => {
+        cursorVisible = active;
+        document.body.classList.toggle('home-cursor-enabled', active);
+        cursorOutline.classList.toggle('is-active', active);
+    };
 
-        if (isInteractiveTarget) {
-            cursorOutline.classList.remove('is-visible');
-            cursorOutline.classList.add('is-hidden');
-            cursorOutline.classList.add('is-active');
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isInsideHome(mouseX, mouseY)) {
+            if (cursorVisible) {
+                setCursorActive(false);
+            }
             return;
         }
 
-        cursorOutline.classList.remove('is-hidden');
-        cursorOutline.classList.remove('is-active');
-        cursorOutline.classList.add('is-visible');
-    };
+        if (!cursorVisible) {
+            setCursorActive(true);
+        }
 
-    window.addEventListener('pointermove', (e) => {
-        updateCursorPosition(e.clientX, e.clientY);
-        setCursorVisibility(e.target);
+        cursorOutline.animate({
+            left: `${mouseX}px`,
+            top: `${mouseY}px`
+        }, {
+            duration: 100,
+            fill: 'forwards'
+        });
     });
 
-    document.addEventListener('pointerover', (e) => {
-        setCursorVisibility(e.target);
+    document.addEventListener('mouseover', (e) => {
+        if (!cursorVisible) return;
+        const interactiveTarget = e.target.closest(interactiveCursorTargets);
+        if (interactiveTarget) {
+            cursorOutline.classList.add('is-active');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (!cursorVisible) return;
+        const relatedTarget = e.relatedTarget;
+        if (!relatedTarget || !relatedTarget.closest(interactiveCursorTargets)) {
+            cursorOutline.classList.remove('is-active');
+        }
     });
 }
 

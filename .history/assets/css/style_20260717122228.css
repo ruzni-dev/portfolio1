@@ -69,7 +69,7 @@ body {
 
 .curser-out-line.is-visible {
     visibility: visible;
-    animation: cursor-show 1s ease forwards;
+    animation: cursor-show 1s ease-in-out forwards;
 }
 
 .curser-out-line.is-hidden {

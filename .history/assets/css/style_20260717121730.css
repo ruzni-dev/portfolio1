@@ -54,7 +54,7 @@ body.light {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%) scale(0.4);
+    transform: translate(-50%, -50%) scale(0.3);
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
@@ -77,19 +77,13 @@ body {
     animation: cursor-hide 1s ease forwards;
 }
 
-.curser-out-line.is-active {
-    transform: translate(-50%, -50%) scale(1.7);
-    background: var(--curser-color);
-}
-
 @keyframes cursor-show {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(2.8);
+        transform: translate(-50%, -50%) scale(0.3);
     }
-    55% {
-        opacity: 0.65;
-        transform: translate(-50%, -50%) scale(1.05);
+    25% {
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -102,18 +96,14 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.8);
     }
-    40% {
-        opacity: 0.95;
-        transform: translate(-50%, -50%) scale(1.35);
-    }
-    78% {
-        opacity: 0.14;
-        transform: translate(-50%, -50%) scale(2.4);
+    60% {
+        opacity: 0.2;
+        transform: translate(-50%, -50%) scale(2.1);
     }
     100% {
         opacity: 0;
         visibility: hidden;
-        transform: translate(-50%, -50%) scale(2.9);
+        transform: translate(-50%, -50%) scale(2.6);
     }
 }
 

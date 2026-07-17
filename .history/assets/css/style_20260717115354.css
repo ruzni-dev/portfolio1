@@ -48,8 +48,8 @@ body.light {
 }
 
 .curser-out-line {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: var(--curser-color);
     position: fixed;
     top: 0;
@@ -60,82 +60,29 @@ body.light {
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.18s ease, transform 0.18s ease, background 0.2s ease;
     mix-blend-mode: screen;
 }
 
-body {
-    cursor: auto;
+body:has(.home:hover) {
+    cursor: none;
 }
 
-.curser-out-line.is-visible {
+body:has(.home:hover) .curser-out-line {
+    opacity: 1;
     visibility: visible;
-    animation: cursor-show 1s ease forwards;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.curser-out-line.is-hidden {
-    visibility: visible;
-    animation: cursor-hide 1s ease forwards;
+body:not(:has(.home:hover)) .curser-out-line {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.4);
 }
 
-.curser-out-line.is-active {
-    transform: translate(-50%, -50%) scale(1.7);
-    background: var(--curser-color);
-}
-
-@keyframes cursor-show {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(2.8);
-    }
-    55% {
-        opacity: 0.65;
-        transform: translate(-50%, -50%) scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-}
-
-@keyframes cursor-hide {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-    40% {
-        opacity: 0.95;
-        transform: translate(-50%, -50%) scale(1.35);
-    }
-    78% {
-        opacity: 0.14;
-        transform: translate(-50%, -50%) scale(2.4);
-    }
-    100% {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(-50%, -50%) scale(2.9);
-    }
-}
-
-.home {
-    cursor: default;
-}
-
-.home a,
-.home button,
-.home .btn,
-.home .portfolio-box,
-.home .services-box,
-.home .skill-category,
-.home .slider-arrow,
-.home .experience-item,
-.home .cert-img {
-    cursor: pointer;
-}
-
-.curser-out-line.is-active {
+body:has(.home:hover) .curser-out-line.is-active {
     transform: translate(-50%, -50%) scale(1.6);
-    background: var(--curser-color);
+    background: radial-gradient(circle, rgba(1, 198, 252, 0.92), rgba(1, 198, 252, 0.18));
 }
 
 section {

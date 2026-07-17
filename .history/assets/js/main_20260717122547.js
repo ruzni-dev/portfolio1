@@ -374,12 +374,10 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
         if (isInteractiveTarget) {
             cursorOutline.classList.remove('is-visible');
             cursorOutline.classList.add('is-hidden');
-            cursorOutline.classList.add('is-active');
             return;
         }
 
         cursorOutline.classList.remove('is-hidden');
-        cursorOutline.classList.remove('is-active');
         cursorOutline.classList.add('is-visible');
     };
 

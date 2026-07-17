@@ -87,9 +87,13 @@ body {
         opacity: 0;
         transform: translate(-50%, -50%) scale(2.8);
     }
-    55% {
-        opacity: 0.65;
-        transform: translate(-50%, -50%) scale(1.05);
+    44% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    74% {
+        opacity: 0.32;
+        transform: translate(-50%, -50%) scale(0.8);
     }
     100% {
         opacity: 1;
@@ -102,12 +106,12 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.8);
     }
-    40% {
-        opacity: 0.95;
-        transform: translate(-50%, -50%) scale(1.35);
+    44% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(2.4);
     }
-    78% {
-        opacity: 0.14;
+    74% {
+        opacity: 0.18;
         transform: translate(-50%, -50%) scale(2.4);
     }
     100% {
@@ -131,11 +135,6 @@ body {
 .home .experience-item,
 .home .cert-img {
     cursor: pointer;
-}
-
-.curser-out-line.is-active {
-    transform: translate(-50%, -50%) scale(1.6);
-    background: var(--curser-color);
 }
 
 section {

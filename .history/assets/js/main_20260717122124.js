@@ -370,17 +370,11 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
 
     const setCursorVisibility = (target) => {
         const isInteractiveTarget = target && target.closest(interactiveCursorTargets);
+        const shouldShow = !isInteractiveTarget;
 
-        if (isInteractiveTarget) {
-            cursorOutline.classList.remove('is-visible');
-            cursorOutline.classList.add('is-hidden');
-            cursorOutline.classList.add('is-active');
-            return;
-        }
-
-        cursorOutline.classList.remove('is-hidden');
-        cursorOutline.classList.remove('is-active');
-        cursorOutline.classList.add('is-visible');
+        cursorOutline.classList.toggle('is-visible', shouldShow);
+        cursorOutline.classList.toggle('is-hidden', isInteractiveTarget);
+        cursorOutline.classList.toggle('is-active', isInteractiveTarget);
     };
 
     window.addEventListener('pointermove', (e) => {
@@ -390,6 +384,12 @@ if (cursorOutline && window.matchMedia('(pointer: fine)').matches) {
 
     document.addEventListener('pointerover', (e) => {
         setCursorVisibility(e.target);
+    });
+
+    document.addEventListener('pointerleave', () => {
+        cursorOutline.classList.remove('is-hidden');
+        cursorOutline.classList.remove('is-active');
+        cursorOutline.classList.add('is-visible');
     });
 }
 
