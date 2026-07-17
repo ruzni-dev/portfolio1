@@ -859,6 +859,7 @@ button:hover {
 
 .experience-content:hover {
     box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
+    transform:  scale(1.01); 
 }
 
 .experience-content .content {

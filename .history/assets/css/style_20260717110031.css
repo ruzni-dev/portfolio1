@@ -630,10 +630,18 @@ button:hover {
     min-width: 34rem;
     flex: 0 0 34rem;
     background: var(--second-bg-color);
+    border: 1px solid transparent;
     border-radius: 15px;
     scroll-snap-align: start;
     display: flex;
     overflow: hidden;
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.simulations .experience-item:hover {
+    transform: translateY(-0.8rem) scale(1.01);
+    border-color: rgba(1, 198, 252, 0.55);
+    box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
 }
 
 .simulations .experience-item::after {
@@ -799,6 +807,15 @@ button:hover {
     position: relative;
     margin-bottom: 4.375rem;
     padding-left: 80px;
+    border: 1px solid transparent;
+    border-radius: 1.2rem;
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-0.8rem);
+    border-color: rgba(1, 198, 252, 0.55);
+    box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
 }
 
 .experience-item:last-child {
@@ -824,9 +841,7 @@ button:hover {
 
 .experience-date i {
     color: var(--text-color);
-    transform: rotate(0deg) scale(1);
-    transform-origin: center center;
-    transition: transform 0.45s ease;
+    transition: .5s ease;
 }
 
 .experience-content {
@@ -851,14 +866,6 @@ button:hover {
     height: 100%;
     background: var(--main-color);
     border-radius: 6px 0 0 6px;
-}
-
-.experience-item:hover .experience-date i {
-    transform: rotate(10deg) scale(1.12);
-}
-
-.experience-content:hover {
-    box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
 }
 
 .experience-content .content {

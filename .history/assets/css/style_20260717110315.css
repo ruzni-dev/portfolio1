@@ -824,9 +824,7 @@ button:hover {
 
 .experience-date i {
     color: var(--text-color);
-    transform: rotate(0deg) scale(1);
-    transform-origin: center center;
-    transition: transform 0.45s ease;
+    transition: .5s ease;
 }
 
 .experience-content {
@@ -853,12 +851,8 @@ button:hover {
     border-radius: 6px 0 0 6px;
 }
 
-.experience-item:hover .experience-date i {
-    transform: rotate(10deg) scale(1.12);
-}
-
-.experience-content:hover {
-    box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
+.experience-content:hover .experience-date i {
+    transform: rotate(10deg) scale(1.1);
 }
 
 .experience-content .content {

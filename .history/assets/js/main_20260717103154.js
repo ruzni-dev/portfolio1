@@ -116,13 +116,19 @@ function setupSkillsSliderControls() {
             nextBtn.style.opacity = atEnd ? '0.45' : '1';
         };
 
-        prevBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-        });
+        const moveSlider = (direction) => {
+            const maxScrollLeft = Math.max(container.scrollWidth - container.clientWidth, 0);
+            const targetLeft = Math.min(
+                Math.max(container.scrollLeft + (direction * scrollAmount()), 0),
+                maxScrollLeft
+            );
 
-        nextBtn.addEventListener('click', () => {
-            container.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-        });
+            container.scrollTo({ left: targetLeft, behavior: 'smooth' });
+            requestAnimationFrame(updateArrowState);
+        };
+
+        prevBtn.addEventListener('click', () => moveSlider(-1));
+        nextBtn.addEventListener('click', () => moveSlider(1));
 
         container.addEventListener('scroll', updateArrowState, { passive: true });
         window.addEventListener('resize', updateArrowState);

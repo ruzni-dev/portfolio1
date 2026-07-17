@@ -853,6 +853,11 @@ button:hover {
     border-radius: 6px 0 0 6px;
 }
 
+.experience-item:hover .experience-date {
+    background-color: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
 .experience-item:hover .experience-date i {
     transform: rotate(10deg) scale(1.12);
 }

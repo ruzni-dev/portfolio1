@@ -857,10 +857,6 @@ button:hover {
     transform: rotate(10deg) scale(1.12);
 }
 
-.experience-content:hover {
-    box-shadow: 0 2rem 4.5rem rgba(1, 198, 252, 0.18);
-}
-
 .experience-content .content {
     width: 60%;
 }
