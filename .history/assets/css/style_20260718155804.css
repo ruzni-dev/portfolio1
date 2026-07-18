@@ -2553,6 +2553,30 @@ body.light #certificate-modal .modal-content {
     scrollbar-color: var(--main-color) transparent;
 }
 
+.hr-certs-grid::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 100%;
+    background: linear-gradient(90deg, var(--second-bg-color), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hr-certs-grid::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3rem;
+    height: 100%;
+    background: linear-gradient(270deg, var(--second-bg-color), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .hr-certs-grid::-webkit-scrollbar {
     height: 0.75rem;
 }
@@ -2622,6 +2646,8 @@ body.light .hr-tab-btn.active {
     overflow: hidden;
 }
 
+
+
 .hr-cert-card.hidden {
     display: none;
 }
@@ -2629,6 +2655,7 @@ body.light .hr-tab-btn.active {
 .hr-cert-card:hover {
     transform: translateY(-5px);
     border-color: var(--main-color);
+    box-shadow: 0 2rem 4rem rgba(1, 198, 252, 0.18);
 }
 
 .hr-cert-top {

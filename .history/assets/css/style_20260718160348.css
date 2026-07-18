@@ -2553,6 +2553,20 @@ body.light #certificate-modal .modal-content {
     scrollbar-color: var(--main-color) transparent;
 }
 
+.hr-certs-grid::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 100%;
+    background: linear-gradient(90deg, var(--second-bg-color), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
 .hr-certs-grid::-webkit-scrollbar {
     height: 0.75rem;
 }

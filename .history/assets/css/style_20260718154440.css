@@ -2514,58 +2514,6 @@ body.light #certificate-modal .modal-content {
     margin-bottom: 4rem;
 }
 
-.hr-certs-slider-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 3.8rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.hr-certs-slider-controls {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.hr-certs-prev {
-    left: -0.8rem;
-}
-
-.hr-certs-next {
-    right: -0.8rem;
-}
-
-.hr-certs-grid {
-    position: relative;
-    display: flex;
-    gap: 1.8rem;
-    align-items: stretch;
-    width: 100%;
-    min-width: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1rem 0.3rem 1.6rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    scrollbar-color: var(--main-color) transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar {
-    height: 0.75rem;
-}
-
-.hr-certs-grid::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, var(--main-color), transparent);
-    border-radius: 999px;
-}
-
 .hr-tab-btn {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2578,6 +2526,11 @@ body.light #certificate-modal .modal-content {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-top: 0;
+}
+
+body.light .hr-tab-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 .hr-tab-btn:hover {
@@ -2599,11 +2552,13 @@ body.light .hr-tab-btn.active {
 }
 
 .hr-certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    gap: 2.2rem;
     min-height: 25rem;
 }
 
 .hr-cert-card {
-    position: relative;
     background: var(--bg-color);
     border: 2px solid rgba(255, 255, 255, 0.05);
     border-radius: 2rem;
@@ -2615,15 +2570,19 @@ body.light .hr-tab-btn.active {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1;
     transform: scale(1);
-    flex: 0 0 30rem;
-    min-width: 30rem;
-    max-width: 30rem;
-    scroll-snap-align: start;
-    overflow: hidden;
 }
 
 .hr-cert-card.hidden {
-    display: none;
+    opacity: 0;
+    transform: scale(0.85);
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
 
 .hr-cert-card:hover {

@@ -9,12 +9,10 @@
 }
 
 :root {
-    --border-color: rgb(50, 54, 67);
     --bg-color: #15181e;
     --second-bg-color: #22262f;
     --text-color: #fff;
     --text-color2: #000000;
-    --text-color3: #c1bfbf;
     --main-color: rgb(1, 198, 252);
     --curser-color: rgb(1, 198, 252);
     --box-shadow: 0 4px 6px rgba(1, 198, 252, 0.3);
@@ -36,12 +34,10 @@ body {
 }
 
 body.light {
-    --border-color: rgb(157, 171, 220);
     --bg-color: #eaf1ff;
     --second-bg-color: #d4e1fa;
     --text-color: #000000;
     --text-color2: #fff;
-    --text-color3: #353535;
     --main-color: #0085a9;
     --main-color2: rgb(1, 198, 252);
     --curser-color: rgb(4, 201, 255);
@@ -2269,7 +2265,7 @@ body.light #certificate-modal .modal-content {
     align-items: flex-start;
     gap: 1rem;
     line-height: 1.4;
-    color: var(--text-color3);
+    color: var(--text-color);
 }
 
 .hr-highlights li i {
@@ -2278,18 +2274,21 @@ body.light #certificate-modal .modal-content {
     margin-top: 0.2rem;
 }
 
-.hr-profile-card .btn {
-    align-self: flex-start;
+.hr-profile-card .btn,
+.hr-profile-card .i {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: .5rem 1.4rem;
     background: var(--main-color);
-    color: var(--second-bg-color);
+    border-radius: 1.5rem;
     box-shadow: 0 0 1rem var(--main-color);
-    display: flex;
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2.2rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
@@ -2306,8 +2305,8 @@ body.light #certificate-modal .modal-content {
 }
 
 .hr-star-card {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 2rem;
     padding: 2.5rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
@@ -2321,9 +2320,15 @@ body.light #certificate-modal .modal-content {
     overflow: hidden;
 }
 
+body.light .hr-star-card {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.02);
+}
+
 .hr-star-card:hover {
     transform: translateY(-0.5rem);
-    border-color: var(--main-color);
+    border-color: rgba(var(--hr-color-rgb), 0.25);
     box-shadow: var(--hr-shadow);
 }
 
@@ -2335,7 +2340,8 @@ body.light #certificate-modal .modal-content {
 }
 
 .hr-star-card:hover .hr-icon-wrapper {
-    transform: rotate(10deg) scale(1.1);
+    transform: scale(1.15);
+    color: var(--hr-color);
 }
 
 .hr-star-card h4 {
@@ -2348,23 +2354,27 @@ body.light #certificate-modal .modal-content {
 .hr-stars-row {
     display: flex;
     gap: 0.4rem;
-    color: var(--main-color2);
+    color: #ffb800;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .hr-stars-row i {
-    text-shadow: 0 0 10px rgba(var(--main-color2));
+    text-shadow: 0 0 10px rgba(255, 184, 0, 0.3);
 }
 
 .hr-star-card .hr-star-badge {
-    background: rgba(var(--main-color), 0.5);
-    color: var(--main-color);
-    border: 1px solid rgba(var(--main-color), 0.8);
+    background: rgba(var(--hr-color-rgb), 0.1);
+    color: var(--hr-color);
+    border: 1px solid rgba(var(--hr-color-rgb), 0.2);
     padding: 0.4rem 1.2rem;
     border-radius: 5rem;
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+body.light .hr-star-card .hr-star-badge {
+    background: rgba(var(--hr-color-rgb), 0.08);
 }
 
 /* Sub-heading for sections */
@@ -2385,7 +2395,7 @@ body.light #certificate-modal .modal-content {
     transform: translateY(-50%);
     width: 6px;
     height: 80%;
-    background: var(--main-color);
+    background: var(--hr-color);
     border-radius: 3px;
 }
 
@@ -2398,8 +2408,8 @@ body.light #certificate-modal .modal-content {
 }
 
 .hr-role-card {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 2rem;
     padding: 3rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
@@ -2408,9 +2418,16 @@ body.light #certificate-modal .modal-content {
     overflow: hidden;
 }
 
+body.light .hr-role-card {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.02);
+}
+
 .hr-role-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--main-color);
+    transform: translateY(-0.8rem);
+    border-color: rgba(var(--hr-color-rgb), 0.35);
+    box-shadow: var(--hr-shadow-hover);
 }
 
 .hr-role-card::after {
@@ -2420,7 +2437,7 @@ body.light #certificate-modal .modal-content {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--main-color2), var(--main-color));
+    background: linear-gradient(90deg, var(--hr-color), var(--main-color));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -2440,32 +2457,30 @@ body.light #certificate-modal .modal-content {
 .hr-role-icon {
     width: 5.5rem;
     height: 5.5rem;
+    background: rgba(var(--hr-color-rgb), 0.15);
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--main-color);
-    font-size: 3rem;
-    transition: all 0.4s ease;
-}
-
-.hr-role-card:hover .hr-role-icon {
-    transform: rotate(10deg) scale(1.2);
+    border: 1px solid rgba(var(--hr-color-rgb), 0.25);
+    color: var(--hr-color);
+    font-size: 2.4rem;
 }
 
 .hr-role-badge {
-    display: inline-flex;
-    align-self: flex-start;
-    border-radius: 999px;
-    background: rgba(1, 198, 252, 0.14);
-    color: var(--main-color);
-    font-size: 1rem;
+    background: linear-gradient(135deg, rgba(var(--hr-color-rgb), 0.2) 0%, rgba(1, 198, 252, 0.15) 100%);
+    border: 1px solid rgba(var(--hr-color-rgb), 0.3);
+    color: var(--text-color);
+    font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    border: 1px solid var(--main-color2);
     padding: 0.5rem 1.2rem;
+    border-radius: 5rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+body.light .hr-role-badge {
+    border-color: rgba(var(--hr-color-rgb), 0.4);
 }
 
 .hr-role-card h4 {
@@ -2480,7 +2495,7 @@ body.light #certificate-modal .modal-content {
     line-height: 1.5;
     opacity: 0.8;
     margin-bottom: 2rem;
-    color: var(--text-color3);
+    color: var(--text-color);
 }
 
 .hr-role-skills-wrap {
@@ -2490,8 +2505,8 @@ body.light #certificate-modal .modal-content {
 }
 
 .hr-role-skills-wrap span {
-    background: var(--second-bg-color);
-    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--text-color);
     font-size: 1.2rem;
     padding: 0.4rem 1rem;
@@ -2500,9 +2515,14 @@ body.light #certificate-modal .modal-content {
     transition: all 0.3s ease;
 }
 
+body.light .hr-role-skills-wrap span {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
 .hr-role-card:hover .hr-role-skills-wrap span {
-    border: 1px solid var(--main-color2);
-    background: rgba(1, 198, 252, 0.14);
+    border-color: rgba(var(--hr-color-rgb), 0.15);
+    background: rgba(var(--hr-color-rgb), 0.05);
 }
 
 /* Skill Certifications Tabs & Grid */
@@ -2512,58 +2532,6 @@ body.light #certificate-modal .modal-content {
     flex-wrap: wrap;
     gap: 1.2rem;
     margin-bottom: 4rem;
-}
-
-.hr-certs-slider-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 3.8rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.hr-certs-slider-controls {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.hr-certs-prev {
-    left: -0.8rem;
-}
-
-.hr-certs-next {
-    right: -0.8rem;
-}
-
-.hr-certs-grid {
-    position: relative;
-    display: flex;
-    gap: 1.8rem;
-    align-items: stretch;
-    width: 100%;
-    min-width: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1rem 0.3rem 1.6rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    scrollbar-color: var(--main-color) transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar {
-    height: 0.75rem;
-}
-
-.hr-certs-grid::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, var(--main-color), transparent);
-    border-radius: 999px;
 }
 
 .hr-tab-btn {
@@ -2578,6 +2546,11 @@ body.light #certificate-modal .modal-content {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-top: 0;
+}
+
+body.light .hr-tab-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 .hr-tab-btn:hover {
@@ -2599,13 +2572,15 @@ body.light .hr-tab-btn.active {
 }
 
 .hr-certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    gap: 2.2rem;
     min-height: 25rem;
 }
 
 .hr-cert-card {
-    position: relative;
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 2rem;
     padding: 2.5rem;
     box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1);
@@ -2615,20 +2590,31 @@ body.light .hr-tab-btn.active {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1;
     transform: scale(1);
-    flex: 0 0 30rem;
-    min-width: 30rem;
-    max-width: 30rem;
-    scroll-snap-align: start;
-    overflow: hidden;
+}
+
+body.light .hr-cert-card {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.02);
 }
 
 .hr-cert-card.hidden {
-    display: none;
+    opacity: 0;
+    transform: scale(0.85);
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
 
 .hr-cert-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--main-color);
+    transform: translateY(-0.5rem);
+    border-color: rgba(var(--hr-color-rgb), 0.25);
+    box-shadow: var(--hr-shadow);
 }
 
 .hr-cert-top {
@@ -2640,12 +2626,7 @@ body.light .hr-tab-btn.active {
 
 .hr-cert-top i {
     font-size: 3rem;
-    color: var(--main-color);
-    transition: all 0.4s ease;
-}
-
-.hr-cert-card:hover .hr-cert-top i {
-    transform: rotate(10deg) scale(1.2);
+    color: var(--hr-color);
 }
 
 /* Difficulty Badges */
@@ -2686,7 +2667,7 @@ body.light .hr-tab-btn.active {
 
 .hr-cert-issuer {
     font-size: 1.3rem;
-    color: var(--text-color3);
+    color: var(--text-color);
     opacity: 0.6;
     margin-bottom: 1.8rem;
 }
@@ -2695,14 +2676,18 @@ body.light .hr-tab-btn.active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid var(--main-color2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 1.5rem;
     margin-top: auto;
 }
 
+body.light .hr-cert-footer {
+    border-top-color: rgba(0, 0, 0, 0.05);
+}
+
 .hr-verify-badge {
     font-size: 1.25rem;
-    color: var(--main-color);
+    color: var(--hr-color);
     font-weight: 600;
     display: flex;
     align-items: center;
