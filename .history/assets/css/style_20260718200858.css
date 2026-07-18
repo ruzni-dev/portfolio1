@@ -1342,7 +1342,7 @@ body.light .project-tags span {
     width: 100%;
     margin: 0;
     padding: 2.2rem;
-    background: var(--second-bg-color);
+    background: linear-gradient(160deg, var(--second-bg-color), var(--bg-color));
     border-radius: 1.2rem;
     border: 1px solid rgba(1, 198, 252, 0.2);
     box-shadow: var(--box-shadow);
