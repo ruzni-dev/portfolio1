@@ -300,10 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 1500,
     delay: 150
     });
-    ScrollReveal().reveal('.home-content, .heading, .hr-section-subtitle', { origin: "top" });
-    ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact, .skills-container, .certifications-container, .hr-roles-grid, .hr-tabs-container, .simulations-container', { origin: "bottom" });
-    ScrollReveal().reveal('.home-content h1, .about-img, anmt1, .hr-profile-card', { origin: "left" });
-    ScrollReveal().reveal('.home-content p, .about-content, .hr-star-card, .hr-cert-card', { origin: "right" });
+    ScrollReveal().reveal('.home-content, .heading', { origin: "top" });
+    ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact, .skills-container, .certifications-container,', { origin: "bottom" });
+    ScrollReveal().reveal('.home-content h1, .about-img, anmt1', { origin: "left" });
+    ScrollReveal().reveal('.home-content p, .about-content, .hr-profile-card', { origin: "right" });
     }, 1000);
 });
 
