@@ -9,14 +9,12 @@
 }
 
 :root {
-    --border-color: rgb(50, 54, 67);
     --bg-color: #15181e;
     --second-bg-color: #22262f;
     --text-color: #fff;
     --text-color2: #000000;
-    --text-color3: #c1bfbf;
     --main-color: rgb(1, 198, 252);
-    --curser-color: rgb(1, 198, 252);
+    --curser-color: rgba(1, 198, 252, 0.708);
     --box-shadow: 0 4px 6px rgba(1, 198, 252, 0.3);
     --box-shadow-hover: 0 4px 6px rgba(1, 198, 252, 0.6);
     --abc-color: rgba(0, 0, 0, .25);
@@ -36,12 +34,10 @@ body {
 }
 
 body.light {
-    --border-color: rgb(157, 171, 220);
     --bg-color: #eaf1ff;
     --second-bg-color: #d4e1fa;
     --text-color: #000000;
     --text-color2: #fff;
-    --text-color3: #353535;
     --main-color: #0085a9;
     --main-color2: rgb(1, 198, 252);
     --curser-color: rgb(4, 201, 255);
@@ -54,12 +50,11 @@ body.light {
 .curser-out-line {
     width: 28px;
     height: 28px;
+    background: var(--curser-color);
     position: fixed;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%) scale(0.4);
-    border-color: var(--curser-color);
-    border: 2px solid var(--curser-color);
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
@@ -84,7 +79,7 @@ body {
 
 .curser-out-line.is-active {
     transform: translate(-50%, -50%) scale(1.7);
-    border-color: var(--curser-color);
+    background: var(--curser-color);
 }
 
 @keyframes cursor-show {
@@ -92,12 +87,10 @@ body {
         opacity: 0;
         transform: translate(-50%, -50%) scale(2.8);
     }
-
     55% {
         opacity: 0.65;
         transform: translate(-50%, -50%) scale(1.05);
     }
-
     100% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.8);
@@ -109,17 +102,14 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.8);
     }
-
     40% {
         opacity: 0.95;
         transform: translate(-50%, -50%) scale(1.35);
     }
-
     78% {
         opacity: 0.14;
         transform: translate(-50%, -50%) scale(2.4);
     }
-
     100% {
         opacity: 0;
         visibility: hidden;
@@ -1001,13 +991,11 @@ button:hover {
     border-radius: 1rem;
 }
 
-.experience-content .cert-img img,
-.cert-img-simulations img {
+.experience-content .cert-img img, .cert-img-simulations img {
     width: 100%;
 }
 
-.cert-img .img-layer,
-.cert-img-simulations .img-layer {
+.cert-img .img-layer, .cert-img-simulations .img-layer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1024,8 +1012,7 @@ button:hover {
     transition: 0.5s ease;
 }
 
-.cert-img:hover .img-layer,
-.cert-img-simulations:hover .img-layer {
+.cert-img:hover .img-layer, .cert-img-simulations:hover .img-layer {
     transform: translateY(0);
 }
 
@@ -1043,13 +1030,11 @@ button:hover {
     align-items: center;
 }
 
-.experience-content .cert-img a,
-.experience-content .cert-img-simulations a {
+.experience-content .cert-img a, .experience-content .cert-img-simulations a {
     display: none;
 }
 
-.services h2,
-.hackerrank h2 {
+.services h2 {
     margin-bottom: 5rem;
 }
 
@@ -1076,8 +1061,7 @@ button:hover {
     transform: scale(1.02);
 }
 
-.services-box:hover i,
-.simulations .experience-item:hover .experience-date {
+.services-box:hover i, .simulations .experience-item:hover .experience-date {
     transform: rotate(10deg) scale(1.1);
 }
 
@@ -2137,613 +2121,4 @@ body.light .modal-btn.outline:hover {
 body.light #certificate-modal .modal-content {
     background: linear-gradient(135deg, #f0f4ff, #e1e9ff);
     border: 1px solid rgba(0, 133, 169, 0.2);
-}
-
-/* ==========================================
-   HACKERRANK ACHIEVEMENTS SECTION
-========================================== */
-.hackerrank {
-    background: var(--second-bg-color);
-    padding: 10rem 9% 8rem 9%;
-}
-
-/* Dashboard Grid Layout */
-.hr-dashboard-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1.8fr;
-    gap: 3rem;
-    margin-bottom: 5rem;
-    align-items: stretch;
-}
-
-@media (max-width: 991px) {
-    .hr-dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Glassmorphic Profile Card */
-.hr-profile-card {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-}
-
-.hr-profile-card:hover {
-    transform: translateY(-0.5rem);
-    border-color: var(--main-color);
-}
-
-.hr-profile-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(var(--main-color), 0.15) 0%, transparent 70%);
-    z-index: 0;
-    pointer-events: none;
-    transition: transform 0.5s ease;
-}
-
-.hr-profile-card:hover::before {
-    transform: translate(-10%, 10%) scale(1.2);
-}
-
-.hr-profile-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hr-logo-wrapper {
-    width: 6.5rem;
-    height: 6.5rem;
-    background: rgba(var(--main-color), 0.1);
-    border-radius: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(var(--main-color), 0.25);
-    box-shadow: 0 0 15px rgba(var(--main-color), 0.15);
-}
-
-.hr-logo-wrapper i {
-    font-size: 3.5rem;
-    color: var(--main-color);
-    transition: .5s ease;
-}
-
-.hr-profile-card:hover .hr-logo-wrapper i {
-    transform: rotate(10deg) scale(1.1);
-}
-
-.hr-profile-title h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--text-color);
-}
-
-.hr-profile-title span {
-    font-size: 1.4rem;
-    color: var(--main-color);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.3rem;
-}
-
-.hr-recruiter-summary {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    opacity: 0.85;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hr-highlights {
-    list-style: none;
-    margin-bottom: 2.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hr-highlights li {
-    font-size: 1.45rem;
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    line-height: 1.4;
-    color: var(--text-color3);
-}
-
-.hr-highlights li i {
-    color: var(--main-color);
-    font-size: 1.6rem;
-    margin-top: 0.2rem;
-}
-
-.hr-profile-card .btn {
-    align-self: flex-start;
-    background: var(--main-color);
-    color: var(--second-bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2.2rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.hr-profile-card .btn:hover {
-    box-shadow: none;
-}
-
-/* Star Ratings Grid */
-.hr-stars-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    gap: 2rem;
-}
-
-.hr-star-card {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding: 2.5rem;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    transition: all 0.4s ease;
-    overflow: hidden;
-}
-
-.hr-star-card:hover {
-    transform: translateY(-0.5rem);
-    border-color: var(--main-color);
-    box-shadow: var(--hr-shadow);
-}
-
-.hr-star-card .hr-icon-wrapper {
-    font-size: 3.5rem;
-    color: var(--main-color);
-    margin-bottom: 1.5rem;
-    transition: all 0.4s ease;
-}
-
-.hr-star-card:hover .hr-icon-wrapper {
-    transform: rotate(10deg) scale(1.1);
-}
-
-.hr-star-card h4 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    color: var(--text-color);
-}
-
-.hr-stars-row {
-    display: flex;
-    gap: 0.4rem;
-    color: var(--main-color2);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.hr-stars-row i {
-    text-shadow: 0 0 10px rgba(var(--main-color2));
-}
-
-.hr-star-card .hr-star-badge {
-    background: rgba(var(--main-color), 0.5);
-    color: var(--main-color);
-    border: 1px solid rgba(var(--main-color), 0.8);
-    padding: 0.4rem 1.2rem;
-    border-radius: 5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-/* Sub-heading for sections */
-.hr-section-subtitle {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin: 6rem 0 3rem;
-    color: var(--text-color);
-    position: relative;
-    padding-left: 2rem;
-}
-
-.hr-section-subtitle::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 80%;
-    background: var(--main-color);
-    border-radius: 3px;
-}
-
-/* Role Certifications Showcase */
-.hr-roles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 5rem;
-}
-
-.hr-role-card {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding: 3rem;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-    position: relative;
-    transition: all 0.4s ease;
-    overflow: hidden;
-}
-
-.hr-role-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--main-color);
-}
-
-.hr-role-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--main-color2), var(--main-color));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.hr-role-card:hover::after {
-    transform: scaleX(1);
-}
-
-.hr-role-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
-.hr-role-icon {
-    width: 5.5rem;
-    height: 5.5rem;
-    border-radius: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--main-color);
-    font-size: 3rem;
-    transition: all 0.4s ease;
-}
-
-.hr-role-card:hover .hr-role-icon {
-    transform: rotate(10deg) scale(1.2);
-}
-
-.hr-role-badge {
-    display: inline-flex;
-    align-self: flex-start;
-    border-radius: 999px;
-    background: rgba(1, 198, 252, 0.14);
-    color: var(--main-color);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    border: 1px solid var(--main-color2);
-    padding: 0.5rem 1.2rem;
-}
-
-.hr-role-card h4 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.hr-role-card p {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    opacity: 0.8;
-    margin-bottom: 2rem;
-    color: var(--text-color3);
-}
-
-.hr-role-skills-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-}
-
-.hr-role-skills-wrap span {
-    background: var(--second-bg-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    font-size: 1.2rem;
-    padding: 0.4rem 1rem;
-    border-radius: 0.8rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.hr-role-card:hover .hr-role-skills-wrap span {
-    border: 1px solid var(--main-color2);
-    background: rgba(1, 198, 252, 0.14);
-}
-
-/* Skill Certifications Tabs & Grid */
-.hr-tabs-container {
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-bottom: 4rem;
-}
-
-.hr-certs-slider-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 3.8rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.hr-certs-slider-controls {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.hr-certs-prev {
-    left: -0.8rem;
-}
-
-.hr-certs-next {
-    right: -0.8rem;
-}
-
-.hr-certs-grid {
-    position: relative;
-    display: flex;
-    gap: 1.8rem;
-    align-items: stretch;
-    width: 100%;
-    min-width: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1rem 0.3rem 1.6rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    scrollbar-color: var(--main-color) transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar {
-    height: 0.75rem;
-}
-
-.hr-certs-grid::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.hr-certs-grid::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, var(--main-color), transparent);
-    border-radius: 999px;
-}
-
-.hr-tab-btn {
-    box-shadow: none;
-    position: relative;
-    display: inline-block;
-    font-size: 1.7rem;
-    color: var(--text-color);
-    margin-left: 2rem;
-    text-decoration: none;
-    font-weight: 600;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-}
-
-.hr-tab-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: var(--main-color);
-    border-radius: 5px;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transition: transform .5s;
-    transform-origin: right;
-}
-
-.hr-tab-btn:hover::after,
-.hr-tab-btn.active::after {
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-.hr-tab-btn:hover,
-.hr-tab-btn.active {
-    color: var(--main-color);
-    background: transparent;
-    border-color: transparent;
-    transform: none;
-    box-shadow: none;
-}
-
-body.light .hr-tab-btn.active {
-    color: var(--main-color) !important;
-}
-
-.hr-certs-grid {
-    min-height: 25rem;
-}
-
-.hr-cert-card {
-    position: relative;
-    background: var(--bg-color);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2rem;
-    padding: 2.5rem;
-    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
-    transform: scale(1);
-    flex: 0 0 30rem;
-    min-width: 30rem;
-    max-width: 30rem;
-    scroll-snap-align: start;
-    overflow: hidden;
-}
-
-.hr-cert-card.hidden {
-    display: none;
-}
-
-.hr-cert-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--main-color);
-}
-
-.hr-cert-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
-.hr-cert-top i {
-    font-size: 3rem;
-    color: var(--main-color);
-    transition: all 0.4s ease;
-}
-
-.hr-cert-card:hover .hr-cert-top i {
-    transform: rotate(10deg) scale(1.2);
-}
-
-/* Difficulty Badges */
-.hr-level-badge {
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 0.3rem 1rem;
-    border-radius: 5rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-}
-
-.hr-level-badge.basic {
-    background: rgba(1, 198, 252, 0.1);
-    color: var(--main-color);
-    border: 1px solid rgba(1, 198, 252, 0.2);
-}
-
-.hr-level-badge.intermediate {
-    background: rgba(168, 85, 247, 0.1);
-    color: #a855f7;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-}
-
-.hr-level-badge.advanced {
-    background: rgba(234, 179, 8, 0.1);
-    color: #eab308;
-    border: 1px solid rgba(234, 179, 8, 0.2);
-}
-
-.hr-cert-card h4 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
-}
-
-.hr-cert-issuer {
-    font-size: 1.3rem;
-    color: var(--text-color3);
-    opacity: 0.6;
-    margin-bottom: 1.8rem;
-}
-
-.hr-cert-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--main-color2);
-    padding-top: 1.5rem;
-    margin-top: auto;
-}
-
-.hr-verify-badge {
-    font-size: 1.25rem;
-    color: var(--main-color);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.hr-cert-card:hover .hr-verify-badge {
-    animation: hrPulse 1.5s infinite;
-}
-
-@keyframes hrPulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
 }
