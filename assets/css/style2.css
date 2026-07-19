@@ -599,3 +599,18 @@ html {
     color: var(--second-bg-color);
 
 }
+
+@media (pointer: coarse) {
+    .curser-out-line {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .secNew {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+}

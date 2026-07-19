@@ -86,7 +86,7 @@ function setupBackToTop() {
 
 // Smooth, low-impact cursor outline follow (disabled for reduced motion)
 const curserOutline = document.querySelector('[data-curser-out-line]');
-if (curserOutline && !prefersReducedMotion) {
+if (curserOutline && window.matchMedia('(pointer: fine)').matches && !prefersReducedMotion) {
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
 

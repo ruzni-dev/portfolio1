@@ -2747,7 +2747,6 @@ body.light .hr-tab-btn.active {
 }
 
 .cert-link {
-    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -2759,23 +2758,7 @@ body.light .hr-tab-btn.active {
 }
 
 .hr-cert-card:hover .cert-link {
-    gap: 0.9rem;   
-}
-
-.role-cert-link {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.4rem;
-    color: var(--main-color);
-    font-weight: 700;
-    margin-top: 1.5rem;
-    transition: gap 0.3s ease;
-}
-
-.hr-role-card:hover .role-cert-link {
-    gap: 0.9rem;   
+    color: var(--main-color2);
 }
 
 @keyframes hrPulse {
