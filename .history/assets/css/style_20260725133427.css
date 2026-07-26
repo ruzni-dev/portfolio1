@@ -90,6 +90,7 @@ body.cursor-hover .cursor-dot {
 }
 
 body.cursor-hover .cursor-ring {
+    visibility: none;
     width: 56px;
     height: 56px;
 }

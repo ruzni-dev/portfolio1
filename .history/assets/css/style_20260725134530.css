@@ -92,6 +92,7 @@ body.cursor-hover .cursor-dot {
 body.cursor-hover .cursor-ring {
     width: 56px;
     height: 56px;
+    opacity: 0;
 }
 
 @media (pointer: coarse) {

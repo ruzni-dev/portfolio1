@@ -69,8 +69,8 @@ body {
 }
 
 .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--cursor-color);
     transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
 }
@@ -85,13 +85,15 @@ body {
 
 /* Hover state, toggled via JS by adding "cursor-hover" class to body */
 body.cursor-hover .cursor-dot {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
+    background: var(--cursor-hover-color);
 }
 
 body.cursor-hover .cursor-ring {
     width: 56px;
     height: 56px;
+    border-color: var(--cursor-hover-color);
 }
 
 @media (pointer: coarse) {

@@ -65,13 +65,13 @@ body {
     pointer-events: none;
     border-radius: 50%;
     z-index: 9999;
-    transform: translate(-50%, -50%);
 }
 
 .cursor-dot {
     width: 8px;
     height: 8px;
     background: var(--cursor-color);
+    transform: translate(-50%, -50%);
     transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
 }
 
@@ -79,19 +79,22 @@ body {
     width: 30px;
     height: 30px;
     border: 2px solid var(--cursor-color);
-    transition: width 0.25s ease, height 0.25s ease,
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.25s ease, background-color 0.25s ease;
 }
 
 /* Hover state, toggled via JS by adding "cursor-hover" class to body */
 body.cursor-hover .cursor-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 
 body.cursor-hover .cursor-ring {
-    width: 56px;
-    height: 56px;
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
 }
 
 @media (pointer: coarse) {

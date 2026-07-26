@@ -52,46 +52,44 @@ body.light {
     --skill-back: #15181e;
 }
 
+.curser-out-line {
+    width: 28px;
+    height: 28px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    border-color: var(--curser-color);
+    border: 2px solid var(--curser-color);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    mix-blend-mode: screen;
+}
+
 body {
     cursor: auto;
 }
 
-/* --- Cursor elements --- */
-.cursor-dot,
-.cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
+.curser-out-line.is-visible {
+    visibility: visible;
+    animation: cursor-show 1s ease forwards;
 }
 
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--cursor-color);
-    transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+.curser-out-line.is-hidden {
+    visibility: visible;
+    animation: cursor-hide 1s ease forwards;
 }
 
-.cursor-ring {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--cursor-color);
-    transition: width 0.25s ease, height 0.25s ease,
-                border-color 0.25s ease, background-color 0.25s ease;
+.curser-out-line.is-active {
+    transform: translate(-50%, -50%) scale(1.7);
+    border-color: var(--curser-color);
 }
 
-/* Hover state, toggled via JS by adding "cursor-hover" class to body */
-body.cursor-hover .cursor-dot {
-    width: 6px;
-    height: 6px;
-}
-
-body.cursor-hover .cursor-ring {
-    width: 56px;
-    height: 56px;
+body.light .curser-out-line {
+    mix-blend-mode: normal;
 }
 
 @media (pointer: coarse) {
@@ -154,6 +152,11 @@ body.cursor-hover .cursor-ring {
 .home .experience-item,
 .home .cert-img {
     cursor: pointer;
+}
+
+.curser-out-line.is-active {
+    transform: translate(-50%, -50%) scale(1.6);
+    background: var(--curser-color);
 }
 
 section {
