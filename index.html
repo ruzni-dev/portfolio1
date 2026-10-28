@@ -3,1205 +3,1834 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruzni</title>
+    <title>Mohamad Ruzni | Executive Software Engineer & Fullstack Craftsman</title>
+    <meta name="description" content="Portfolio of Mohamad Ruzni — Fullstack Software Engineer, 5-Star HackerRank Elite, Scholar at University of Moratuwa (BIT) and SEUSL.">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=4">
     <link rel="shortcut icon" type="image/svg+xml" href="assets/images/profile.svg?v=4">
-     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Preconnect & Editorial Modern Typeface Stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Core Luxury Design System Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Progress Bar -->
+
+    <!-- Interactive Celestial Particle Canvas -->
+    <canvas id="luxuryCanvas"></canvas>
+
+    <!-- Precision Scroll Progress Bar -->
     <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
     </div>
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
         <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modern Futuristic Apple OS Glass Cursor -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+        <span class="cursor-label" id="cursor-label"></span>
     </div>
+
+    <!-- macOS Menu Bar / Dynamic Island Header -->
     <header class="header">
-        <a href="#" class="logo"><code>&lt;R/&gt;</code></a>
-        <div class="theme-toggle">
-            <input type="checkbox" id="themeSwitch" checked>
-            <label for="themeSwitch" class="toggle">
-                <span class="btnToggle">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-            </label>
-        </div>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#simulations">Simulations</a>
-            <a href="#hackerrank">HackerRank</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <div class="preloader">
-        <h1 class="loader-text"><span class="mlt-load"></span></h1>
-        <h1 class="loader-text"><span class="mlt-load1"></span></h1>
-        <h1 class="loader-text"><span class="mlt-load2"></span></h1>
-    </div>
-    <!-- Progress Bar -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Mohamad Ruzni</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>Hi! I’m a beginner IT enthusiast passionate about technology, problem-solving, and continuous learning. I enjoy exploring programming, networking, and software development while building a strong foundation in IT skills. My goal is to grow as a tech professional by taking on new challenges, learning from real-world projects, and contributing creative solutions.</p>
-            <div class="social-media">
-                <a href="https://x.com/Mohamad_Ruzni"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://lk.linkedin.com/in/ruzni-dev"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/ruzni-dev/"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.hackerrank.com/profile/ruzni_dev"><i class="fa-brands fa-hackerrank"></i></a>
-            </div>
-            <a href="https://drive.google.com/file/d/1zH18yxWMdOYtbDRnXFMQVHe324t2tH8Q/view?usp=sharing" class="btn">Download CV</a>
-        </div>
-        <div class="home-img">
-            <img src="assets/images/profile.jpg" alt="">
-        </div>
-    </section>
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="assets/images/profile.jpg" alt="">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Beginner IT Enthusiast Passionate About Technology</h3>
-            <p> I'm Mohamad Ruzni, a 22-year-old from Vavuniya. I completed my A.L studies at Al-Hamiya M.M.V in 2023 (2024) and am currently pursuing a BIT degree at Moratuwa University and BSc in Applied Science at South eastern university of Srilanka. I'm passionate about technology and always eager to learn and grow in the IT field. I look forward to gaining new skills and experiences that will help shape my future career.</p>
-            <span id="moreText">
-                <h3>Education</h3>
-                <p>Bachelor of IT (R), University of Moratuwa (2025-2028)</p>
-                <p>BSc in Aplied Science (R), South eastern university of srilanka (2025-2029)</p>
-                <p>Cyber Security Master Course, MarsTech Campus (2025)</p>
-                <p>Artificial Inteligence Master Course, MarsTech Campus (2025)</p>
+        <a href="#home" class="logo-wrapper">
+            <span class="logo">&lt;<span>RUZNI</span> /&gt;</span>
+            <span class="logo-badge">
+                <span class="pulse-dot"></span> AVAILABLE
             </span>
-            <button class="btn" onclick="toggleText()" id="toggleBtn">Read More</button>
+        </a>
+
+        <!-- Apple Dynamic Island Capsule -->
+        <div class="dynamic-island" id="dynamicIsland">
+            <div class="island-capsule">
+                <span class="island-icon"><i class="fas fa-microchip"></i></span>
+                <span class="island-title">RuzniOS</span>
+                <span class="island-sep">•</span>
+                <span class="island-clock" id="islandClock">GMT+5:30</span>
+                <span class="island-status-pill">ONLINE</span>
+            </div>
+            <div class="island-expanded-view">
+                <div class="island-grid">
+                    <div class="island-cell">
+                        <span class="island-label">LOCATION</span>
+                        <span class="island-val">Vavuniya, Sri Lanka</span>
+                    </div>
+                    <div class="island-cell">
+                        <span class="island-label">DUAL ACADEMIA</span>
+                        <span class="island-val">Moratuwa BIT &amp; SEUSL</span>
+                    </div>
+                    <div class="island-cell">
+                        <span class="island-label">ALGORITHMS</span>
+                        <span class="island-val">5★ HackerRank Elite</span>
+                    </div>
+                    <div class="island-cell">
+                        <span class="island-label">AVAILABILITY</span>
+                        <span class="island-val" style="color: var(--cyan-electric);">Worldwide Relocation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <!-- Apple Spotlight Search Button (⌘K / Ctrl+K) -->
+            <button class="spotlight-trigger-btn" id="spotlightTriggerBtn" aria-label="Open Spotlight Search" title="Spotlight Quick Search (⌘K)">
+                <i class="fas fa-magnifying-glass"></i>
+                <span class="kbd-pill">⌘K</span>
+            </button>
+
+            <!-- Interactive Cyber Terminal Trigger -->
+            <button class="terminal-trigger-btn" id="terminalTriggerBtn" aria-label="Open Cyber Terminal Shell" title="Launch RUZNI_OS Cyber Terminal">
+                <i class="fas fa-terminal"></i>
+                <span>CLI</span>
+            </button>
+
+            <!-- Sound FX Toggle Button -->
+            <button class="sound-toggle-btn" id="soundToggleBtn" aria-label="Toggle Cyber Sound Effects" title="Toggle Sound Feedback">
+                <i class="fas fa-volume-high"></i>
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <i class="fa-solid fa-bars" id="menu-icon" aria-label="Toggle mobile menu"></i>
+        </div>
+    </header>
+
+    <!-- ===================================================================
+         HERO SECTION (SHOWSTOPPER)
+         =================================================================== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-status-pill">
+                <span class="live-dot"></span>
+                <span>Dual University IT Scholar • Open to Global Roles</span>
+            </div>
+
+            <h3 class="hero-greeting">Hello, I'm</h3>
+            <h1 class="hero-title">
+                Mohamad <span class="name-gradient">Ruzni</span>
+            </h1>
+
+            <div class="hero-typed-wrapper">
+                <span>Specialized in</span>
+                <span class="multiple-text"></span>
+            </div>
+
+            <p class="hero-desc">
+                High-performance Software Engineer & Fullstack Craftsman pursuing dual degrees at the 
+                <strong>University of Moratuwa (BIT)</strong> and <strong>South Eastern University of Sri Lanka (BSc Applied Science)</strong>. 
+                Verified 5-Star HackerRank Elite problem solver with completed software engineering simulations from 
+                <strong>Walmart USA</strong>, <strong>JPMorgan Chase</strong>, and <strong>Citi</strong>.
+            </p>
+
+            <div class="hero-cta-deck">
+                <a href="#portfolio" class="btn btn-primary">
+                    <i class="fas fa-layer-group"></i> Explore Projects
+                </a>
+                <a href="https://drive.google.com/file/d/1zH18yxWMdOYtbDRnXFMQVHe324t2tH8Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="fas fa-file-arrow-down"></i> Download Dossier / CV
+                </a>
+            </div>
+
+            <div class="hero-social-deck">
+                <a href="https://github.com/ruzni-dev/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://lk.linkedin.com/in/ruzni-dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.hackerrank.com/profile/ruzni_dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="HackerRank Profile" title="HackerRank">
+                    <i class="fa-brands fa-hackerrank"></i>
+                </a>
+                <a href="https://x.com/Mohamad_Ruzni" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter Profile" title="X (Twitter)">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="mailto:ruzni.dev@gmail.com" class="social-icon-btn" aria-label="Direct Email" title="Direct Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-card-3d-wrap">
+                <!-- Floating Satellite Badges -->
+                <div class="satellite-badge badge-top-right">
+                    <div class="satellite-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="satellite-text">
+                        <h5>5★ HackerRank</h5>
+                        <span>Java • SQL • Python • C</span>
+                    </div>
+                </div>
+
+                <div class="satellite-badge badge-bottom-left">
+                    <div class="satellite-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="satellite-text">
+                        <h5>15+ Verified Certs</h5>
+                        <span>Microsoft & Moratuwa</span>
+                    </div>
+                </div>
+
+                <div class="hero-card-3d">
+                    <img src="assets/images/profile.jpg" alt="Mohamad Ruzni Portrait" loading="eager">
+                    <div class="hero-card-overlay">
+                        <h4>Mohamad Ruzni</h4>
+                        <p>&lt;Software Engineer /&gt;</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="skills" id="skills">
-        <div class="skill-container">
-            <div class="skills-intro">
+
+    <!-- ===================================================================
+         INFINITE TECH TICKER (LUXURY MARQUEE)
+         =================================================================== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-pill"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+            <div class="marquee-pill"><i class="fa-brands fa-react"></i> React.js</div>
+            <div class="marquee-pill"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</div>
+            <div class="marquee-pill"><i class="fa-brands fa-java"></i> Java &amp; Spring Boot</div>
+            <div class="marquee-pill"><i class="fa-brands fa-python"></i> Python &amp; ETL</div>
+            <div class="marquee-pill"><i class="fa-solid fa-code"></i> C# .NET Core</div>
+            <div class="marquee-pill"><i class="fa-solid fa-database"></i> SQL &amp; Relational DB</div>
+            <div class="marquee-pill"><i class="fa-solid fa-shield-halved"></i> Ethical Hacking (CEH v11)</div>
+            <div class="marquee-pill"><i class="fa-solid fa-vial-circle-check"></i> Software QA &amp; Testing</div>
+            <div class="marquee-pill"><i class="fa-solid fa-network-wired"></i> RESTful Architecture</div>
+            <div class="marquee-pill"><i class="fa-brands fa-figma"></i> Figma UI/UX</div>
+            <div class="marquee-pill"><i class="fa-brands fa-git-alt"></i> Git &amp; CI/CD Workflows</div>
+
+            <!-- Duplicate for seamless infinite loop -->
+            <div class="marquee-pill"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+            <div class="marquee-pill"><i class="fa-brands fa-react"></i> React.js</div>
+            <div class="marquee-pill"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</div>
+            <div class="marquee-pill"><i class="fa-brands fa-java"></i> Java &amp; Spring Boot</div>
+            <div class="marquee-pill"><i class="fa-brands fa-python"></i> Python &amp; ETL</div>
+            <div class="marquee-pill"><i class="fa-solid fa-code"></i> C# .NET Core</div>
+            <div class="marquee-pill"><i class="fa-solid fa-database"></i> SQL &amp; Relational DB</div>
+            <div class="marquee-pill"><i class="fa-solid fa-shield-halved"></i> Ethical Hacking (CEH v11)</div>
+            <div class="marquee-pill"><i class="fa-solid fa-vial-circle-check"></i> Software QA &amp; Testing</div>
+            <div class="marquee-pill"><i class="fa-solid fa-network-wired"></i> RESTful Architecture</div>
+            <div class="marquee-pill"><i class="fa-brands fa-figma"></i> Figma UI/UX</div>
+            <div class="marquee-pill"><i class="fa-brands fa-git-alt"></i> Git &amp; CI/CD Workflows</div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         EXECUTIVE DOSSIER (ABOUT ME - BENTO ARCHITECTURE)
+         =================================================================== -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <span class="section-tag">Executive Dossier</span>
+            <h2 class="heading">Crafting <span>Digital Excellence</span></h2>
+            <p class="section-desc">A convergence of rigorous academia, elite algorithmic problem solving, and Fortune 500 corporate simulations.</p>
+        </div>
+
+        <div class="about-bento-grid">
+            <!-- Bento 1: Main Story Card -->
+            <div class="bento-card bento-story">
                 <div>
-                    <h2 class="heading">Skills & <span>Technologies</span></h2>
-                </div>
-            </div>
-            <div class="skills-slider-wrap">
-                <div class="skills-slider-controls" aria-label="Skills carousel controls">
-                    <button class="slider-arrow skills-prev" type="button" aria-label="Scroll skills left">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-arrow skills-next" type="button" aria-label="Scroll skills right">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <span class="category-tag">Core Stack</span>
-                        <h3>Frontend Development</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">HTML5</span><span class="skill-badge" style="--skill-fill: 95%;">95%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">CSS3</span><span class="skill-badge" style="--skill-fill: 95%;">95%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">JavaScript (ES6+)</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Responsive Web Design</span><span class="skill-badge" style="--skill-fill: 95%;">95%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Bootstrap</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Tailwind CSS</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">React.js</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">UI/UX Design</span><span class="skill-badge" style="--skill-fill: 80%;">80%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Server Logic</span>
-                        <h3>Backend Development</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">PHP</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Node.js</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Express.js</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Python</span><span class="skill-badge" style="--skill-fill: 60%;">60%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Java</span><span class="skill-badge" style="--skill-fill: 70%;">70%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">C Programming</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">C#</span><span class="skill-badge" style="--skill-fill: 60%;">60%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Data Layer</span>
-                        <h3>Database</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">MySQL</span><span class="skill-badge" style="--skill-fill: 80%;">80%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">phpMyAdmin</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">SQL</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Database Design</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Connectivity</span>
-                        <h3>Networking</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Networking Fundamentals</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Network Configuration</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Routing &amp; Switching</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Network Security</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Protection</span>
-                        <h3>Cyber Security</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Linux OS</span><span class="skill-badge" style="--skill-fill: 60%;">60%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Basic Ethical Hacking</span><span class="skill-badge" style="--skill-fill: 55%;">55%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Network Security</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Vulnerability Assessment</span><span class="skill-badge" style="--skill-fill: 50%;">50%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Cyber Security Fundamentals</span><span class="skill-badge" style="--skill-fill: 65%;">65%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Hardware</span>
-                        <h3>Computer Hardware</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Computer Hardware</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">PC Assembly &amp; Troubleshooting</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Server Management</span><span class="skill-badge" style="--skill-fill: 60%;">60%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Operating System Installation</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Collaboration</span>
-                        <h3>Version Control</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Git</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">GitHub</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Toolbox</span>
-                        <h3>Development Tools</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Visual Studio Code</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">IntelliJ IDEA</span><span class="skill-badge" style="--skill-fill: 80%;">80%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">NetBeans</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Visual Studio</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">PyCharm</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">XAMPP</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Postman</span><span class="skill-badge" style="--skill-fill: 80%;">80%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">npm</span><span class="skill-badge" style="--skill-fill: 70%;">70%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Deploy</span>
-                        <h3>Cloud &amp; Deployment</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">GitHub Pages</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Vercel</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Netlify</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Integration</span>
-                        <h3>APIs</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">REST APIs</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">JSON</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Fetch API</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">AJAX</span><span class="skill-badge" style="--skill-fill: 75%;">75%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Engineering</span>
-                        <h3>Software Development</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">OOP</span><span class="skill-badge" style="--skill-fill: 80%;">80%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Data Structures &amp; Algorithms</span><span class="skill-badge" style="--skill-fill: 70%;">70%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Problem Solving</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Debugging</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Software Testing</span><span class="skill-badge" style="--skill-fill: 70%;">70%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">AI Workflow</span>
-                        <h3>AI &amp; Productivity</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">ChatGPT</span><span class="skill-badge" style="--skill-fill: 95%;">95%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">GitHub Copilot</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Prompt Engineering</span><span class="skill-badge" style="--skill-fill: 90%;">90%</span></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <span class="category-tag">Design Suite</span>
-                        <h3>Design Tools</h3>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Figma</span><span class="skill-badge" style="--skill-fill: 70%;">70%</span></div></div>
-                        <div class="skill"><div class="skill-meta"><span class="skill-name">Canva</span><span class="skill-badge" style="--skill-fill: 85%;">85%</span></div></div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </section>
-    <section class="certifications" id="certifications">
-        <h2 class="heading"><span>Certifications</span></h2>
-        <div class="certifications-container">
-            <!-- Experience Item 1 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>ETHICAL HACKING</h3>
-                        <h4>MARSTECH</h4>
-                        <p>Successfully Completing The Certified Ethical Hacker (CEH v11) Training Course</p>
-                        <ul>
-                            <li>What is Ethical Hacking? (White-hat vs Black-hat vs Grey-hat)</li>
-                            <li>Virtualization (VMware, VirtualBox, Kali Linux setup)</li>
-                            <li>Social Engineering Awareness</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/img15.png" alt="Ethical Hacking">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/img21.pdf')">View Certificate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experience Item 2 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>ARTIFICIAL INTELIGENCE AND ROBOTICS</h3>
-                        <h4>MARSTECH</h4>
-                        <p>Successfully Completed The Artificial Intelligence & Robotics 4 Month Training Workshop</p>
-                        <ul>
-                            <li>Robotic Simulation</li>
-                            <li>IOT (Internet of Things) Smart Technology</li>
-                            <li>Introduction to Artificial Intelligence</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/img14.png" alt="Artificial Intelligence & Robotics">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/img20.pdf')">View Certificate</button>
-                            <button onclick="openCertificateModal('assets/certificates/img19.pdf')">View Transcript</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experience Item 5 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>FRONT-END WEB DEVELOPMENT</h3>
-                        <h4>UNIVERSITY OF MORATUWA</h4>
-                        <p>Has Participated in the online learning programme in Front-End Web Development Certification on May 13, 2026</p>
-                        <ul>
-                            <li>Core Front-End Technologies (HTML, CSS, JavaScript)</li>
-                            <li>Responsive & Modern Web Design</li>
-                            <li>Front-End Tools & Framework Basics</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/img35.png" alt="Web Development">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/img36.pdf')">View Certificate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experience Item 16 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>SERVER-SIDE WEB PROGRAMMING</h3>
-                        <h4>UNIVERSITY OF MORATUWA</h4>
-                        <p>Successfully completed the Server-side Web Programming online learning programme.</p>
-                        <ul>
-                            <li>Gained hands-on exposure to full-stack web development</li>
-                            <li>Built dynamic web application backends and databases</li>
-                            <li>Handled server-side routing, controllers, and application logic</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/12.%20Server-side_Web_Programming_E-Certificate.png" alt="Server-side Web Programming">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/12.%20Server-side_Web_Programming_E-Certificate.pdf')">View Certificate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experience Item 17 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>INTRODUCTION TO SOFTWARE QUALITY ASSURANCE</h3>
-                        <h4>UNIVERSITY OF MORATUWA</h4>
-                        <p>Successfully completed the Introduction to Software Quality Assurance online learning programme.</p>
-                        <ul>
-                            <li>Studied Software Testing Life Cycle (STLC) methodologies</li>
-                            <li>Developed defect identification, bug reporting, and tracking skills</li>
-                            <li>Learned quality engineering metrics and root cause analysis</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.png" alt="Introduction to Software Quality Assurance">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.pdf')">View Certificate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experience Item 19 -->
-            <div class="experience-item">
-                <div class="experience-date"><i class="fas fa-award"></i></div>
-                <div class="experience-content">
-                    <div class="content">
-                        <h3>FOUNDATIONAL C# WITH MICROSOFT</h3>
-                        <h4>MICROSOFT & FREECODECAMP</h4>
-                        <p>Successfully completed the Foundational C# with Microsoft Developer Certification on June 5, 2026.</p>
-                        <ul>
-                            <li>Core C# syntax, variables, operators, and control flow logic</li>
-                            <li>Collection structures including arrays, helper methods, and string formatting</li>
-                            <li>Building console applications, debugging, and basic exception handling</li>
-                        </ul>
-                    </div>
-                    <div class="cert-img">
-                        <img src="assets/images/07.%20foundational-c-sharp-with-microsoft.png" alt="Foundational C# with Microsoft">
-                        <div class="img-layer">
-                            <button onclick="openCertificateModal('assets/certificates/07.%20foundational-c-sharp-with-microsoft.pdf')">View Certificate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="simulations" id="simulations">
-        <div class="simulation-container">
-            <h2 class="heading">Job <span>Simulations</span></h2>
-            <div class="simulations-slider-wrap">
-                <div class="simulations-slider-controls" aria-label="Simulations carousel controls">
-                    <button class="slider-arrow simulations-prev" type="button" aria-label="Scroll simulations left">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-arrow simulations-next" type="button" aria-label="Scroll simulations right">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <div class="simulations-container">
-                    <!-- Experience Item 9 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>ADVANCED SOFTWARE ENGINEERING</h3>
-                                <h4>WALMART USA (THE FORAGE)</h4>
-                                <p>Successfully completed the Advanced Software Engineering Job Simulation through The Forage in July 2026.</p>
-                                <ul>
-                                    <li>Designed scalable software architecture using UML and SOLID principles</li>
-                                    <li>Built a custom Power-of-Two Max Heap data structure in Java</li>
-                                    <li>Created a dynamic data processing pipeline with configurable modes and databases</li>
-                                    <li>Designed a fully normalized relational database (ERD) for a retail system</li>
-                                    <li>Developed a Python ETL data munging pipeline using SQLite</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/16.%20Advanced%20Software%20Engineering%20Job.png" alt="Advanced Software Engineering">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/16.%20Advanced%20Software%20Engineering%20Job.pdf')">View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience Item 10 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>INTRODUCTION TO SOFTWARE ENGINEERING</h3>
-                                <h4>COMMONWEALTH BANK (THE FORAGE)</h4>
-                                <p>Successfully completed the Introduction to Software Engineering Virtual Experience Program through Forage.</p>
-                                <ul>
-                                    <li>Built a website using HTML and CSS applying design principles and brand guidelines</li>
-                                    <li>Developed financial cybersecurity awareness content for users</li>
-                                    <li>Explored secure web hosting strategies and security considerations</li>
-                                    <li>Analyzed software engineering approaches to real-world business requirements</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/17.%20Introduction%20to%20Software%20Engineering%20Job.png" alt="Introduction to Software Engineering">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/17.%20Introduction%20to%20Software%20Engineering%20Job.pdf')">View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience Item 11 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>SOFTWARE ENGINEERING</h3>
-                                <h4>JPMORGAN CHASE (THE FORAGE)</h4>
-                                <p>Successfully completed the Software Engineering Virtual Experience Program through Forage.</p>
-                                <ul>
-                                    <li>Developed backend solutions using Java, Spring Framework, and Spring Boot</li>
-                                    <li>Built REST APIs and integrated SQL databases using H2 and Spring Data JPA</li>
-                                    <li>Integrated Kafka message queuing for dynamic real-time message processing</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/18.%20Software%20Engineering%20Job%20Simulation.png" alt="Software Engineering Job Simulation">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/18.%20Software%20Engineering%20Job%20Simulation.pdf')">View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience Item 12 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>FRONT-END SOFTWARE ENGINEERING</h3>
-                                <h4>SKYSCANNER (THE FORAGE)</h4>
-                                <p>Successfully completed the Front-End Software Engineering Virtual Experience Program through Forage.</p>
-                                <ul>
-                                    <li>Built a responsive flight scheduling interface using React.js</li>
-                                    <li>Customised user interfaces using the Skyscanner Backpack Design System</li>
-                                    <li>Executed automated front-end testing to ensure quality and accessibility</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/19.%20Front-End%20Software%20Engineering%20Job.png" alt="Front-End Software Engineering">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/19.%20Front-End%20Software%20Engineering%20Job.pdf')">View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience Item 13 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>SOFTWARE ENGINEERING</h3>
-                                <h4>WELLS FARGO (THE FORAGE)</h4>
-                                <p>Successfully completed the Software Engineering Virtual Experience Program through Forage.</p>
-                                <ul>
-                                    <li>Designed Entity Relationship Diagrams (ERD) for portfolio management systems</li>
-                                    <li>Implemented database entities using Java Persistence API (JPA) annotations</li>
-                                    <li>Integrated Spring Framework, Object-Relational Mapping (ORM), and relational databases</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/20.%20Software%20Engineering%20Job%20Simulation.png" alt="Software Engineering Job Simulation">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/20.%20Software%20Engineering%20Job%20Simulation.pdf')"> View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience Item 14 -->
-                    <div class="experience-item simulations-item">
-                        <div class="experience-date"><i class="fas fa-award"></i></div>
-                        <div class="experience-content">
-                            <div class="content">
-                                <h3>TECHNOLOGY SOFTWARE DEVELOPMENT</h3>
-                                <h4>CITI (THE FORAGE)</h4>
-                                <p>Successfully completed the Technology Software Development Job Simulation by Citi through Forage.</p>
-                                <ul>
-                                    <li>Designed UML State Diagrams to model loan management workflows</li>
-                                    <li>Developed a Machine Learning-based Credit Risk Modeling proposal</li>
-                                    <li>Built Java data processing applications and integrated REST APIs for market data</li>
-                                    <li>Created time-series data visualizations using Python</li>
-                                </ul>
-                            </div>
-                            <div class="cert-img-simulations">
-                                <img src="assets/images/21.%20Technology%20Software%20Development%20Job.png" alt="Technology Software Development">
-                                <div class="img-layer">
-                                    <button onclick="openCertificateModal('assets/certificates/21.%20Technology%20Software%20Development%20Job.pdf')">View Certificate</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="hackerrank" id="hackerrank">
-        <h2 class="heading">HackerRank <span>Achievements</span></h2>
-        
-        <!-- Profile Dashboard Grid -->
-        <div class="hr-dashboard-grid">
-            <!-- Profile Info Card -->
-            <div class="hr-profile-card">
-                <div>
-                    <div class="hr-profile-header">
-                        <div class="hr-logo-wrapper">
-                            <i class="fa-brands fa-hackerrank"></i>
-                        </div>
-                        <div class="hr-profile-title">
-                            <h3>Mohamad Ruzni</h3>
-                            <span>Verified Coding Expert <i class="fa-solid fa-circle-check"></i></span>
-                        </div>
-                    </div>
-                    <p class="hr-recruiter-summary">
-                        My HackerRank achievements demonstrate verified technical proficiency across software engineering, programming, database management, frontend technologies, backend development, and problem-solving. The combination of high star ratings, multiple skill certifications, and professional role certifications reflects practical coding ability, strong analytical thinking, and readiness for full-stack, backend, frontend, and database-focused roles.
+                    <h3>Software Engineering Mindset Focused on Scalability &amp; Resilience</h3>
+                    <p>
+                        I'm Mohamad Ruzni, a 22-year-old technology enthusiast and software engineer based in Vavuniya, Sri Lanka. 
+                        My journey bridges rigorous academic inquiry with pragmatic software delivery — developing enterprise-grade backends, 
+                        reactive frontends, and hardened security architectures.
                     </p>
-                    <ul class="hr-highlights">
-                        <li><i class="fa-solid fa-circle-check"></i> Achieved 5-Star ratings in Problem Solving, Java, C, Python, and SQL</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Earned 15 HackerRank Skill Certifications in programming, databases, and web dev</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Obtained 3 Professional Role Certifications validating job-ready engineering skills</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Strengthened core CS concepts, algorithmic thinking, debugging, and optimization</li>
+                    <p>
+                        With double degree pursuits spanning Information Technology at the University of Moratuwa and Applied Sciences 
+                        at South Eastern University of Sri Lanka, I bring mathematical clarity and engineering rigor to every line of code.
+                    </p>
+                </div>
+                <div class="bento-story-highlights">
+                    <span class="highlight-pill"><i class="fas fa-check-circle"></i> Clean Code &amp; SOLID Principles</span>
+                    <span class="highlight-pill"><i class="fas fa-bolt"></i> High-Efficiency REST APIs</span>
+                    <span class="highlight-pill"><i class="fas fa-shield"></i> Security-First Architecture</span>
+                </div>
+            </div>
+
+            <!-- Bento 2: Metrics Counter Grid -->
+            <div class="bento-card bento-metrics">
+                <div class="metric-box">
+                    <span class="metric-number" data-count="15" data-suffix="+">0</span>
+                    <span class="metric-label">Accredited Credentials</span>
+                </div>
+                <div class="metric-box gold">
+                    <span class="metric-number" data-count="6" data-suffix="+">0</span>
+                    <span class="metric-label">Fortune 500 Simulations</span>
+                </div>
+                <div class="metric-box gold">
+                    <span class="metric-number" data-count="5" data-suffix="★">0</span>
+                    <span class="metric-label">HackerRank Elite Stars</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-number" data-count="100" data-suffix="%">0</span>
+                    <span class="metric-label">Commitment to Quality</span>
+                </div>
+            </div>
+
+            <!-- Bento 3: Dual Universities Timeline -->
+            <div class="bento-card bento-education">
+                <div class="bento-header-row">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Academic Pedigree &amp; Specializations</h3>
+                </div>
+                <div class="timeline-item">
+                    <h4>Bachelor of Information Technology (BIT)</h4>
+                    <p class="timeline-meta">University of Moratuwa (2025 – 2028)</p>
+                    <p>Comprehensive curriculum covering enterprise software architecture, fullstack systems, data modeling, and distributed computing.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>BSc in Applied Sciences</h4>
+                    <p class="timeline-meta">South Eastern University of Sri Lanka (2025 – 2029)</p>
+                    <p>Rigorous mathematical modeling, statistics, data analytics, computational algorithms, and applied scientific research.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Cyber Security &amp; AI Master Series</h4>
+                    <p class="timeline-meta">MarsTech Campus (2025)</p>
+                    <p>Hands-on training in Ethical Hacking (CEH v11), Virtualization with Kali Linux, IoT automation, and AI robotics simulations.</p>
+                </div>
+            </div>
+
+            <!-- Bento 4: Core Engineering Pillars -->
+            <div class="bento-card bento-disciplines">
+                <div class="bento-header-row">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Core Engineering Pillars</h3>
+                </div>
+                <div class="discipline-deck">
+                    <div class="discipline-item">
+                        <div class="discipline-icon"><i class="fas fa-code"></i></div>
+                        <div class="discipline-info">
+                            <h4>Fullstack &amp; Backend Systems</h4>
+                            <p>Designing performant microservices and responsive frontends using Java, Spring Boot, Node.js, React, and PHP.</p>
+                        </div>
+                    </div>
+                    <div class="discipline-item">
+                        <div class="discipline-icon"><i class="fas fa-database"></i></div>
+                        <div class="discipline-info">
+                            <h4>Relational Database &amp; ETL</h4>
+                            <p>Relational normalization (ERD), complex query optimization in SQL &amp; MySQL, and Python-driven ETL pipelines.</p>
+                        </div>
+                    </div>
+                    <div class="discipline-item">
+                        <div class="discipline-icon"><i class="fas fa-shield-virus"></i></div>
+                        <div class="discipline-info">
+                            <h4>Cyber Security &amp; QA Testing</h4>
+                            <p>Certified vulnerability assessment, STLC quality assurance, defensive coding standards, and Linux administration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         SKILLS & TECHNOLOGIES COMMAND CENTER
+         =================================================================== -->
+    <section class="skills" id="skills">
+        <div class="section-header">
+            <span class="section-tag">Technical Matrix</span>
+            <h2 class="heading">Skills &amp; <span>Capabilities</span></h2>
+            <p class="section-desc">Interactive command center featuring verified proficiencies across frontend, backend, security, and cloud ecosystems.</p>
+        </div>
+
+        <div class="skills-command-center">
+            <!-- Filter & Search Toolbar -->
+            <div class="skills-filter-toolbar">
+                <div class="skills-tab-list">
+                    <button class="skills-tab-btn active" data-filter="all">All Systems</button>
+                    <button class="skills-tab-btn" data-filter="frontend">Frontend</button>
+                    <button class="skills-tab-btn" data-filter="backend">Backend &amp; Core</button>
+                    <button class="skills-tab-btn" data-filter="database">Databases</button>
+                    <button class="skills-tab-btn" data-filter="security">Security &amp; Cloud</button>
+                    <button class="skills-tab-btn" data-filter="tools">Engineering Tools</button>
+                </div>
+                <div class="skills-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="skillSearchInput" placeholder="Filter skills..." aria-label="Search skills">
+                </div>
+            </div>
+
+            <!-- Skills Cards Grid -->
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Frontend -->
+                <div class="skill-card" data-domain="frontend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-html5"></i></div>
+                            <div>
+                                <h4>HTML5 &amp; Semantic Web</h4>
+                                <span class="skill-domain-tag">Core Frontend</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">95%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="frontend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-css3-alt"></i></div>
+                            <div>
+                                <h4>CSS3 &amp; Modern Layouts</h4>
+                                <span class="skill-domain-tag">Design Systems</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">95%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="frontend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-js"></i></div>
+                            <div>
+                                <h4>JavaScript (ES6+)</h4>
+                                <span class="skill-domain-tag">Interactive Logic</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">90%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="frontend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-react"></i></div>
+                            <div>
+                                <h4>React.js</h4>
+                                <span class="skill-domain-tag">Component UI</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">80%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="frontend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-wind"></i></div>
+                            <div>
+                                <h4>Tailwind CSS &amp; Bootstrap</h4>
+                                <span class="skill-domain-tag">Utility Frameworks</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">90%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                </div>
+
+                <!-- Backend & Core -->
+                <div class="skill-card" data-domain="backend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-java"></i></div>
+                            <div>
+                                <h4>Java &amp; OOP Architecture</h4>
+                                <span class="skill-domain-tag">Backend Enterprise</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">85%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="backend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-python"></i></div>
+                            <div>
+                                <h4>Python &amp; Data Pipelines</h4>
+                                <span class="skill-domain-tag">Data &amp; Scripting</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">80%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="backend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-php"></i></div>
+                            <div>
+                                <h4>PHP &amp; Server Scripts</h4>
+                                <span class="skill-domain-tag">Backend Routing</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">85%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="backend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-node-js"></i></div>
+                            <div>
+                                <h4>Node.js &amp; Express</h4>
+                                <span class="skill-domain-tag">Asynchronous APIs</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">75%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="backend">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
+                            <div>
+                                <h4>C# &amp; C Programming</h4>
+                                <span class="skill-domain-tag">Microsoft &amp; Low-Level</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">80%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-card" data-domain="database">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-database"></i></div>
+                            <div>
+                                <h4>SQL &amp; Relational Schema (ERD)</h4>
+                                <span class="skill-domain-tag">Database Architecture</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">90%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="database">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-server"></i></div>
+                            <div>
+                                <h4>MySQL &amp; phpMyAdmin</h4>
+                                <span class="skill-domain-tag">Query Optimization</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">85%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                </div>
+
+                <!-- Security & Cloud -->
+                <div class="skill-card" data-domain="security">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-user-secret"></i></div>
+                            <div>
+                                <h4>Ethical Hacking (CEH v11)</h4>
+                                <span class="skill-domain-tag">Vulnerability Audit</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">75%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="security">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-linux"></i></div>
+                            <div>
+                                <h4>Linux OS &amp; Kali Virtualization</h4>
+                                <span class="skill-domain-tag">Security Environment</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">80%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="security">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-cloud"></i></div>
+                            <div>
+                                <h4>Vercel, Netlify &amp; GitHub Pages</h4>
+                                <span class="skill-domain-tag">Cloud Deployment</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">90%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+                </div>
+
+                <!-- Engineering Tools -->
+                <div class="skill-card" data-domain="tools">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-git-alt"></i></div>
+                            <div>
+                                <h4>Git &amp; GitHub Version Control</h4>
+                                <span class="skill-domain-tag">DevOps Workflow</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">95%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="tools">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+                            <div>
+                                <h4>Postman &amp; REST Integration</h4>
+                                <span class="skill-domain-tag">API Testing</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">85%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+                </div>
+
+                <div class="skill-card" data-domain="tools">
+                    <div class="skill-top-row">
+                        <div class="skill-identity">
+                            <div class="skill-icon-wrap"><i class="fa-brands fa-figma"></i></div>
+                            <div>
+                                <h4>Figma &amp; Canva Design</h4>
+                                <span class="skill-domain-tag">UI/UX Prototyping</span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage-badge">80%</span>
+                    </div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         FORTUNE 500 CORPORATE JOB SIMULATIONS
+         =================================================================== -->
+    <section class="simulations" id="simulations">
+        <div class="section-header">
+            <span class="section-tag">Corporate Credentials</span>
+            <h2 class="heading">Fortune 500 <span>Simulations</span></h2>
+            <p class="section-desc">Practical software engineering, systems design, and database modeling delivered for global industry leaders via The Forage.</p>
+        </div>
+
+        <div class="simulations-grid">
+            <!-- 1. Walmart USA -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/16.%20Advanced%20Software%20Engineering%20Job.png" alt="Walmart USA Advanced Software Engineering" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">WALMART USA</span>
+                        <h3>Advanced Software Engineering</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Scalable software architecture using UML &amp; SOLID principles</li>
+                        <li><i class="fas fa-check"></i> Custom Power-of-Two Max Heap data structure built in Java</li>
+                        <li><i class="fas fa-check"></i> Python ETL munging pipeline with SQLite relational databases</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/16.%20Advanced%20Software%20Engineering%20Job.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. JPMorgan Chase -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/18.%20Software%20Engineering%20Job%20Simulation.png" alt="JPMorgan Chase Software Engineering" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">JPMORGAN CHASE &amp; CO.</span>
+                        <h3>Software Engineering Program</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Enterprise backend development in Java, Spring &amp; Spring Boot</li>
+                        <li><i class="fas fa-check"></i> High-performance RESTful APIs integrated with SQL &amp; JPA</li>
+                        <li><i class="fas fa-check"></i> Apache Kafka real-time message streaming integration</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/18.%20Software%20Engineering%20Job%20Simulation.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Citi -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/21.%20Technology%20Software%20Development%20Job.png" alt="Citi Technology Software Development" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">CITI GROUP</span>
+                        <h3>Technology Software Development</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> UML State Diagrams modeling complex loan management workflows</li>
+                        <li><i class="fas fa-check"></i> Machine Learning-based credit risk modeling proposal</li>
+                        <li><i class="fas fa-check"></i> Java market data processors &amp; Python financial visualizers</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/21.%20Technology%20Software%20Development%20Job.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Skyscanner -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/19.%20Front-End%20Software%20Engineering%20Job.png" alt="Skyscanner Front-End Software Engineering" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">SKYSCANNER</span>
+                        <h3>Front-End Software Engineering</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Responsive flight scheduling portal built with React.js</li>
+                        <li><i class="fas fa-check"></i> Customized Skyscanner Backpack Design System tokens</li>
+                        <li><i class="fas fa-check"></i> Automated front-end testing for accessibility &amp; resilience</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/19.%20Front-End%20Software%20Engineering%20Job.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Wells Fargo -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/20.%20Software%20Engineering%20Job%20Simulation.png" alt="Wells Fargo Software Engineering" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">WELLS FARGO</span>
+                        <h3>Software Engineering Virtual Experience</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Entity Relationship Diagrams (ERD) for financial portfolios</li>
+                        <li><i class="fas fa-check"></i> Java Persistence API (JPA) database entity architectures</li>
+                        <li><i class="fas fa-check"></i> Integrated Spring Framework with relational ORM pipelines</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/20.%20Software%20Engineering%20Job%20Simulation.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Commonwealth Bank -->
+            <div class="simulation-card">
+                <div class="simulation-img-container">
+                    <img src="assets/images/17.%20Introduction%20to%20Software%20Engineering%20Job.png" alt="Commonwealth Bank Software Engineering" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">COMMONWEALTH BANK</span>
+                        <h3>Software Engineering Program</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Security-oriented web applications using modern HTML/CSS</li>
+                        <li><i class="fas fa-check"></i> Financial cybersecurity awareness &amp; threat mitigation models</li>
+                        <li><i class="fas fa-check"></i> Secure web hosting strategies &amp; architecture analysis</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/17.%20Introduction%20to%20Software%20Engineering%20Job.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         ACCREDITED CERTIFICATIONS (ACADEMIC & PROFESSIONAL)
+         =================================================================== -->
+    <section class="certifications" id="certifications">
+        <div class="section-header">
+            <span class="section-tag">Accreditations</span>
+            <h2 class="heading">Professional <span>Certifications</span></h2>
+            <p class="section-desc">Certified credentials from Microsoft, University of Moratuwa, and MarsTech validating specialized competence.</p>
+        </div>
+
+        <div class="certifications-grid">
+            <!-- 1. Ethical Hacking -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/img15.png" alt="Certified Ethical Hacker (CEH v11)" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MARSTECH</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">CYBER SECURITY</span>
+                        <h3>Certified Ethical Hacker (CEH v11)</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> White-hat penetration testing &amp; threat intelligence</li>
+                        <li><i class="fas fa-check"></i> Virtualization setup with VMware, VirtualBox, and Kali Linux</li>
+                        <li><i class="fas fa-check"></i> Social engineering defense &amp; network vulnerability auditing</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img21.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. AI and Robotics -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/img14.png" alt="Artificial Intelligence &amp; Robotics" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MARSTECH</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">ARTIFICIAL INTELLIGENCE</span>
+                        <h3>AI &amp; Robotics 4-Month Master Series</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Autonomous robotic simulations &amp; sensor feedback</li>
+                        <li><i class="fas fa-check"></i> IoT (Internet of Things) embedded systems integration</li>
+                        <li><i class="fas fa-check"></i> Core concepts in Machine Learning &amp; Neural Reasoning</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img20.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img19.pdf')">
+                            <i class="fas fa-file-lines"></i> Transcript
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Front-End Web Development (Moratuwa) -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/img35.png" alt="Front-End Web Development - University of Moratuwa" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
+                        <h3>Front-End Web Development</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Advanced HTML5, CSS3, and JavaScript ES6+ execution</li>
+                        <li><i class="fas fa-check"></i> Performance optimization for cross-browser web interfaces</li>
+                        <li><i class="fas fa-check"></i> Responsive design methodologies and DOM lifecycle handling</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img36.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Server-Side Web Programming (Moratuwa) -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/12.%20Server-side_Web_Programming_E-Certificate.png" alt="Server-Side Web Programming - University of Moratuwa" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
+                        <h3>Server-Side Web Programming</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Dynamic server backends with controllers and routing logic</li>
+                        <li><i class="fas fa-check"></i> Database connectivity, session management, and CRUD pipelines</li>
+                        <li><i class="fas fa-check"></i> Server-side authentication and secure request pipelines</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/12.%20Server-side_Web_Programming_E-Certificate.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Software Quality Assurance (Moratuwa) -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.png" alt="Introduction to Software Quality Assurance" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
+                        <h3>Software Quality Assurance</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> Software Testing Life Cycle (STLC) &amp; QA metrics</li>
+                        <li><i class="fas fa-check"></i> Defect triage, bug reporting, and regression verification</li>
+                        <li><i class="fas fa-check"></i> Root cause analysis and automated quality benchmarks</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Foundational C# with Microsoft -->
+            <div class="cert-card-luxury">
+                <div class="simulation-img-container">
+                    <img src="assets/images/07.%20foundational-c-sharp-with-microsoft.png" alt="Foundational C# with Microsoft Developer" loading="lazy">
+                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MICROSOFT</span>
+                </div>
+                <div class="simulation-body">
+                    <div class="simulation-corp-header">
+                        <span class="corp-badge">MICROSOFT &amp; FREECODECAMP</span>
+                        <h3>Foundational C# Developer</h3>
+                    </div>
+                    <ul class="simulation-highlights">
+                        <li><i class="fas fa-check"></i> C# .NET language syntax, operators, and control flows</li>
+                        <li><i class="fas fa-check"></i> Array processing, collections, and robust memory management</li>
+                        <li><i class="fas fa-check"></i> Console systems debugging and exception handling</li>
+                    </ul>
+                    <div class="simulation-footer-actions">
+                        <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/07.%20foundational-c-sharp-with-microsoft.pdf')">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         HACKERRANK ELITE DASHBOARD
+         =================================================================== -->
+    <section class="hackerrank" id="hackerrank">
+        <div class="section-header">
+            <span class="section-tag">Elite Competitive Coding</span>
+            <h2 class="heading">HackerRank <span>Hall of Fame</span></h2>
+            <p class="section-desc">Demonstrated technical excellence across algorithmic problem solving, object-oriented design, databases, and professional roles.</p>
+        </div>
+
+        <div class="hackerrank-nexus">
+            <!-- Recruiter Dashboard Banner -->
+            <div class="hr-banner-card">
+                <div class="hr-brand-info">
+                    <div class="hr-logo-circle">
+                        <i class="fa-brands fa-hackerrank"></i>
+                    </div>
+                    <div>
+                        <h3>Mohamad Ruzni</h3>
+                        <p>Verified Coding Expert with 5-Star Elite Badges across Java, Problem Solving, SQL, Python, and C. Validated with 3 Professional Role Certifications and 15 Skill Credentials.</p>
+                    </div>
+                </div>
+                <a href="https://www.hackerrank.com/profile/ruzni_dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex-shrink: 0;">
+                    <i class="fa-brands fa-hackerrank"></i> View Official Profile
+                </a>
+            </div>
+
+            <!-- 5-Star Elite Trophy Matrix -->
+            <div class="hr-stars-matrix">
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fas fa-brain"></i></div>
+                    <h4>Problem Solving</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="elite-pill">5-Star Elite</span>
+                </div>
+
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fa-brands fa-java"></i></div>
+                    <h4>Java</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="elite-pill">5-Star Elite</span>
+                </div>
+
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h4>C Programming</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="elite-pill">5-Star Elite</span>
+                </div>
+
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fa-brands fa-python"></i></div>
+                    <h4>Python</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="elite-pill">5-Star Elite</span>
+                </div>
+
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fa-solid fa-database"></i></div>
+                    <h4>SQL</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="elite-pill">5-Star Elite</span>
+                </div>
+
+                <div class="hr-star-trophy-card">
+                    <div class="star-card-icon"><i class="fa-brands fa-react"></i></div>
+                    <h4>React</h4>
+                    <div class="star-rating-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <span class="elite-pill" style="color: var(--cyan-glow); background: rgba(0, 242, 254, 0.12); border-color: rgba(0, 242, 254, 0.3);">4-Star Advanced</span>
+                </div>
+            </div>
+
+            <!-- Role Certifications -->
+            <div class="hr-roles-deck">
+                <div class="hr-role-lux-card">
+                    <div>
+                        <div class="hr-role-header">
+                            <i class="fas fa-shield-halved"></i>
+                            <span class="badge-certified"><i class="fas fa-circle-check"></i> Role Certified</span>
+                        </div>
+                        <h4>Software Engineer</h4>
+                        <p>Validates end-to-end software engineering capability, API integration, database schema handling, and complex algorithmic logic under exam conditions.</p>
+                        <div class="hr-role-tags">
+                            <span>Algorithms</span>
+                            <span>Data Structures</span>
+                            <span>SQL</span>
+                            <span>REST APIs</span>
+                        </div>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/3bcc91d9f200" target="_blank" rel="noopener noreferrer" class="hr-link-btn">
+                        Inspect Certificate <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hr-role-lux-card">
+                    <div>
+                        <div class="hr-role-header">
+                            <i class="fa-brands fa-react"></i>
+                            <span class="badge-certified"><i class="fas fa-circle-check"></i> Role Certified</span>
+                        </div>
+                        <h4>Front-End Developer</h4>
+                        <p>Confirms professional mastery of React.js state management, component architecture, CSS layout fidelity, and cross-platform frontend execution.</p>
+                        <div class="hr-role-tags">
+                            <span>React.js</span>
+                            <span>JavaScript ES6+</span>
+                            <span>UI/UX</span>
+                            <span>CSS Architecture</span>
+                        </div>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/55ed13b39595" target="_blank" rel="noopener noreferrer" class="hr-link-btn">
+                        Inspect Certificate <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hr-role-lux-card">
+                    <div>
+                        <div class="hr-role-header">
+                            <i class="fas fa-user-graduate"></i>
+                            <span class="badge-certified"><i class="fas fa-circle-check"></i> Role Certified</span>
+                        </div>
+                        <h4>Software Engineer Intern</h4>
+                        <p>Validates core CS prerequisites, sorting algorithms, OOP design patterns, normalized database schemas, and foundational code execution.</p>
+                        <div class="hr-role-tags">
+                            <span>OOP Principles</span>
+                            <span>Problem Solving</span>
+                            <span>Sorting Algorithms</span>
+                            <span>Core CS</span>
+                        </div>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/6173cb81fc88" target="_blank" rel="noopener noreferrer" class="hr-link-btn">
+                        Inspect Certificate <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Verified Skill Credentials with Category Tabs -->
+            <div>
+                <div class="hr-skills-filter-wrap">
+                    <button class="hr-tab-btn active" data-filter="all">All Credentials (15)</button>
+                    <button class="hr-tab-btn" data-filter="languages">Languages (5)</button>
+                    <button class="hr-tab-btn" data-filter="database">Databases (3)</button>
+                    <button class="hr-tab-btn" data-filter="web">Web Technologies (6)</button>
+                    <button class="hr-tab-btn" data-filter="problem-solving">Problem Solving (1)</button>
+                </div>
+
+                <div class="hr-certs-grid">
+                    <!-- C# Basic -->
+                    <div class="hr-cert-card" data-category="languages">
+                        <div class="hr-cert-top"><i class="fa-solid fa-code"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>C#</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/8245a5853e2b" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Java Basic -->
+                    <div class="hr-cert-card" data-category="languages">
+                        <div class="hr-cert-top"><i class="fa-brands fa-java"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>Java</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/99a7e9100f61" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- JS Basic -->
+                    <div class="hr-cert-card" data-category="languages">
+                        <div class="hr-cert-top"><i class="fa-brands fa-js"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>JavaScript</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/9e4b3591c666" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- JS Intermediate -->
+                    <div class="hr-cert-card" data-category="languages">
+                        <div class="hr-cert-top"><i class="fa-brands fa-js"></i><span class="hr-level-badge intermediate">Intermediate</span></div>
+                        <h4>JavaScript</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/bf9bad600166" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Python Basic -->
+                    <div class="hr-cert-card" data-category="languages">
+                        <div class="hr-cert-top"><i class="fa-brands fa-python"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>Python</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/2e883d6a59f0" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- SQL Basic -->
+                    <div class="hr-cert-card" data-category="database">
+                        <div class="hr-cert-top"><i class="fa-solid fa-database"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>SQL</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/cb11c88a1103" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- SQL Intermediate -->
+                    <div class="hr-cert-card" data-category="database">
+                        <div class="hr-cert-top"><i class="fa-solid fa-database"></i><span class="hr-level-badge intermediate">Intermediate</span></div>
+                        <h4>SQL</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/345a1ab6ee5f" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- SQL Advanced -->
+                    <div class="hr-cert-card" data-category="database">
+                        <div class="hr-cert-top"><i class="fa-solid fa-database"></i><span class="hr-level-badge advanced">Advanced</span></div>
+                        <h4>SQL</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/0c6b6fce0444" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- CSS Basic -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-brands fa-css3-alt"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>CSS</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/86e2e37e154c" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- React Basic -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-brands fa-react"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>React</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/c0061561c1a6" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Angular Basic -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-brands fa-angular"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>Angular</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/95ae5b6bdc9f" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Node.js Basic -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-brands fa-node-js"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>Node.js</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/6d001cde8937" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Node.js Intermediate -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-brands fa-node-js"></i><span class="hr-level-badge intermediate">Intermediate</span></div>
+                        <h4>Node.js</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/68e69e7b0b6b" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- REST API Intermediate -->
+                    <div class="hr-cert-card" data-category="web">
+                        <div class="hr-cert-top"><i class="fa-solid fa-link"></i><span class="hr-level-badge intermediate">Intermediate</span></div>
+                        <h4>REST API</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/aa1fc2d9e6ec" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Problem Solving Basic -->
+                    <div class="hr-cert-card" data-category="problem-solving">
+                        <div class="hr-cert-top"><i class="fa-solid fa-brain"></i><span class="hr-level-badge basic">Basic</span></div>
+                        <h4>Problem Solving</h4>
+                        <p class="hr-cert-issuer">HackerRank Academy</p>
+                        <div class="hr-cert-footer">
+                            <a href="https://www.hackerrank.com/certificates/e83615a603b3" target="_blank" rel="noopener noreferrer">Verify <i class="fas fa-external-link-alt"></i></a>
+                            <span class="hr-verify-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         LUXURY SERVICES (HIGH-IMPACT VALUE MATRIX)
+         =================================================================== -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag">Value Proposition</span>
+            <h2 class="heading">Tailored <span>Services</span></h2>
+            <p class="section-desc">Bespoke technical solutions tailored to transform ambitious ideas into secure, scalable, and revenue-generating digital products.</p>
+        </div>
+
+        <div class="services-container">
+            <!-- 1. Web Development -->
+            <div class="services-box">
+                <div>
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Bespoke web applications built from the foundation up. Fast load speeds, accessible semantics, responsive layouts, and robust backend API integrations.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-circle-check"></i> Custom responsive web apps</li>
+                        <li><i class="fas fa-circle-check"></i> High-speed load &amp; SEO optimization</li>
+                        <li><i class="fas fa-circle-check"></i> Modern React &amp; Vanilla architectures</li>
                     </ul>
                 </div>
-                <a href="https://www.hackerrank.com/profile/ruzni_dev" target="_blank" class="btn"><i class="fa-brands fa-hackerrank"></i> View HackerRank Profile</a>
-            </div>
-
-            <!-- Star Ratings Grid -->
-            <div class="hr-stars-container">
-                <!-- Star Card 1 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-solid fa-brain"></i></div>
-                    <h4>Problem Solving</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">5-Star Elite</span>
-                </div>
-                <!-- Star Card 2 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-brands fa-java"></i></div>
-                    <h4>Java</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">5-Star Elite</span>
-                </div>
-                <!-- Star Card 3 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-solid fa-code"></i></div>
-                    <h4>C Programming</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">5-Star Elite</span>
-                </div>
-                <!-- Star Card 4 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-brands fa-python"></i></div>
-                    <h4>Python</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">5-Star Elite</span>
-                </div>
-                <!-- Star Card 5 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-solid fa-database"></i></div>
-                    <h4>SQL</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">5-Star Elite</span>
-                </div>
-                <!-- Star Card 6 -->
-                <div class="hr-star-card">
-                    <div class="hr-icon-wrapper"><i class="fa-brands fa-react"></i></div>
-                    <h4>React</h4>
-                    <div class="hr-stars-row">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="hr-star-badge">4-Star Advanced</span>
+                <div class="service-actions-row">
+                    <a href="pages/web-dev.html" class="service-more-link">Explore Architecture <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
 
-        <!-- Role Certifications -->
-        <h3 class="hr-section-subtitle">Role-Based Certifications</h3>
-        <div class="hr-roles-grid">
-            <!-- Role 1 -->
-            <div class="hr-role-card">
-                <div class="hr-role-header">
-                    <div class="hr-role-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <span class="hr-role-badge">Certified</span>
+            <!-- 2. Software Development -->
+            <div class="services-box">
+                <div>
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Software Engineering</h3>
+                    <p>End-to-end custom software solutions engineering. Desktop, microservices, relational database modeling, and automated ETL data processing pipelines.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-circle-check"></i> Object-oriented system modeling</li>
+                        <li><i class="fas fa-circle-check"></i> Normalized SQL &amp; database design</li>
+                        <li><i class="fas fa-circle-check"></i> Java, Python &amp; C# enterprise logic</li>
+                    </ul>
                 </div>
-                <h4>Software Engineer</h4>
-                <p>Demonstrates overall proficiency in software engineering methodologies, backend API workflows, database queries, and algorithmic problem solving.</p>
-                <div class="hr-role-skills-wrap">
-                    <span>Problem Solving</span>
-                    <span>SQL</span>
-                    <span>REST API</span>
-                    <span>Algorithms</span>
+                <div class="service-actions-row">
+                    <a href="pages/soft-dev.html" class="service-more-link">Explore Architecture <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://www.hackerrank.com/certificates/3bcc91d9f200" class="role-cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
             </div>
-            <!-- Role 2 -->
-            <div class="hr-role-card">
-                <div class="hr-role-header">
-                    <div class="hr-role-icon"><i class="fa-brands fa-react"></i></div>
-                    <span class="hr-role-badge">Certified</span>
-                </div>
-                <h4>Front-End Developer</h4>
-                <p>Validates high-level frontend capabilities, modern UI components layout, states management using React.js, and advanced responsive styling.</p>
-                <div class="hr-role-skills-wrap">
-                    <span>React.js</span>
-                    <span>CSS</span>
-                    <span>JavaScript (ES6+)</span>
-                    <span>UI/UX</span>
-                </div>
-                <a href="https://www.hackerrank.com/certificates/55ed13b39595" class="role-cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-            <!-- Role 3 -->
-            <div class="hr-role-card">
-                <div class="hr-role-header">
-                    <div class="hr-role-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                    <span class="hr-role-badge">Certified</span>
-                </div>
-                <h4>Software Engineer Intern</h4>
-                <p>Validates the core technical prerequisites, logical reasoning, sorting algorithms, database creation, and software development foundations.</p>
-                <div class="hr-role-skills-wrap">
-                    <span>Data Structures</span>
-                    <span>OOP</span>
-                    <span>Problem Solving</span>
-                    <span>Core Code</span>
-                </div>
-                <a href="https://www.hackerrank.com/certificates/6173cb81fc88" class="role-cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-        </div>
 
-        <!-- Skill Certifications with Tabs -->
-        <h3 class="hr-section-subtitle">Verified Skill Credentials</h3>
-        
-        <!-- Filter Tabs -->
-        <div class="hr-tabs-container">
-            <button class="hr-tab-btn active" data-filter="all">All (15)</button>
-            <button class="hr-tab-btn" data-filter="languages">Languages (5)</button>
-            <button class="hr-tab-btn" data-filter="database">Databases (3)</button>
-            <button class="hr-tab-btn" data-filter="web">Web Dev (6)</button>
-            <button class="hr-tab-btn" data-filter="problem-solving">Problem Solving (1)</button>
-        </div>
-
-        <!-- Skill Cards Rail -->
-        <div class="hr-certs-slider-wrap">
-            <div class="hr-certs-slider-controls" aria-label="Verified skill credentials carousel controls">
-                <button class="slider-arrow hr-certs-prev" type="button" aria-label="Scroll verified skill credentials left">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow hr-certs-next" type="button" aria-label="Scroll verified skill credentials right">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="hr-certs-grid">
-                <!-- Card 1: C# Basic -->
-                <div class="hr-cert-card" data-category="languages">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-code"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>C#</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/8245a5853e2b" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
+            <!-- 3. Graphic & UI/UX Design -->
+            <div class="services-box">
+                <div>
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-paintbrush"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>High-fidelity user interface prototyping, comprehensive design tokens, interactive micro-animations, and visual brand identity systems.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-circle-check"></i> Interactive Figma prototypes</li>
+                        <li><i class="fas fa-circle-check"></i> Glassmorphic &amp; dark mode systems</li>
+                        <li><i class="fas fa-circle-check"></i> Conversion-focused user flows</li>
+                    </ul>
                 </div>
-                <!-- Card 2: Java Basic -->
-                <div class="hr-cert-card" data-category="languages">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-java"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>Java</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/99a7e9100f61" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span> 
-                    </div>
-                </div>
-                <!-- Card 3: JavaScript Basic -->
-                <div class="hr-cert-card" data-category="languages">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-js"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>JavaScript</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/9e4b3591c666" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 4: JavaScript Intermediate -->
-                <div class="hr-cert-card" data-category="languages">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-js"></i>
-                        <span class="hr-level-badge intermediate">Intermediate</span>
-                    </div>
-                    <h4>JavaScript</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/bf9bad600166" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 5: Python Basic -->
-                <div class="hr-cert-card" data-category="languages">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-python"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>Python</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/2e883d6a59f0" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-
-                <!-- Card 6: SQL Basic -->
-                <div class="hr-cert-card" data-category="database">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-database"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>SQL</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/cb11c88a1103" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 7: SQL Intermediate -->
-                <div class="hr-cert-card" data-category="database">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-database"></i>
-                        <span class="hr-level-badge intermediate">Intermediate</span>
-                    </div>
-                    <h4>SQL</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/345a1ab6ee5f" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 8: SQL Advanced -->
-                <div class="hr-cert-card" data-category="database">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-database"></i>
-                        <span class="hr-level-badge advanced">Advanced</span>
-                    </div>
-                    <h4>SQL</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/0c6b6fce0444" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-
-                <!-- Card 9: CSS Basic -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>CSS</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/86e2e37e154c" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 10: React Basic -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-react"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>React</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/c0061561c1a6" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 11: Angular Basic -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-angular"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>Angular</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/95ae5b6bdc9f" class="cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 12: Node.js Basic -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-node-js"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>Node.js</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/6d001cde8937" class="cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 13: Node.js Intermediate -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-brands fa-node-js"></i>
-                        <span class="hr-level-badge intermediate">Intermediate</span>
-                    </div>
-                    <h4>Node.js</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/68e69e7b0b6b" class="cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-                <!-- Card 14: REST API Intermediate -->
-                <div class="hr-cert-card" data-category="web">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-link"></i>
-                        <span class="hr-level-badge intermediate">Intermediate</span>
-                    </div>
-                    <h4>REST API</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/aa1fc2d9e6ec" class="cert-link"> View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
-                </div>
-
-                <!-- Card 15: Problem Solving Basic -->
-                <div class="hr-cert-card" data-category="problem-solving">
-                    <div class="hr-cert-top">
-                        <i class="fa-solid fa-brain"></i>
-                        <span class="hr-level-badge basic">Basic</span>
-                    </div>
-                    <h4>Problem Solving</h4>
-                    <p class="hr-cert-issuer">HackerRank Academy</p>
-                    <div class="hr-cert-footer">
-                        <a href="https://www.hackerrank.com/certificates/e83615a603b3" class="cert-link">View Certificate <i class="fa-solid fa-chevron-right"></i></a>
-                        <span class="hr-verify-badge"><i class="fa-solid fa-certificate"></i> Verified</span>
-                    </div>
+                <div class="service-actions-row">
+                    <a href="pages/graphic.html" class="service-more-link">Explore Architecture <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="services" id="services">
-        <h2 class="heading">Our <span>services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development</h3>
-                <p>We offer tailored web development solutions that bring your ideas to life. From responsive designs to robust backend systems, we build fast, secure, and user-friendly websites that help your business grow online.</p>
-                <a href="pages/web-dev.html" class="btn">Read more</a>
-            </div>
-            <div class="services-box">
-                <i class="fa-solid fa-paintbrush"></i>
-                <h3>Graphic Design</h3>
-                <p>Our graphic design services create visually stunning and impactful designs that communicate your brand’s message clearly. From logos to marketing materials, we craft creative visuals that captivate and engage your audience.</p>
-                <a href="pages/graphic.html" class="btn">Read more</a>
-            </div>
-            <div class="services-box">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>Software Development</h3>
-                <p>We provide custom software development services to turn your ideas into powerful digital solutions. From desktop to cloud systems, we build smooth, secure, and efficient software tailored to meet your business goals.</p>
-                <a href="pages/soft-dev.html" class="btn">Read more</a>
-            </div>
-        </div>
-    </section>
+
+    <!-- ===================================================================
+         PORTFOLIO (FEATURED PROJECTS BENTO GRID)
+         =================================================================== -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="section-header">
+            <span class="section-tag">Engineered Solutions</span>
+            <h2 class="heading">Featured <span>Projects</span></h2>
+            <p class="section-desc">Interactive portfolio of web applications, commercial systems, and algorithmic games engineered with pixel-perfect precision.</p>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="portfolio-filter-row">
+            <button class="project-filter-btn active" data-filter="all">All Projects</button>
+            <button class="project-filter-btn" data-filter="web">Web Applications</button>
+            <button class="project-filter-btn" data-filter="commercial">Commercial Sites</button>
+            <button class="project-filter-btn" data-filter="games">Interactive Games</button>
+        </div>
+
         <div class="portfolio-container">
+            <!-- 1. Real Estate Agency -->
             <div class="portfolio-box" 
-                 data-project-title="To-Do List" 
-                 data-project-badge="Web App" 
-                 data-project-badge-icon="fa-list-check"
-                 data-project-long-desc="A feature-rich, high-performance task management application designed to organize daily activities. Features local storage persistence for task recovery, filters to toggle between active/completed tasks, and a responsive modern dashboard UI."
-                 data-project-tech="HTML5 • CSS3 • JavaScript"
-                 data-project-demo-url="https://ruzni-dev.github.io/project-showcase/pages/61-project-to-do/">
-                <div class="project-img-box">
-                    <img src="assets/images/img1.png" alt="To-Do list">
-                </div>
-                <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-list-check"></i> WEB APP</span>
-                    <h3 class="project-title">To-Do List</h3>
-                    <p class="project-desc">Clean task management application with local storage persistence and category filters.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <span class="project-link">Discover project <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-project-title="Personal Portfolio" 
-                 data-project-badge="Web App" 
-                 data-project-badge-icon="fa-laptop-code"
-                 data-project-long-desc="An interactive and fully responsive personal portfolio website designed to showcase a professional profile, technical skillset, and certificates. Features micro-animations, theme-switching capabilities, and ScrollReveal effects."
-                 data-project-tech="HTML5 • CSS3 • JavaScript • ScrollReveal"
-                 data-project-demo-url="https://portfolio1-pearl-seven.vercel.app/">
-                <div class="project-img-box">
-                    <img src="assets/images/img32.png" alt="Portfolio">
-                </div>
-                <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-laptop-code"></i> WEB APP</span>
-                    <h3 class="project-title">Personal Portfolio</h3>
-                    <p class="project-desc">Interactive personal portfolio website showcasing skills, certificates, and projects.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>+1</span>
-                    </div>
-                    <span class="project-link">Discover project <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-project-title="Dice Game" 
-                 data-project-badge="Game" 
-                 data-project-badge-icon="fa-dice"
-                 data-project-long-desc="A simple dice game built with JavaScript that demonstrates DOM manipulation and game logic."
-                 data-project-tech="HTML5 • CSS3 • JavaScript"
-                 data-project-demo-url="https://ruzni-dev.github.io/Dice-Game/">
-                <div class="project-img-box">
-                    <img src="assets/images/dice-game.png" alt="Dice Game">
-                </div>
-                <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-dice"></i> GAME</span>
-                    <h3 class="project-title">Dice Game</h3>
-                    <p class="project-desc">Interactive Dice Game showcasing JavaScript game logic and UI updates.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JQuery</span>
-                    </div>
-                    <span class="project-link">Launch App <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-project-title="IT Solutions Website" 
-                 data-project-badge="Web App" 
-                 data-project-badge-icon="fa-laptop-code"
-                 data-project-long-desc="A professional and sleek landing page for a modern IT services and tech solutions company. Features interactive service sections, technology focus areas, client testimonial widgets, and a fully functional dynamic contact form."
-                 data-project-tech="HTML5 • CSS3 • JavaScript"
-                 data-project-demo-url="https://ruzni-dev.github.io/Internship-tasks/IT-Solutions-Website/">
-                <div class="project-img-box">
-                    <img src="assets/images/img41.png" alt="IT Solutions Website">
-                </div>
-                <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-laptop-code"></i> WEB APP</span>
-                    <h3 class="project-title">IT Solutions Website</h3>
-                    <p class="project-desc">Clean and responsive IT agency website showcasing technology services, solutions, and contacts.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <span class="project-link">Discover project <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-project-title="Simon Game" 
-                 data-project-badge="Game" 
-                 data-project-badge-icon="fa-gamepad"
-                 data-project-long-desc="Classic Simon memory game implemented with JavaScript and DOM animations."
-                 data-project-tech="HTML5 • CSS3 • JavaScript"
-                 data-project-demo-url="https://ruzni-dev.github.io/Simon-Game/">
-                <div class="project-img-box">
-                    <img src="assets/images/simon-game.png" alt="Simon Game">
-                </div>
-                <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-gamepad"></i> GAME</span>
-                    <h3 class="project-title">Simon Game</h3>
-                    <p class="project-desc">Classic memory game demonstrating timing, sequencing, and interactive UI.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JQuery</span>
-                    </div>
-                    <span class="project-link">Discover project <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-            <div class="portfolio-box" 
-                 data-project-title="Movies Page" 
-                 data-project-badge="Web App" 
-                 data-project-badge-icon="fa-film"
-                 data-project-long-desc="Built a Premium Real Estate Agency Website using HTML, CSS, Boostrap, JavaScript & JQuery with a modern UI and responsive design."
+                 data-category="commercial"
+                 data-project-title="Real Estate Agency Luxury Portal" 
+                 data-project-badge="Commercial Platform" 
+                 data-project-badge-icon="fa-building"
+                 data-project-long-desc="A premium real estate agency digital platform featuring interactive property catalogs, responsive luxury grids, search filtering, dynamic inquiry models, and sleek cross-browser UI."
                  data-project-tech="HTML5 • CSS3 • Bootstrap • JavaScript • jQuery"
                  data-project-demo-url="https://ruzni-dev.github.io/Real-Estate-Agency/">
                 <div class="project-img-box">
-                    <img src="assets/images/real-estad-agency.png" alt="Movies page">
+                    <img src="assets/images/real-estad-agency.png" alt="Real Estate Agency Platform" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-building"></i> COMMERCIAL</span>
                 </div>
                 <div class="project-content">
-                    <span class="project-badge"><i class="fa-solid fa-film"></i> WEB APP</span>
-                    <h3 class="project-title">Real Estate Agency</h3>
-                    <p class="project-desc">Built a Premium Real Estate Agency Website using HTML, CSS, Boostrap, JavaScript & JQuery with a modern UI and responsive design.</p>
+                    <h3 class="project-title">Real Estate Agency Portal</h3>
+                    <p class="project-desc">High-end real estate web solution with responsive listing galleries and intuitive lead capture.</p>
+                    <div class="project-tags">
+                        <span>Bootstrap</span>
+                        <span>JavaScript</span>
+                        <span>jQuery</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. IT Solutions Website -->
+            <div class="portfolio-box" 
+                 data-category="commercial"
+                 data-project-title="IT Solutions &amp; Tech Agency" 
+                 data-project-badge="Enterprise Landing" 
+                 data-project-badge-icon="fa-laptop-code"
+                 data-project-long-desc="A cutting-edge landing portal for enterprise tech agencies. Incorporates modular service showcases, interactive client testimonials, dark mode accents, and dynamic contact workflows."
+                 data-project-tech="HTML5 • Modern CSS3 • JavaScript ES6+"
+                 data-project-demo-url="https://ruzni-dev.github.io/Internship-tasks/IT-Solutions-Website/">
+                <div class="project-img-box">
+                    <img src="assets/images/img41.png" alt="IT Solutions Website" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-laptop-code"></i> ENTERPRISE</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">IT Solutions Agency</h3>
+                    <p class="project-desc">Professional corporate portal engineered for technology service providers with rich interactive sections.</p>
                     <div class="project-tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
-                        <span>Bootstrap</span>
                         <span>JavaScript</span>
-                        <span>JQuery</span>
+                        <span>B2B</span>
                     </div>
-                    <span class="project-link">Discover project <i class="fa-solid fa-chevron-right"></i></span>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. To-Do List Web App -->
+            <div class="portfolio-box" 
+                 data-category="web"
+                 data-project-title="To-Do Task Management Engine" 
+                 data-project-badge="Web Application" 
+                 data-project-badge-icon="fa-list-check"
+                 data-project-long-desc="A lightweight productivity task engine with persistent browser LocalStorage, dynamic status filtering, real-time counter updates, and keyboard shortcuts."
+                 data-project-tech="HTML5 • CSS3 • JavaScript ES6+ • LocalStorage"
+                 data-project-demo-url="https://ruzni-dev.github.io/project-showcase/pages/61-project-to-do/">
+                <div class="project-img-box">
+                    <img src="assets/images/img1.png" alt="To-Do Task App" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-list-check"></i> WEB APP</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">To-Do Task Manager</h3>
+                    <p class="project-desc">Clean, state-managed daily task tracker with instant filtering and browser persistence.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>DOM Engine</span>
+                        <span>LocalStorage</span>
+                    </div>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Simon Memory Game -->
+            <div class="portfolio-box" 
+                 data-category="games"
+                 data-project-title="Simon Sequencing Memory Game" 
+                 data-project-badge="Interactive Game" 
+                 data-project-badge-icon="fa-gamepad"
+                 data-project-long-desc="Classic Simon electronic memory game with synchronized sound synthesis, algorithmic pattern generation, progressive speed levels, and mistake detection."
+                 data-project-tech="HTML5 • CSS3 • JavaScript • Audio API"
+                 data-project-demo-url="https://ruzni-dev.github.io/Simon-Game/">
+                <div class="project-img-box">
+                    <img src="assets/images/simon-game.png" alt="Simon Memory Game" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-gamepad"></i> GAME</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Simon Memory Game</h3>
+                    <p class="project-desc">Interactive memory sequencing game demonstrating state machines and audio-visual synchronization.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Game Logic</span>
+                        <span>Web Audio</span>
+                    </div>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Interactive Dice Game -->
+            <div class="portfolio-box" 
+                 data-category="games"
+                 data-project-title="Competitive Dice Roll Game" 
+                 data-project-badge="Interactive Game" 
+                 data-project-badge-icon="fa-dice"
+                 data-project-long-desc="A responsive dual-player dice challenge highlighting pseudo-random number generators, score tracking, dynamic vector rendering, and win condition logic."
+                 data-project-tech="HTML5 • CSS3 • JavaScript"
+                 data-project-demo-url="https://ruzni-dev.github.io/Dice-Game/">
+                <div class="project-img-box">
+                    <img src="assets/images/dice-game.png" alt="Interactive Dice Game" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-dice"></i> GAME</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Dice Duel Arena</h3>
+                    <p class="project-desc">Two-player competitive dice simulator engineered with clean DOM animations and random logic.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Random RNG</span>
+                        <span>Animations</span>
+                    </div>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Personal Portfolio -->
+            <div class="portfolio-box" 
+                 data-category="web"
+                 data-project-title="Executive Portfolio System" 
+                 data-project-badge="Creative Portfolio" 
+                 data-project-badge-icon="fa-layer-group"
+                 data-project-long-desc="An interactive creative portfolio demonstrating Awwwards-grade glassmorphic aesthetics, custom canvas particle physics, 3D card tilt, and complete credential verification."
+                 data-project-tech="HTML5 • Vanilla CSS3 • JavaScript • Canvas"
+                 data-project-demo-url="https://portfolio1-pearl-seven.vercel.app/">
+                <div class="project-img-box">
+                    <img src="assets/images/img32.png" alt="Personal Portfolio Showcase" loading="lazy">
+                    <span class="project-badge-float"><i class="fas fa-layer-group"></i> SHOWCASE</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Personal Portfolio System</h3>
+                    <p class="project-desc">Award-grade portfolio demonstrating modern web engineering, dark mode, and interactive physics.</p>
+                    <div class="project-tags">
+                        <span>Vanilla CSS</span>
+                        <span>Canvas</span>
+                        <span>Glassmorphism</span>
+                    </div>
+                    <div class="project-link-row">
+                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="view">
-            <a href="https://ruzni-dev.github.io/project-showcase/" class="btn">Explore more</a>
+
+        <div class="project-view-more-center">
+            <a href="https://ruzni-dev.github.io/project-showcase/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <i class="fas fa-compass"></i> Explore Entire Showcase Repository
+            </a>
         </div>
     </section>
+
+    <!-- ===================================================================
+         CONTACT CONCIERGE (LUXURY GLASS HUB)
+         =================================================================== -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-        <p class="contact-intro">Have a project, collaboration, or question? Share a few details and I will get back to you soon.</p>
+        <div class="section-header">
+            <span class="section-tag">Direct Communication</span>
+            <h2 class="heading">Let's <span>Connect</span></h2>
+            <p class="section-desc">Open to software engineering roles, high-impact freelance projects, and technical collaborations.</p>
+        </div>
+
         <div class="contact-wrapper">
+            <!-- Left Info Card -->
             <div class="contact-info-card">
-                <h3>Let's Build Something Great</h3>
-                <p>I am open to freelance projects, internships, and tech collaborations focused on web and software solutions.</p>
-                <div class="contact-points">
-                    <p><i class="fas fa-envelope"></i> ruzni.dev@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +94 71 1615 447</p>
-                    <p><i class="fas fa-location-dot"></i> Vavuniya, Sri Lanka</p>
+                <h3>Start a Conversation</h3>
+                <p class="contact-desc">
+                    Whether you have an ambitious new project, an open engineering position, or want to collaborate on research, I’m ready to deliver.
+                </p>
+
+                <div class="contact-points-deck">
+                    <div class="contact-point-item">
+                        <div class="contact-point-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-point-text">
+                            <h5>DIRECT EMAIL</h5>
+                            <p>
+                                <a href="mailto:ruzni.dev@gmail.com">ruzni.dev@gmail.com</a>
+                                <button class="quick-copy-email-btn" title="Copy email address" aria-label="Copy Email">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-point-item">
+                        <div class="contact-point-icon"><i class="fas fa-phone-volume"></i></div>
+                        <div class="contact-point-text">
+                            <h5>PHONE &amp; WHATSAPP</h5>
+                            <p><a href="tel:+94711615447">+94 71 1615 447</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-point-item">
+                        <div class="contact-point-icon"><i class="fas fa-location-dot"></i></div>
+                        <div class="contact-point-text">
+                            <h5>LOCATION</h5>
+                            <p>Vavuniya, Sri Lanka (Available Remote &amp; Global)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-actions">
-                    <a href="mailto:ruzni.dev@gmail.com" class="contact-link"><i class="fas fa-paper-plane"></i> Email Directly</a>
-                    <a href="tel:+94711615447" class="contact-link"><i class="fas fa-phone-volume"></i> Call Now</a>
+
+                <div class="vip-response-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Guaranteed Response within 24 Hours</span>
                 </div>
-                <p class="contact-note">Average response time: within 24 hours</p>
             </div>
-            <form action="#" id="contactForm" novalidate>
-                <div class="input-box">
-                    <label for="fullName" class="sr-only">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Full Name" autocomplete="name" required>
-                    <label for="emailAddress" class="sr-only">Email Address</label>
-                    <input type="email" placeholder="Email Address" id="emailAddress" autocomplete="email" required>
-                </div>
-                <div class="input-box">
-                    <label for="mobileNumber" class="sr-only">Mobile Number</label>
-                    <input type="tel" id="mobileNumber" placeholder="Mobile Number" autocomplete="tel" required>
-                    <label for="emailSubject" class="sr-only">Email Subject</label>
-                    <input type="text" placeholder="Email Subject" id="emailSubject" required>
-                </div>
-                <div class="input-box form-row-full">
-                    <label for="projectType" class="sr-only">Project Type</label>
-                    <select id="projectType" required>
-                        <option value="" selected disabled>Select Project Type</option>
-                        <option value="Website Development">Website Development</option>
-                        <option value="UI/UX Design">UI/UX Design</option>
-                        <option value="Software Development">Software Development</option>
-                        <option value="Cyber Security Support">Cyber Security Support</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <label for="yourMessage" class="sr-only">Your Message</label>
-                <textarea id="yourMessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <div class="form-meta">
-                    <p class="char-count" id="messageCount">0 / 600</p>
-                    <label class="consent-wrap" for="privacyConsent">
-                        <input type="checkbox" id="privacyConsent" required>
-                        <span>I agree to be contacted regarding my inquiry.</span>
-                    </label>
-                </div>
-                <p class="response-msg" id="contactStatus" role="status" aria-live="polite"></p>
-                <input type="submit" value="Send Message" class="btn" id="submit">
-            </form>
+
+            <!-- Right Form Card -->
+            <div class="contact-form-glass">
+                <form id="contactForm" novalidate>
+                    <div class="form-grid-double">
+                        <div class="form-group">
+                            <input type="text" id="fullName" class="form-input" placeholder="Your Full Name *" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="emailAddress" class="form-input" placeholder="Your Email Address *" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-double">
+                        <div class="form-group">
+                            <input type="tel" id="mobileNumber" class="form-input" placeholder="Mobile / WhatsApp Number *" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="emailSubject" class="form-input" placeholder="Subject / Focus Area *" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <select id="projectType" class="form-select" required>
+                            <option value="" selected disabled>Select Project / Inquiry Scope *</option>
+                            <option value="Fullstack Web Application">Fullstack Web Application</option>
+                            <option value="Software Engineering &amp; Backend">Software Engineering &amp; Backend</option>
+                            <option value="UI/UX Prototyping &amp; Design">UI/UX Prototyping &amp; Design</option>
+                            <option value="Quality Assurance &amp; Testing">Quality Assurance &amp; Testing</option>
+                            <option value="Full-Time Engineering Role">Full-Time Engineering Role</option>
+                            <option value="Consultation &amp; Other">Consultation &amp; Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <textarea id="yourMessage" class="form-textarea" placeholder="Detail your project requirements, timeline, or inquiry..." required></textarea>
+                    </div>
+
+                    <div class="form-meta-row">
+                        <span class="char-count" id="messageCount">0 / 600</span>
+                        <label class="consent-wrap" for="privacyConsent">
+                            <input type="checkbox" id="privacyConsent" required checked>
+                            <span>I agree to be contacted regarding this inquiry.</span>
+                        </label>
+                    </div>
+
+                    <p class="response-msg" id="contactStatus" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Direct Message
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
+
+    <!-- ===================================================================
+         LUXURY FOOTER
+         =================================================================== -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
-                <h3 class="footer-title">DARKBEAST</h3>
-                <p>Tech enthusiast passionate about problem-solving, continuous learning, and creating innovative solutions.</p>
-                <div class="social-icons">
-                    <a href="https://x.com/Mohamad_Ruzni"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://lk.linkedin.com/in/ruzni-dev"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/ruzni-dev/"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.hackerrank.com/profile/ruzni_dev"><i class="fa-brands fa-hackerrank"></i></a>
+                <h3 class="footer-brand">&lt;<span>RUZNI</span> /&gt;</h3>
+                <p class="footer-bio">
+                    Computer Science &amp; Applied Science Scholar. High-performance software engineering, 
+                    scalable web applications, and certified cyber defense systems.
+                </p>
+                <div class="hero-social-deck">
+                    <a href="https://github.com/ruzni-dev/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://lk.linkedin.com/in/ruzni-dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.hackerrank.com/profile/ruzni_dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="HackerRank"><i class="fa-brands fa-hackerrank"></i></a>
+                    <a href="https://x.com/Mohamad_Ruzni" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
+
             <div class="footer-column">
-                <h4 class="footer-title">Solutions</h4>
+                <h4 class="footer-title">Engineering</h4>
                 <div class="footer-links">
                     <a href="pages/web-dev.html">Web Development</a>
-                    <a href="pages/graphic.html">Graphic Design</a>
-                    <a href="pages/soft-dev.html">Software Development</a>
+                    <a href="pages/soft-dev.html">Software Systems</a>
+                    <a href="pages/graphic.html">UI/UX &amp; Prototyping</a>
+                    <a href="#simulations">Corporate Simulations</a>
                 </div>
             </div>
+
             <div class="footer-column">
-                <h4 class="footer-title">Company</h4>
+                <h4 class="footer-title">Navigation</h4>
                 <div class="footer-links">
-                    <a href="#about">About Us</a>
-                    <a href="#">Research</a>
-                    <a href="#">Careers</a>
-                    <a href="#">News</a>
+                    <a href="#about">Executive Dossier</a>
+                    <a href="#skills">Skills Matrix</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#hackerrank">HackerRank Hall of Fame</a>
+                    <a href="#portfolio">Featured Projects</a>
                 </div>
             </div>
+
             <div class="footer-column">
-                <h4 class="footer-title">Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Vavuniya, Srilanka</p>
-                <p><i class="fas fa-phone"></i> +94 71 1615 447</p>
-                <p><i class="fas fa-envelope"></i> ruzni.dev@gmail.com</p>
+                <h4 class="footer-title">Direct Contact</h4>
+                <div class="footer-contact-info">
+                    <p><i class="fas fa-location-dot"></i> Vavuniya, Sri Lanka</p>
+                    <p><i class="fas fa-phone"></i> +94 71 1615 447</p>
+                    <p><i class="fas fa-envelope"></i> ruzni.dev@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> GMT +5:30 (Available Globally)</p>
+                </div>
             </div>
         </div>
-        <div class="foot-note">
-            <div class="footer-text">
-                <p>Copyright &copy; 2025 by <a href="https://ruzni-dev.github.io/portfolio1/">DARKBEAST</a> | All Rights Reserved</p>
-            </div>
+
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 Mohamad Ruzni. All Rights Reserved. Engineered with Pride &amp; Precision.</p>
+            <p>Designed with High-Performance Vanilla Web Standards</p>
         </div>
     </footer>
-    <!-- Certificate Modal -->
-    <div class="modal" id="certificate-modal" aria-hidden="true">
+
+    <!-- Certificate Modal Viewer -->
+    <div class="modal" id="certificate-modal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-body" id="modal-body">
-                <!-- Modal content will be inserted here -->
+            <button class="modal-close" onclick="closeCertificateModal()" aria-label="Close Certificate Modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Project Details Modal Viewer -->
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close Project Modal">&times;</button>
+            <div class="project-modal-body" id="project-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Interactive Futuristic Cyber Terminal (RUZNI_OS v4.2) -->
+    <div class="cyber-terminal-modal" id="cyberTerminalModal" aria-hidden="true" role="dialog" aria-label="RUZNI_OS Cyber Terminal">
+        <div class="cyber-terminal-window">
+            <div class="cyber-terminal-header">
+                <div class="terminal-dots">
+                    <span class="terminal-dot close-btn" id="terminalCloseDot" title="Close Terminal (or type exit)"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                </div>
+                <div class="terminal-title">RUZNI_OS v4.2 [CYBER-SHELL] // ONLINE</div>
+                <div style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--cyan-electric);">NODE: SECURE</div>
+            </div>
+            <div class="cyber-terminal-body" id="terminalBody">
+                <div class="terminal-output" id="terminalOutput">
+                    <div class="terminal-line cyan">=======================================================</div>
+                    <div class="terminal-line cyan">   RUZNI_OS CYBER TERMINAL INTERFACE v4.2</div>
+                    <div class="terminal-line dim">   Type 'help' to inspect available system commands.</div>
+                    <div class="terminal-line cyan">=======================================================</div>
+                </div>
+                <div class="terminal-input-row">
+                    <span class="terminal-prompt">ruzni@cyber-sys:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="type a command...">
+                </div>
             </div>
         </div>
     </div>
-    <!-- Project Details Modal -->
-    <div class="modal" id="project-modal" aria-hidden="true">
-        <div class="modal-content project-modal-content">
-            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
-            <div class="project-modal-body" id="project-modal-body">
-                <!-- Project details will be dynamically loaded here -->
+
+    <!-- Apple Spotlight Quick Command Palette Modal (⌘K / Ctrl+K) -->
+    <div class="spotlight-modal" id="spotlightModal" aria-hidden="true" role="dialog" aria-label="Spotlight Quick Search">
+        <div class="spotlight-palette">
+            <div class="spotlight-search-header">
+                <i class="fas fa-magnifying-glass spotlight-search-icon"></i>
+                <input type="text" class="spotlight-input" id="spotlightInput" placeholder="Spotlight Search (e.g. Walmart, React, HackerRank, CV, Contact...)" autocomplete="off" spellcheck="false">
+                <span class="spotlight-esc-pill">ESC</span>
+            </div>
+            <div class="spotlight-quick-categories">
+                <span class="spot-filter-pill active" data-spot="all">All</span>
+                <span class="spot-filter-pill" data-spot="projects">Projects</span>
+                <span class="spot-filter-pill" data-spot="skills">Skills</span>
+                <span class="spot-filter-pill" data-spot="simulations">Simulations</span>
+                <span class="spot-filter-pill" data-spot="certs">Certifications</span>
+            </div>
+            <div class="spotlight-results" id="spotlightResults">
+                <!-- Dynamically populated via main.js -->
+            </div>
+            <div class="spotlight-footer">
+                <div class="spotlight-footer-keys">
+                    <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+                    <span><kbd>↵</kbd> Select</span>
+                    <span><kbd>ESC</kbd> Close</span>
+                </div>
+                <div class="spotlight-footer-brand">
+                    <span>RuzniOS Spotlight</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-ring" id="cursor-ring"></div>
-    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Apple macOS / visionOS Floating Glass Dock -->
+    <nav class="macos-dock" id="macosDock" aria-label="macOS Floating Glass Dock Navigation">
+        <div class="dock-container">
+            <a href="#home" class="dock-item active" data-tooltip="Home">
+                <i class="fas fa-house"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#about" class="dock-item" data-tooltip="Executive Dossier">
+                <i class="fas fa-user-tie"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#skills" class="dock-item" data-tooltip="Skills Matrix">
+                <i class="fas fa-layer-group"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#simulations" class="dock-item" data-tooltip="Fortune 500 Simulations">
+                <i class="fas fa-building-columns"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#certifications" class="dock-item" data-tooltip="Accredited Certs">
+                <i class="fas fa-award"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#hackerrank" class="dock-item" data-tooltip="5★ HackerRank Elite">
+                <i class="fas fa-star"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#services" class="dock-item" data-tooltip="Engineering Services">
+                <i class="fas fa-cubes"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <a href="#portfolio" class="dock-item" data-tooltip="Featured Projects">
+                <i class="fas fa-laptop-code"></i>
+                <span class="dock-dot"></span>
+            </a>
+            <div class="dock-separator"></div>
+            <button class="dock-item dock-btn" id="dockSpotlightBtn" data-tooltip="Spotlight (⌘K)">
+                <i class="fas fa-magnifying-glass"></i>
+            </button>
+            <button class="dock-item dock-btn" id="dockTerminalBtn" data-tooltip="Terminal (CLI)">
+                <i class="fas fa-terminal"></i>
+            </button>
+            <a href="#contact" class="dock-item dock-action" data-tooltip="Contact Concierge">
+                <i class="fas fa-paper-plane"></i>
+                <span class="dock-dot"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Typed.js for dynamic hero typing -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Core Application JavaScript Engine -->
     <script src="assets/js/main.js"></script>
-    <script src="https://kit.fontawesome.com/e7fed33d62.js" crossorigin="anonymous"></script>
+    <script>
+        // Hero Dynamic Typed Text Initialization
+        if (typeof Typed !== 'undefined') {
+            new Typed('.multiple-text', {
+                strings: [
+                    'Fullstack Web Architecture',
+                    'Enterprise Software Development',
+                    '5-Star Algorithmic Problem Solving',
+                    'System Security & QA Engineering',
+                    'Scalable Database & ETL Design'
+                ],
+                typeSpeed: 55,
+                backSpeed: 35,
+                backDelay: 1800,
+                loop: true
+            });
+        }
+    </script>
 </body>
 </html>
-
-
