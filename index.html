@@ -1616,170 +1616,276 @@
          =================================================================== -->
     <section class="portfolio" id="portfolio">
         <div class="section-header">
-            <span class="section-tag">Engineered Solutions</span>
-            <h2 class="heading">Featured <span>Projects</span></h2>
-            <p class="section-desc">Interactive portfolio of web applications, commercial systems, and algorithmic games
-                engineered with pixel-perfect precision.</p>
+            <span class="section-tag"><i class="fas fa-layer-group"></i> Featured Portfolio</span>
+            <h2 class="heading">Crafted solutions in <span class="serif-word">production.</span></h2>
+            <p class="section-desc">Interactive depth deck of enterprise applications, commercial platforms, and algorithmic systems engineered with pixel-perfect precision.</p>
         </div>
 
-        <!-- Filter Row -->
-        <div class="portfolio-filter-row">
-            <button class="project-filter-btn active" data-filter="all">All Projects</button>
-            <button class="project-filter-btn" data-filter="web">Web Applications</button>
-            <button class="project-filter-btn" data-filter="commercial">Commercial Sites</button>
-            <button class="project-filter-btn" data-filter="games">Interactive Games</button>
-        </div>
+        <!-- Layered 3D Card Stack (Depth Deck matching user reference) -->
+        <div class="project-stack-deck" id="projectStackDeck">
+            <!-- 3D Stage -->
+            <div class="project-stack-stage" id="projectStackStage">
 
-        <div class="portfolio-container">
-            <!-- 1. Real Estate Agency -->
-            <div class="portfolio-box" data-category="commercial" data-project-title="Real Estate Agency Luxury Portal"
-                data-project-badge="Commercial Platform" data-project-badge-icon="fa-building"
-                data-project-long-desc="A premium real estate agency digital platform featuring interactive property catalogs, responsive luxury grids, search filtering, dynamic inquiry models, and sleek cross-browser UI."
-                data-project-tech="HTML5 • CSS3 • Bootstrap • JavaScript • jQuery"
-                data-project-demo-url="https://ruzni-dev.github.io/Real-Estate-Agency/">
-                <div class="project-img-box">
-                    <img src="assets/images/real-estad-agency.png" alt="Real Estate Agency Platform" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-building"></i> COMMERCIAL</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Real Estate Agency Portal</h3>
-                    <p class="project-desc">High-end real estate web solution with responsive listing galleries and
-                        intuitive lead capture.</p>
-                    <div class="project-tags">
-                        <span>Bootstrap</span>
-                        <span>JavaScript</span>
-                        <span>jQuery</span>
-                        <span>Responsive</span>
+                <!-- 01. Real Estate Agency -->
+                <article class="project-stack-card active" data-index="0"
+                    data-project-title="Real Estate Agency Luxury Portal"
+                    data-project-badge="Commercial Platform" data-project-badge-icon="fa-building"
+                    data-project-long-desc="A premium real estate agency digital platform featuring interactive property catalogs, responsive luxury grids, search filtering, dynamic inquiry models, and sleek cross-browser UI."
+                    data-project-tech="HTML5 • CSS3 • Bootstrap • JavaScript • jQuery"
+                    data-project-demo-url="https://ruzni-dev.github.io/Real-Estate-Agency/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">01 / COMMERCIAL PLATFORM</span>
+                            <h3 class="project-card-title">Real Estate Agency Portal</h3>
+                            <p class="project-card-desc">High-end real estate web solution with responsive listing galleries, dynamic inquiry models, and intuitive lead capture.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">Bootstrap</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">jQuery</span>
+                                <span class="tech-pill">Responsive</span>
+                                <span class="tech-pill">HTML5</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(0)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://ruzni-dev.github.io/Real-Estate-Agency/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/real-estad-agency.png" alt="Real Estate Agency Platform" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-building"></i> Commercial
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
+                </article>
+
+                <!-- 02. IT Solutions Website -->
+                <article class="project-stack-card" data-index="1"
+                    data-project-title="IT Solutions &amp; Tech Agency"
+                    data-project-badge="Enterprise Landing" data-project-badge-icon="fa-laptop-code"
+                    data-project-long-desc="A cutting-edge landing portal for enterprise tech agencies. Incorporates modular service showcases, interactive client testimonials, dark mode accents, and dynamic contact workflows."
+                    data-project-tech="HTML5 • Modern CSS3 • JavaScript ES6+"
+                    data-project-demo-url="https://ruzni-dev.github.io/Internship-tasks/IT-Solutions-Website/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">02 / ENTERPRISE LANDING</span>
+                            <h3 class="project-card-title">IT Solutions Agency</h3>
+                            <p class="project-card-desc">Professional corporate portal engineered for technology service providers with rich interactive sections and modular showcases.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">HTML5</span>
+                                <span class="tech-pill">CSS3</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">B2B</span>
+                                <span class="tech-pill">Enterprise</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(1)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://ruzni-dev.github.io/Internship-tasks/IT-Solutions-Website/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/img41.png" alt="IT Solutions Website" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-laptop-code"></i> Enterprise
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- 03. To-Do List Web App -->
+                <article class="project-stack-card" data-index="2"
+                    data-project-title="To-Do Task Management Engine"
+                    data-project-badge="Web Application" data-project-badge-icon="fa-list-check"
+                    data-project-long-desc="A lightweight productivity task engine with persistent browser LocalStorage, dynamic status filtering, real-time counter updates, and keyboard shortcuts."
+                    data-project-tech="HTML5 • CSS3 • JavaScript ES6+ • LocalStorage"
+                    data-project-demo-url="https://ruzni-dev.github.io/project-showcase/pages/61-project-to-do/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">03 / WEB APPLICATION</span>
+                            <h3 class="project-card-title">To-Do Task Manager</h3>
+                            <p class="project-card-desc">Clean, state-managed daily task tracker engineered with instant filtering, keyboard navigation, and persistent browser storage.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">DOM Engine</span>
+                                <span class="tech-pill">LocalStorage</span>
+                                <span class="tech-pill">State Machine</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(2)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://ruzni-dev.github.io/project-showcase/pages/61-project-to-do/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/img1.png" alt="To-Do Task App" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-list-check"></i> Web App
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 04. Simon Memory Game -->
+                <article class="project-stack-card" data-index="3"
+                    data-project-title="Simon Sequencing Memory Game"
+                    data-project-badge="Interactive Game" data-project-badge-icon="fa-gamepad"
+                    data-project-long-desc="Classic Simon electronic memory game with synchronized sound synthesis, algorithmic pattern generation, progressive speed levels, and mistake detection."
+                    data-project-tech="HTML5 • CSS3 • JavaScript • Audio API"
+                    data-project-demo-url="https://ruzni-dev.github.io/Simon-Game/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">04 / INTERACTIVE GAME</span>
+                            <h3 class="project-card-title">Simon Memory Game</h3>
+                            <p class="project-card-desc">Interactive memory sequencing game demonstrating state machines, Web Audio synthesis, and dynamic pattern generation.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Game Logic</span>
+                                <span class="tech-pill">Web Audio</span>
+                                <span class="tech-pill">Algorithms</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(3)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://ruzni-dev.github.io/Simon-Game/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/simon-game.png" alt="Simon Memory Game" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-gamepad"></i> Game
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 05. Interactive Dice Game -->
+                <article class="project-stack-card" data-index="4"
+                    data-project-title="Competitive Dice Roll Game"
+                    data-project-badge="Interactive Game" data-project-badge-icon="fa-dice"
+                    data-project-long-desc="A responsive dual-player dice challenge highlighting pseudo-random number generators, score tracking, dynamic vector rendering, and win condition logic."
+                    data-project-tech="HTML5 • CSS3 • JavaScript"
+                    data-project-demo-url="https://ruzni-dev.github.io/Dice-Game/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">05 / ALGORITHMIC ARENA</span>
+                            <h3 class="project-card-title">Dice Duel Arena</h3>
+                            <p class="project-card-desc">Two-player competitive dice simulator engineered with clean DOM animations, score tracking, and pseudo-random mechanics.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Random RNG</span>
+                                <span class="tech-pill">DOM Logic</span>
+                                <span class="tech-pill">State Flow</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(4)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://ruzni-dev.github.io/Dice-Game/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/dice-game.png" alt="Interactive Dice Game" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-dice"></i> Arena
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 06. Personal Portfolio -->
+                <article class="project-stack-card" data-index="5"
+                    data-project-title="Executive Portfolio System"
+                    data-project-badge="Creative Portfolio" data-project-badge-icon="fa-layer-group"
+                    data-project-long-desc="An interactive creative portfolio demonstrating Awwwards-grade glassmorphic aesthetics, custom canvas particle physics, 3D card tilt, and complete credential verification."
+                    data-project-tech="HTML5 • Vanilla CSS3 • JavaScript • Canvas"
+                    data-project-demo-url="https://portfolio1-pearl-seven.vercel.app/">
+                    <div class="project-card-split">
+                        <div class="project-card-info">
+                            <span class="project-card-eyebrow">06 / CREATIVE PORTFOLIO</span>
+                            <h3 class="project-card-title">Personal Portfolio System</h3>
+                            <p class="project-card-desc">Award-grade portfolio showcasing modern web engineering, Apple visionOS glassmorphism, canvas particle physics, and Web Audio haptics.</p>
+                            <div class="project-tech-pills">
+                                <span class="tech-pill">Vanilla CSS</span>
+                                <span class="tech-pill">Canvas API</span>
+                                <span class="tech-pill">Glassmorphism</span>
+                                <span class="tech-pill">Web Audio</span>
+                            </div>
+                            <div class="project-card-actions">
+                                <button type="button" class="btn-project-inspect" onclick="openProjectModalFromStack(5)">
+                                    <span>View Project</span>
+                                    <span class="btn-arrow-circle"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                                </button>
+                                <a href="https://portfolio1-pearl-seven.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-live">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-visual">
+                            <div class="project-visual-frame">
+                                <img src="assets/images/img32.png" alt="Personal Portfolio Showcase" loading="lazy">
+                                <div class="project-visual-badge">
+                                    <i class="fas fa-layer-group"></i> Showcase
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
 
-            <!-- 2. IT Solutions Website -->
-            <div class="portfolio-box" data-category="commercial" data-project-title="IT Solutions &amp; Tech Agency"
-                data-project-badge="Enterprise Landing" data-project-badge-icon="fa-laptop-code"
-                data-project-long-desc="A cutting-edge landing portal for enterprise tech agencies. Incorporates modular service showcases, interactive client testimonials, dark mode accents, and dynamic contact workflows."
-                data-project-tech="HTML5 • Modern CSS3 • JavaScript ES6+"
-                data-project-demo-url="https://ruzni-dev.github.io/Internship-tasks/IT-Solutions-Website/">
-                <div class="project-img-box">
-                    <img src="assets/images/img41.png" alt="IT Solutions Website" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-laptop-code"></i> ENTERPRISE</span>
+            <!-- Bottom Depth Deck Controls matching user reference -->
+            <div class="project-stack-controls">
+                <div class="project-nav-group">
+                    <button type="button" class="project-nav-btn" id="projPrevBtn" aria-label="Previous Project">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="project-counter" aria-live="polite">
+                        <span class="proj-counter-active" id="projCurrentNum">01</span>
+                        <span class="proj-counter-divider">/</span>
+                        <span class="proj-counter-total">06</span>
+                    </div>
+                    <button type="button" class="project-nav-btn" id="projNextBtn" aria-label="Next Project">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
-                <div class="project-content">
-                    <h3 class="project-title">IT Solutions Agency</h3>
-                    <p class="project-desc">Professional corporate portal engineered for technology service providers
-                        with rich interactive sections.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>B2B</span>
-                    </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. To-Do List Web App -->
-            <div class="portfolio-box" data-category="web" data-project-title="To-Do Task Management Engine"
-                data-project-badge="Web Application" data-project-badge-icon="fa-list-check"
-                data-project-long-desc="A lightweight productivity task engine with persistent browser LocalStorage, dynamic status filtering, real-time counter updates, and keyboard shortcuts."
-                data-project-tech="HTML5 • CSS3 • JavaScript ES6+ • LocalStorage"
-                data-project-demo-url="https://ruzni-dev.github.io/project-showcase/pages/61-project-to-do/">
-                <div class="project-img-box">
-                    <img src="assets/images/img1.png" alt="To-Do Task App" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-list-check"></i> WEB APP</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">To-Do Task Manager</h3>
-                    <p class="project-desc">Clean, state-managed daily task tracker with instant filtering and browser
-                        persistence.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>DOM Engine</span>
-                        <span>LocalStorage</span>
-                    </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Simon Memory Game -->
-            <div class="portfolio-box" data-category="games" data-project-title="Simon Sequencing Memory Game"
-                data-project-badge="Interactive Game" data-project-badge-icon="fa-gamepad"
-                data-project-long-desc="Classic Simon electronic memory game with synchronized sound synthesis, algorithmic pattern generation, progressive speed levels, and mistake detection."
-                data-project-tech="HTML5 • CSS3 • JavaScript • Audio API"
-                data-project-demo-url="https://ruzni-dev.github.io/Simon-Game/">
-                <div class="project-img-box">
-                    <img src="assets/images/simon-game.png" alt="Simon Memory Game" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-gamepad"></i> GAME</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Simon Memory Game</h3>
-                    <p class="project-desc">Interactive memory sequencing game demonstrating state machines and
-                        audio-visual synchronization.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Game Logic</span>
-                        <span>Web Audio</span>
-                    </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Interactive Dice Game -->
-            <div class="portfolio-box" data-category="games" data-project-title="Competitive Dice Roll Game"
-                data-project-badge="Interactive Game" data-project-badge-icon="fa-dice"
-                data-project-long-desc="A responsive dual-player dice challenge highlighting pseudo-random number generators, score tracking, dynamic vector rendering, and win condition logic."
-                data-project-tech="HTML5 • CSS3 • JavaScript"
-                data-project-demo-url="https://ruzni-dev.github.io/Dice-Game/">
-                <div class="project-img-box">
-                    <img src="assets/images/dice-game.png" alt="Interactive Dice Game" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-dice"></i> GAME</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Dice Duel Arena</h3>
-                    <p class="project-desc">Two-player competitive dice simulator engineered with clean DOM animations
-                        and random logic.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Random RNG</span>
-                        <span>Animations</span>
-                    </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Personal Portfolio -->
-            <div class="portfolio-box" data-category="web" data-project-title="Executive Portfolio System"
-                data-project-badge="Creative Portfolio" data-project-badge-icon="fa-layer-group"
-                data-project-long-desc="An interactive creative portfolio demonstrating Awwwards-grade glassmorphic aesthetics, custom canvas particle physics, 3D card tilt, and complete credential verification."
-                data-project-tech="HTML5 • Vanilla CSS3 • JavaScript • Canvas"
-                data-project-demo-url="https://portfolio1-pearl-seven.vercel.app/">
-                <div class="project-img-box">
-                    <img src="assets/images/img32.png" alt="Personal Portfolio Showcase" loading="lazy">
-                    <span class="project-badge-float"><i class="fas fa-layer-group"></i> SHOWCASE</span>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Personal Portfolio System</h3>
-                    <p class="project-desc">Award-grade portfolio demonstrating modern web engineering, dark mode, and
-                        interactive physics.</p>
-                    <div class="project-tags">
-                        <span>Vanilla CSS</span>
-                        <span>Canvas</span>
-                        <span>Glassmorphism</span>
-                    </div>
-                    <div class="project-link-row">
-                        <span class="project-action-link">Inspect Architecture <i class="fas fa-arrow-right"></i></span>
-                    </div>
+                <div class="project-dash-deck" id="projDashDeck" role="tablist" aria-label="Project Selection">
+                    <button type="button" class="proj-dash active" data-index="0" aria-label="Jump to Project 1"></button>
+                    <button type="button" class="proj-dash" data-index="1" aria-label="Jump to Project 2"></button>
+                    <button type="button" class="proj-dash" data-index="2" aria-label="Jump to Project 3"></button>
+                    <button type="button" class="proj-dash" data-index="3" aria-label="Jump to Project 4"></button>
+                    <button type="button" class="proj-dash" data-index="4" aria-label="Jump to Project 5"></button>
+                    <button type="button" class="proj-dash" data-index="5" aria-label="Jump to Project 6"></button>
                 </div>
             </div>
         </div>

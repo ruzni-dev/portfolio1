@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMetricsCounter();
     initSkillsCommandCenter();
     initHackerRankFilters();
-    initPortfolioFilters();
+    initProjectStack();
     initSimulationSlider();
     initCertCoverflow();
     initModalSystem();
@@ -1026,39 +1026,220 @@ function initHackerRankFilters() {
 }
 
 /* ===================================================================
-   13. PORTFOLIO FILTERS
+   13. PORTFOLIO LAYERED 3D CARD STACK (DEPTH DECK)
    =================================================================== */
-function initPortfolioFilters() {
-    const filterBtns = document.querySelectorAll('.project-filter-btn');
-    const projectCards = document.querySelectorAll('.portfolio-box');
+function initProjectStack() {
+    const stage = document.getElementById('projectStackStage');
+    const cards = document.querySelectorAll('.project-stack-card');
+    const prevBtn = document.getElementById('projPrevBtn');
+    const nextBtn = document.getElementById('projNextBtn');
+    const counterCurrent = document.getElementById('projCurrentNum');
+    const dashes = document.querySelectorAll('.proj-dash');
+    const deck = document.getElementById('projectStackDeck');
+    const section = document.getElementById('portfolio');
 
-    if (!filterBtns.length || !projectCards.length) return;
+    if (!stage || cards.length === 0) return;
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    let autoPlayTimer = null;
+    const AUTO_DELAY = 4500;
+    let isVisible = false;
 
-            const targetFilter = btn.getAttribute('data-filter');
+    // Responsive stack offset step (horizontal and vertical diagonal progression)
+    function getStep() {
+        return window.innerWidth < 640 ? { x: 8, y: -8 } : { x: 16, y: -14 };
+    }
 
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (targetFilter === 'all' || category === targetFilter) {
-                    card.classList.remove('hidden');
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(15px)';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 40);
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-            playAppleSound('click');
+    function updateProjectStack(playSound = true) {
+        const step = getStep();
+
+        cards.forEach((card, i) => {
+            // Forward circular offset from currentIndex:
+            const pos = (i - currentIndex + totalCards) % totalCards;
+
+            if (pos === 0) {
+                // Active Front Card
+                card.style.transform = 'translate3d(0px, 0px, 0px) scale(1)';
+                card.style.opacity = '1';
+                card.style.zIndex = '10';
+                card.style.filter = 'none';
+                card.style.pointerEvents = 'auto';
+                card.classList.add('active');
+            } else if (pos === 1) {
+                // Layer 1 behind
+                card.style.transform = `translate3d(${step.x}px, ${step.y}px, 0px) scale(0.97)`;
+                card.style.opacity = '0.7';
+                card.style.zIndex = '8';
+                card.style.filter = 'brightness(0.85)';
+                card.style.pointerEvents = 'auto';
+                card.classList.remove('active');
+            } else if (pos === 2) {
+                // Layer 2 behind
+                card.style.transform = `translate3d(${step.x * 2}px, ${step.y * 2}px, 0px) scale(0.94)`;
+                card.style.opacity = '0.45';
+                card.style.zIndex = '6';
+                card.style.filter = 'brightness(0.7)';
+                card.style.pointerEvents = 'auto';
+                card.classList.remove('active');
+            } else if (pos === 3) {
+                // Layer 3 behind
+                card.style.transform = `translate3d(${step.x * 3}px, ${step.y * 3}px, 0px) scale(0.91)`;
+                card.style.opacity = '0.25';
+                card.style.zIndex = '4';
+                card.style.filter = 'brightness(0.55)';
+                card.style.pointerEvents = 'auto';
+                card.classList.remove('active');
+            } else if (pos === totalCards - 1) {
+                // Exit card sliding back
+                card.style.transform = 'translate3d(-40px, 12px, 0px) scale(0.95)';
+                card.style.opacity = '0';
+                card.style.zIndex = '1';
+                card.style.pointerEvents = 'none';
+                card.classList.remove('active');
+            } else {
+                // Hidden cards in deep background
+                card.style.transform = `translate3d(${step.x * 3.5}px, ${step.y * 3.5}px, 0px) scale(0.88)`;
+                card.style.opacity = '0';
+                card.style.zIndex = '0';
+                card.style.pointerEvents = 'none';
+                card.classList.remove('active');
+            }
+        });
+
+        // Update counter
+        if (counterCurrent) {
+            counterCurrent.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        // Update dashes
+        dashes.forEach((dash, i) => {
+            dash.classList.toggle('active', i === currentIndex);
+        });
+
+        if (playSound && typeof playAppleSound === 'function') {
+            playAppleSound('card');
+        }
+    }
+
+    function goToCard(index, playSound = true) {
+        if (index < 0) index = totalCards - 1;
+        if (index >= totalCards) index = 0;
+        currentIndex = index;
+        updateProjectStack(playSound);
+    }
+
+    function nextCard(userInitiated = false) {
+        goToCard(currentIndex + 1, true);
+        if (userInitiated) resetAutoPlay();
+    }
+
+    function prevCard(userInitiated = false) {
+        goToCard(currentIndex - 1, true);
+        if (userInitiated) resetAutoPlay();
+    }
+
+    // Attach click events
+    if (nextBtn) nextBtn.addEventListener('click', () => nextCard(true));
+    if (prevBtn) prevBtn.addEventListener('click', () => prevCard(true));
+
+    // Dash clicks
+    dashes.forEach((dash, i) => {
+        dash.addEventListener('click', () => {
+            goToCard(i, true);
+            resetAutoPlay();
         });
     });
+
+    // Peeking card click: clicking any card in the stack brings it to front!
+    cards.forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+            // Don't intercept if clicking an action link or inspect button
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            if (i !== currentIndex) {
+                goToCard(i, true);
+                resetAutoPlay();
+            } else {
+                // If front card is clicked, open modal
+                openProjectModal(card);
+            }
+        });
+    });
+
+    // Window resize handler to recalculate card step
+    window.addEventListener('resize', () => {
+        updateProjectStack(false);
+    });
+
+    // Auto-sliding Engine (100% Error-Free, IntersectionObserver, Zero Window Jerk)
+    function startAutoPlay() {
+        stopAutoPlay();
+        if (!isVisible) return;
+        autoPlayTimer = setInterval(() => {
+            if (isVisible && !document.hidden) {
+                goToCard(currentIndex + 1, false);
+            }
+        }, AUTO_DELAY);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    if (deck) {
+        deck.addEventListener('mouseenter', stopAutoPlay);
+        deck.addEventListener('mouseleave', () => {
+            if (isVisible) startAutoPlay();
+        });
+    }
+
+    // IntersectionObserver so auto-sliding ONLY runs when section is visible
+    if ('IntersectionObserver' in window && section) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(section);
+    } else {
+        isVisible = true;
+        startAutoPlay();
+    }
+
+    // Tab visibility change
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (isVisible) {
+            startAutoPlay();
+        }
+    });
+
+    // Initial render
+    updateProjectStack(false);
 }
+
+// Global modal helper for stack cards
+window.openProjectModalFromStack = function(index) {
+    const cards = document.querySelectorAll('.project-stack-card');
+    if (cards[index]) {
+        openProjectModal(cards[index]);
+    }
+};
 
 /* ===================================================================
    13.5. FORTUNE 500 CORPORATE JOB SIMULATIONS SPATIAL SLIDER
@@ -1481,8 +1662,9 @@ function initModalSystem() {
         }
     });
 
-    document.querySelectorAll('.portfolio-box').forEach(box => {
-        box.addEventListener('click', () => {
+    document.querySelectorAll('.portfolio-box, .project-stack-card').forEach(box => {
+        box.addEventListener('click', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) return;
             openProjectModal(box);
         });
     });
