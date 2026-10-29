@@ -364,322 +364,546 @@
          =================================================================== -->
     <section class="skills" id="skills">
         <div class="section-header">
-            <span class="section-tag">Technical Matrix</span>
-            <h2 class="heading">Skills &amp; <span>Capabilities</span></h2>
-            <p class="section-desc">Interactive command center featuring verified proficiencies across frontend,
-                backend, security, and cloud ecosystems.</p>
+            <span class="section-tag"><i class="fas fa-terminal"></i> Technical Matrix</span>
+            <h2 class="heading">Core engineering<br>and technical <span class="serif-word">capabilities.</span></h2>
+            <p class="section-desc">Interactive domain command center featuring verified proficiencies across frontend, backend, security, and cloud ecosystems.</p>
         </div>
 
-        <div class="skills-command-center">
-            <!-- Filter & Search Toolbar -->
-            <div class="skills-filter-toolbar">
-                <div class="skills-tab-list">
-                    <button class="skills-tab-btn active" data-filter="all">All Systems</button>
-                    <button class="skills-tab-btn" data-filter="frontend">Frontend</button>
-                    <button class="skills-tab-btn" data-filter="backend">Backend &amp; Core</button>
-                    <button class="skills-tab-btn" data-filter="database">Databases</button>
-                    <button class="skills-tab-btn" data-filter="security">Security &amp; Cloud</button>
-                    <button class="skills-tab-btn" data-filter="tools">Engineering Tools</button>
-                </div>
-                <div class="skills-search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="skillSearchInput" placeholder="Filter skills..." aria-label="Search skills">
+        <div class="skills-deck" id="skillsDeck">
+            <!-- Top Domain Scrubber Rail -->
+            <div class="skills-domain-rail" role="tablist" aria-label="Technical Domains">
+                <button type="button" class="domain-tab-pill active" data-domain-index="0" role="tab" aria-selected="true">
+                    <span class="domain-pill-num">01</span>
+                    <span class="domain-pill-label">Frontend</span>
+                </button>
+                <button type="button" class="domain-tab-pill" data-domain-index="1" role="tab" aria-selected="false">
+                    <span class="domain-pill-num">02</span>
+                    <span class="domain-pill-label">Backend</span>
+                </button>
+                <button type="button" class="domain-tab-pill" data-domain-index="2" role="tab" aria-selected="false">
+                    <span class="domain-pill-num">03</span>
+                    <span class="domain-pill-label">Databases</span>
+                </button>
+                <button type="button" class="domain-tab-pill" data-domain-index="3" role="tab" aria-selected="false">
+                    <span class="domain-pill-num">04</span>
+                    <span class="domain-pill-label">Security &amp; Cloud</span>
+                </button>
+                <button type="button" class="domain-tab-pill" data-domain-index="4" role="tab" aria-selected="false">
+                    <span class="domain-pill-num">05</span>
+                    <span class="domain-pill-label">Tools &amp; DevOps</span>
+                </button>
+            </div>
+
+            <!-- Viewport & Track -->
+            <div class="skills-deck-viewport" id="skillsDeckViewport">
+                <div class="skills-deck-track" id="skillsDeckTrack">
+
+                    <!-- Domain Slide 01: Frontend -->
+                    <div class="skills-domain-slide active" data-index="0">
+                        <div class="domain-slide-card">
+                            <div class="domain-slide-header">
+                                <div class="domain-header-left">
+                                    <span class="domain-sector-tag"><i class="fa-solid fa-code"></i> SECTOR 01 // CLIENT-SIDE ARCHITECTURE</span>
+                                    <h3 class="domain-slide-title">Frontend &amp; Interface Engineering</h3>
+                                    <p class="domain-slide-desc">High-performance reactive interfaces, accessible semantic structure, and modern responsive design systems.</p>
+                                </div>
+                                <div class="domain-header-stat">
+                                    <span class="domain-stat-pulse"></span>
+                                    <span class="domain-stat-val">90%</span>
+                                    <span class="domain-stat-lbl">DOM AVG</span>
+                                </div>
+                            </div>
+
+                            <div class="domain-skills-grid">
+                                <!-- HTML5 -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-html5"></i></div>
+                                            <div>
+                                                <h4>HTML5 &amp; Semantic Web</h4>
+                                                <span class="skill-item-sub">Core Web Standard</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">95%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="95%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- CSS3 -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                                            <div>
+                                                <h4>CSS3 &amp; Modern Layouts</h4>
+                                                <span class="skill-item-sub">Grid, Flex &amp; Motion</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">95%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="95%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- JavaScript -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-js"></i></div>
+                                            <div>
+                                                <h4>JavaScript (ES6+)</h4>
+                                                <span class="skill-item-sub">Asynchronous Logic &amp; DOM</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- React.js -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-react"></i></div>
+                                            <div>
+                                                <h4>React.js</h4>
+                                                <span class="skill-item-sub">Component Hierarchy &amp; State</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Tailwind & Bootstrap -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-wind"></i></div>
+                                            <div>
+                                                <h4>Tailwind CSS &amp; Bootstrap</h4>
+                                                <span class="skill-item-sub">Utility Frameworks &amp; Systems</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domain-slide-footer">
+                                <div class="domain-tech-chips">
+                                    <span class="domain-chip">HTML5</span>
+                                    <span class="domain-chip">CSS3</span>
+                                    <span class="domain-chip">ES6+</span>
+                                    <span class="domain-chip">React.js</span>
+                                    <span class="domain-chip">Tailwind</span>
+                                </div>
+                                <span class="domain-footer-badge"><i class="fas fa-check-circle"></i> Production Ready Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Slide 02: Backend -->
+                    <div class="skills-domain-slide" data-index="1">
+                        <div class="domain-slide-card">
+                            <div class="domain-slide-header">
+                                <div class="domain-header-left">
+                                    <span class="domain-sector-tag"><i class="fa-solid fa-server"></i> SECTOR 02 // SERVER-SIDE &amp; RUNTIMES</span>
+                                    <h3 class="domain-slide-title">Backend &amp; Enterprise Computing</h3>
+                                    <p class="domain-slide-desc">Robust enterprise backend services, object-oriented systems design, server script engines, and RESTful pipelines.</p>
+                                </div>
+                                <div class="domain-header-stat">
+                                    <span class="domain-stat-pulse"></span>
+                                    <span class="domain-stat-val">81%</span>
+                                    <span class="domain-stat-lbl">CORE AVG</span>
+                                </div>
+                            </div>
+
+                            <div class="domain-skills-grid">
+                                <!-- Java -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-java"></i></div>
+                                            <div>
+                                                <h4>Java &amp; OOP Architecture</h4>
+                                                <span class="skill-item-sub">Enterprise Systems &amp; Patterns</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Python -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-python"></i></div>
+                                            <div>
+                                                <h4>Python &amp; Data Pipelines</h4>
+                                                <span class="skill-item-sub">Automation &amp; Data Scripting</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- PHP -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-php"></i></div>
+                                            <div>
+                                                <h4>PHP &amp; Server Scripts</h4>
+                                                <span class="skill-item-sub">Backend Routing &amp; Session State</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Node.js -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-node-js"></i></div>
+                                            <div>
+                                                <h4>Node.js &amp; Express</h4>
+                                                <span class="skill-item-sub">Event-Driven RESTful APIs</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">75%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="75%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- C# & C -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-code"></i></div>
+                                            <div>
+                                                <h4>C# &amp; C Programming</h4>
+                                                <span class="skill-item-sub">Microsoft .NET &amp; Low-Level</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domain-slide-footer">
+                                <div class="domain-tech-chips">
+                                    <span class="domain-chip">Java</span>
+                                    <span class="domain-chip">Python</span>
+                                    <span class="domain-chip">PHP</span>
+                                    <span class="domain-chip">Node.js</span>
+                                    <span class="domain-chip">C# / C</span>
+                                </div>
+                                <span class="domain-footer-badge"><i class="fas fa-check-circle"></i> High-Throughput Logic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Slide 03: Databases -->
+                    <div class="skills-domain-slide" data-index="2">
+                        <div class="domain-slide-card">
+                            <div class="domain-slide-header">
+                                <div class="domain-header-left">
+                                    <span class="domain-sector-tag"><i class="fa-solid fa-database"></i> SECTOR 03 // PERSISTENCE &amp; SCHEMAS</span>
+                                    <h3 class="domain-slide-title">Database Engineering &amp; Storage</h3>
+                                    <p class="domain-slide-desc">Relational architecture design, complex SQL query optimization, normalized schemas, and ERD data modeling.</p>
+                                </div>
+                                <div class="domain-header-stat">
+                                    <span class="domain-stat-pulse"></span>
+                                    <span class="domain-stat-val">88%</span>
+                                    <span class="domain-stat-lbl">DATA AVG</span>
+                                </div>
+                            </div>
+
+                            <div class="domain-skills-grid">
+                                <!-- SQL & ERD -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-database"></i></div>
+                                            <div>
+                                                <h4>SQL &amp; Relational Schema (ERD)</h4>
+                                                <span class="skill-item-sub">Data Normalization &amp; Integrity</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- MySQL -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-server"></i></div>
+                                            <div>
+                                                <h4>MySQL &amp; phpMyAdmin</h4>
+                                                <span class="skill-item-sub">Database Administration &amp; Indexing</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Query Optimization & Relational Mapping -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                            <div>
+                                                <h4>Query Optimization &amp; Relational Modeling</h4>
+                                                <span class="skill-item-sub">ACID Compliance &amp; Performance</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">88%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domain-slide-footer">
+                                <div class="domain-tech-chips">
+                                    <span class="domain-chip">Relational SQL</span>
+                                    <span class="domain-chip">MySQL</span>
+                                    <span class="domain-chip">ERD Modeling</span>
+                                    <span class="domain-chip">Query Tuning</span>
+                                </div>
+                                <span class="domain-footer-badge"><i class="fas fa-check-circle"></i> ACID-Compliant Schemas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Slide 04: Security & Cloud -->
+                    <div class="skills-domain-slide" data-index="3">
+                        <div class="domain-slide-card">
+                            <div class="domain-slide-header">
+                                <div class="domain-header-left">
+                                    <span class="domain-sector-tag"><i class="fa-solid fa-shield-halved"></i> SECTOR 04 // DEFENSE &amp; INFRASTRUCTURE</span>
+                                    <h3 class="domain-slide-title">Cyber Security &amp; Cloud Deployment</h3>
+                                    <p class="domain-slide-desc">Penetration testing fundamentals, virtualized Kali environments, threat mitigation, and automated cloud hosting.</p>
+                                </div>
+                                <div class="domain-header-stat">
+                                    <span class="domain-stat-pulse"></span>
+                                    <span class="domain-stat-val">82%</span>
+                                    <span class="domain-stat-lbl">SEC AVG</span>
+                                </div>
+                            </div>
+
+                            <div class="domain-skills-grid">
+                                <!-- Ethical Hacking -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-user-secret"></i></div>
+                                            <div>
+                                                <h4>Ethical Hacking (CEH v11)</h4>
+                                                <span class="skill-item-sub">Vulnerability Auditing &amp; Testing</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">75%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="75%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Linux OS & Kali -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-linux"></i></div>
+                                            <div>
+                                                <h4>Linux OS &amp; Kali Virtualization</h4>
+                                                <span class="skill-item-sub">VMware, VirtualBox &amp; Terminal</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Cloud Deployment -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-cloud"></i></div>
+                                            <div>
+                                                <h4>Vercel, Netlify &amp; GitHub Pages</h4>
+                                                <span class="skill-item-sub">Edge Deployment &amp; CI/CD Pipelines</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domain-slide-footer">
+                                <div class="domain-tech-chips">
+                                    <span class="domain-chip">CEH v11</span>
+                                    <span class="domain-chip">Kali Linux</span>
+                                    <span class="domain-chip">VMware</span>
+                                    <span class="domain-chip">Vercel</span>
+                                    <span class="domain-chip">Netlify</span>
+                                </div>
+                                <span class="domain-footer-badge"><i class="fas fa-check-circle"></i> Fortified Defense &amp; CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Slide 05: Tools & DevOps -->
+                    <div class="skills-domain-slide" data-index="4">
+                        <div class="domain-slide-card">
+                            <div class="domain-slide-header">
+                                <div class="domain-header-left">
+                                    <span class="domain-sector-tag"><i class="fa-solid fa-screwdriver-wrench"></i> SECTOR 05 // WORKFLOW &amp; PROTOTYPING</span>
+                                    <h3 class="domain-slide-title">Engineering Tools &amp; Design Lab</h3>
+                                    <p class="domain-slide-desc">Distributed version management, API test automation with Postman, and high-fidelity interface prototyping.</p>
+                                </div>
+                                <div class="domain-header-stat">
+                                    <span class="domain-stat-pulse"></span>
+                                    <span class="domain-stat-val">87%</span>
+                                    <span class="domain-stat-lbl">OPS AVG</span>
+                                </div>
+                            </div>
+
+                            <div class="domain-skills-grid">
+                                <!-- Git & GitHub -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-git-alt"></i></div>
+                                            <div>
+                                                <h4>Git &amp; GitHub Version Control</h4>
+                                                <span class="skill-item-sub">Branching Strategy &amp; Collaborative PRs</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">95%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="95%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Postman -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-solid fa-network-wired"></i></div>
+                                            <div>
+                                                <h4>Postman &amp; REST Integration</h4>
+                                                <span class="skill-item-sub">Endpoint Testing &amp; Schema Validation</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Figma & Canva -->
+                                <div class="domain-skill-item">
+                                    <div class="skill-item-header">
+                                        <div class="skill-item-identity">
+                                            <div class="skill-item-icon"><i class="fa-brands fa-figma"></i></div>
+                                            <div>
+                                                <h4>Figma &amp; Canva Design</h4>
+                                                <span class="skill-item-sub">UI/UX Wireframes &amp; Design Tokens</span>
+                                            </div>
+                                        </div>
+                                        <span class="skill-item-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track">
+                                        <div class="skill-bar-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="domain-slide-footer">
+                                <div class="domain-tech-chips">
+                                    <span class="domain-chip">Git</span>
+                                    <span class="domain-chip">GitHub</span>
+                                    <span class="domain-chip">Postman</span>
+                                    <span class="domain-chip">REST APIs</span>
+                                    <span class="domain-chip">Figma</span>
+                                </div>
+                                <span class="domain-footer-badge"><i class="fas fa-check-circle"></i> Agile DevOps Cycle</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Skills Cards Grid -->
-            <div class="skills-grid" id="skillsGrid">
-                <!-- Frontend -->
-                <div class="skill-card" data-domain="frontend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-html5"></i></div>
-                            <div>
-                                <h4>HTML5 &amp; Semantic Web</h4>
-                                <span class="skill-domain-tag">Core Frontend</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">95%</span>
+            <!-- Bottom Deck Controls -->
+            <div class="skills-deck-controls">
+                <div class="skills-nav-group">
+                    <button type="button" class="skills-nav-btn" id="skillPrevBtn" aria-label="Previous Domain">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="skills-counter" aria-live="polite">
+                        <span class="skills-counter-active" id="skillCurrentNum">01</span>
+                        <span class="skills-counter-divider">/</span>
+                        <span class="skills-counter-total">05</span>
                     </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="95%"></div>
-                    </div>
+                    <button type="button" class="skills-nav-btn" id="skillNextBtn" aria-label="Next Domain">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
 
-                <div class="skill-card" data-domain="frontend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-css3-alt"></i></div>
-                            <div>
-                                <h4>CSS3 &amp; Modern Layouts</h4>
-                                <span class="skill-domain-tag">Design Systems</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">95%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="95%"></div>
-                    </div>
+                <div class="skills-progress-track">
+                    <div class="skills-progress-bar" id="skillProgressBar"></div>
                 </div>
 
-                <div class="skill-card" data-domain="frontend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-js"></i></div>
-                            <div>
-                                <h4>JavaScript (ES6+)</h4>
-                                <span class="skill-domain-tag">Interactive Logic</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">90%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="frontend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-react"></i></div>
-                            <div>
-                                <h4>React.js</h4>
-                                <span class="skill-domain-tag">Component UI</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">80%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="frontend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-wind"></i></div>
-                            <div>
-                                <h4>Tailwind CSS &amp; Bootstrap</h4>
-                                <span class="skill-domain-tag">Utility Frameworks</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">90%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <!-- Backend & Core -->
-                <div class="skill-card" data-domain="backend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-java"></i></div>
-                            <div>
-                                <h4>Java &amp; OOP Architecture</h4>
-                                <span class="skill-domain-tag">Backend Enterprise</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">85%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="backend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-python"></i></div>
-                            <div>
-                                <h4>Python &amp; Data Pipelines</h4>
-                                <span class="skill-domain-tag">Data &amp; Scripting</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">80%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="backend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-php"></i></div>
-                            <div>
-                                <h4>PHP &amp; Server Scripts</h4>
-                                <span class="skill-domain-tag">Backend Routing</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">85%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="backend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-node-js"></i></div>
-                            <div>
-                                <h4>Node.js &amp; Express</h4>
-                                <span class="skill-domain-tag">Asynchronous APIs</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">75%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="75%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="backend">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
-                            <div>
-                                <h4>C# &amp; C Programming</h4>
-                                <span class="skill-domain-tag">Microsoft &amp; Low-Level</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">80%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
-                </div>
-
-                <!-- Database -->
-                <div class="skill-card" data-domain="database">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-database"></i></div>
-                            <div>
-                                <h4>SQL &amp; Relational Schema (ERD)</h4>
-                                <span class="skill-domain-tag">Database Architecture</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">90%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="database">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-server"></i></div>
-                            <div>
-                                <h4>MySQL &amp; phpMyAdmin</h4>
-                                <span class="skill-domain-tag">Query Optimization</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">85%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="85%"></div>
-                    </div>
-                </div>
-
-                <!-- Security & Cloud -->
-                <div class="skill-card" data-domain="security">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-user-secret"></i></div>
-                            <div>
-                                <h4>Ethical Hacking (CEH v11)</h4>
-                                <span class="skill-domain-tag">Vulnerability Audit</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">75%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="75%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="security">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-linux"></i></div>
-                            <div>
-                                <h4>Linux OS &amp; Kali Virtualization</h4>
-                                <span class="skill-domain-tag">Security Environment</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">80%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="security">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-cloud"></i></div>
-                            <div>
-                                <h4>Vercel, Netlify &amp; GitHub Pages</h4>
-                                <span class="skill-domain-tag">Cloud Deployment</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">90%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <!-- Engineering Tools -->
-                <div class="skill-card" data-domain="tools">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-git-alt"></i></div>
-                            <div>
-                                <h4>Git &amp; GitHub Version Control</h4>
-                                <span class="skill-domain-tag">DevOps Workflow</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">95%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="95%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="tools">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
-                            <div>
-                                <h4>Postman &amp; REST Integration</h4>
-                                <span class="skill-domain-tag">API Testing</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">85%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-domain="tools">
-                    <div class="skill-top-row">
-                        <div class="skill-identity">
-                            <div class="skill-icon-wrap"><i class="fa-brands fa-figma"></i></div>
-                            <div>
-                                <h4>Figma &amp; Canva Design</h4>
-                                <span class="skill-domain-tag">UI/UX Prototyping</span>
-                            </div>
-                        </div>
-                        <span class="skill-percentage-badge">80%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
+                <div class="skills-dash-deck" id="skillDashDeck" role="tablist" aria-label="Domain Selector">
+                    <button type="button" class="skill-dash active" data-index="0" aria-label="Frontend Domain"></button>
+                    <button type="button" class="skill-dash" data-index="1" aria-label="Backend Domain"></button>
+                    <button type="button" class="skill-dash" data-index="2" aria-label="Databases Domain"></button>
+                    <button type="button" class="skill-dash" data-index="3" aria-label="Security Domain"></button>
+                    <button type="button" class="skill-dash" data-index="4" aria-label="Tools Domain"></button>
                 </div>
             </div>
         </div>

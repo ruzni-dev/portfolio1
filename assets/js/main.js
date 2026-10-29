@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAudioController();
     initHeroCard3DTilt();
     initMetricsCounter();
-    initSkillsCommandCenter();
+    initSkillsDeck();
     initHackerRankFilters();
     initProjectStack();
     initSimulationSlider();
@@ -933,61 +933,178 @@ function initMetricsCounter() {
 }
 
 /* ===================================================================
-   11. SKILLS SEARCH & FILTER
+   11. SKILLS DOMAIN SLIDES DECK
    =================================================================== */
-function initSkillsCommandCenter() {
-    const tabs = document.querySelectorAll('.skills-tab-btn');
-    const searchInput = document.getElementById('skillSearchInput');
-    const skillCards = document.querySelectorAll('.skill-card');
-    const skillFills = document.querySelectorAll('.skill-bar-fill');
+function initSkillsDeck() {
+    const track = document.getElementById('skillsDeckTrack');
+    const slides = document.querySelectorAll('.skills-domain-slide');
+    const pills = document.querySelectorAll('.domain-tab-pill');
+    const prevBtn = document.getElementById('skillPrevBtn');
+    const nextBtn = document.getElementById('skillNextBtn');
+    const currentNum = document.getElementById('skillCurrentNum');
+    const progressBar = document.getElementById('skillProgressBar');
+    const dashes = document.querySelectorAll('.skill-dash');
+    const deck = document.getElementById('skillsDeck');
+    const section = document.getElementById('skills');
 
-    let activeFilter = 'all';
-    let searchQuery = '';
+    if (!track || slides.length === 0) return;
 
-    function filterSkills() {
-        skillCards.forEach(card => {
-            const domain = card.getAttribute('data-domain') || '';
-            const skillName = (card.querySelector('h4')?.textContent || '').toLowerCase();
-            const matchesFilter = (activeFilter === 'all') || (domain === activeFilter);
-            const matchesSearch = !searchQuery || skillName.includes(searchQuery);
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlayTimer = null;
+    const AUTO_DELAY = 4500;
+    let isVisible = false;
 
-            if (matchesFilter && matchesSearch) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
+    function animateFillsForSlide(slide) {
+        if (!slide) return;
+        const fills = slide.querySelectorAll('.skill-bar-fill');
+        fills.forEach(fill => {
+            const targetWidth = fill.getAttribute('data-width') || '80%';
+            fill.style.width = '0%';
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    fill.style.width = targetWidth;
+                }, 60);
+            });
         });
     }
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            activeFilter = tab.getAttribute('data-filter') || 'all';
-            filterSkills();
-            playAppleSound('click');
+    function goToDomain(index, playSound = true) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+
+        // Slide Track translation
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update slides active state
+        slides.forEach((slide, i) => {
+            const isActive = i === currentIndex;
+            slide.classList.toggle('active', isActive);
+            if (isActive) {
+                animateFillsForSlide(slide);
+            }
+        });
+
+        // Update top pill rail (NO scrollIntoView)
+        pills.forEach((pill, i) => {
+            const isActive = i === currentIndex;
+            pill.classList.toggle('active', isActive);
+            pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Update dashes
+        dashes.forEach((dash, i) => {
+            dash.classList.toggle('active', i === currentIndex);
+        });
+
+        // Update Counter
+        if (currentNum) {
+            currentNum.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        // Update Progress Bar
+        if (progressBar) {
+            progressBar.style.width = `${((currentIndex + 1) / totalSlides) * 100}%`;
+        }
+
+        if (playSound && typeof playAppleSound === 'function') {
+            playAppleSound('card');
+        }
+    }
+
+    function nextDomain(userInitiated = false) {
+        goToDomain(currentIndex + 1, true);
+        if (userInitiated) resetAutoPlay();
+    }
+
+    function prevDomain(userInitiated = false) {
+        goToDomain(currentIndex - 1, true);
+        if (userInitiated) resetAutoPlay();
+    }
+
+    // Attach click events
+    if (nextBtn) nextBtn.addEventListener('click', () => nextDomain(true));
+    if (prevBtn) prevBtn.addEventListener('click', () => prevDomain(true));
+
+    // Pill clicks
+    pills.forEach((pill, i) => {
+        pill.addEventListener('click', () => {
+            goToDomain(i, true);
+            resetAutoPlay();
         });
     });
 
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value.trim().toLowerCase();
-            filterSkills();
+    // Dash clicks
+    dashes.forEach((dash, i) => {
+        dash.addEventListener('click', () => {
+            goToDomain(i, true);
+            resetAutoPlay();
+        });
+    });
+
+    // Auto-sliding Engine (100% Error-Free, IntersectionObserver, Zero Window Jerk)
+    function startAutoPlay() {
+        stopAutoPlay();
+        if (!isVisible) return;
+        autoPlayTimer = setInterval(() => {
+            if (isVisible && !document.hidden) {
+                goToDomain(currentIndex + 1, false);
+            }
+        }, AUTO_DELAY);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    if (deck) {
+        deck.addEventListener('mouseenter', stopAutoPlay);
+        deck.addEventListener('mouseleave', () => {
+            if (isVisible) startAutoPlay();
         });
     }
 
-    const progressObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const fill = entry.target;
-                const targetWidth = fill.getAttribute('data-width') || '80%';
-                fill.style.width = targetWidth;
-                progressObserver.unobserve(fill);
-            }
-        });
-    }, { threshold: 0.2 });
+    // IntersectionObserver so auto-sliding ONLY runs when section is visible
+    if ('IntersectionObserver' in window && section) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    animateFillsForSlide(slides[currentIndex]);
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(section);
+    } else {
+        isVisible = true;
+        animateFillsForSlide(slides[0]);
+        startAutoPlay();
+    }
 
-    skillFills.forEach(fill => progressObserver.observe(fill));
+    // Tab visibility change
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (isVisible) {
+            startAutoPlay();
+        }
+    });
+
+    // Initial render
+    goToDomain(0, false);
 }
 
 /* ===================================================================
