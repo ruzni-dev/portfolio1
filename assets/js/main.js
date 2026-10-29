@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsCommandCenter();
     initHackerRankFilters();
     initPortfolioFilters();
+    initSimulationSlider();
     initModalSystem();
     initContactForm();
     initQuickCopyEmail();
@@ -1056,6 +1057,165 @@ function initPortfolioFilters() {
             playAppleSound('click');
         });
     });
+}
+
+/* ===================================================================
+   13.5. FORTUNE 500 CORPORATE JOB SIMULATIONS SPATIAL SLIDER
+   =================================================================== */
+function initSimulationSlider() {
+    const track = document.getElementById('simTrack');
+    const slides = document.querySelectorAll('.sim-slide');
+    const tabs = document.querySelectorAll('.sim-corp-tab');
+    const dots = document.querySelectorAll('.sim-dot');
+    const prevBtn = document.getElementById('simPrevBtn');
+    const nextBtn = document.getElementById('simNextBtn');
+    const currentNum = document.getElementById('simCounterCurrent');
+    const progressBar = document.getElementById('simProgressBar');
+    const sliderDeck = document.getElementById('simSliderDeck');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlayTimer = null;
+    const AUTO_PLAY_INTERVAL = 6500;
+
+    function goToSlide(index, playSound = true) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+
+        // Slide Track translation
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update slides active state
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentIndex);
+        });
+
+        // Synchronize Corporate Tabs
+        tabs.forEach((tab, i) => {
+            const isActive = i === currentIndex;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            if (isActive) {
+                tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        });
+
+        // Synchronize Dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        // Update Counter
+        if (currentNum) {
+            currentNum.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        // Update Progress Bar
+        if (progressBar) {
+            progressBar.style.width = `${((currentIndex + 1) / totalSlides) * 100}%`;
+        }
+
+        if (playSound) {
+            playAppleSound('tap');
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(() => {
+            goToSlide(currentIndex + 1, false);
+        }, AUTO_PLAY_INTERVAL);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Button event listeners
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+            resetAutoPlay();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+            resetAutoPlay();
+        });
+    }
+
+    // Corporate Tab clicks
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetSlide = parseInt(tab.getAttribute('data-slide'), 10);
+            if (!isNaN(targetSlide) && targetSlide !== currentIndex) {
+                goToSlide(targetSlide);
+                resetAutoPlay();
+            }
+        });
+    });
+
+    // Indicator Dot clicks
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const targetSlide = parseInt(dot.getAttribute('data-slide'), 10);
+            if (!isNaN(targetSlide) && targetSlide !== currentIndex) {
+                goToSlide(targetSlide);
+                resetAutoPlay();
+            }
+        });
+    });
+
+    // Pause on hover
+    if (sliderDeck) {
+        sliderDeck.addEventListener('mouseenter', stopAutoPlay);
+        sliderDeck.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const viewport = document.getElementById('simViewport') || sliderDeck;
+
+    if (viewport) {
+        viewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 45) {
+            if (diff < 0) {
+                goToSlide(currentIndex + 1);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+            resetAutoPlay();
+        }
+    }
+
+    // Initialize state
+    goToSlide(0, false);
+    startAutoPlay();
 }
 
 /* ===================================================================

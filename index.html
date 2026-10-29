@@ -691,175 +691,259 @@
     <section class="simulations" id="simulations">
         <div class="section-header">
             <span class="section-tag">Corporate Credentials</span>
-            <h2 class="heading">Fortune 500 <span>Simulations</span></h2>
+            <h2 class="heading">Corporate engineering<br>at <span class="serif-word">scale.</span></h2>
             <p class="section-desc">Practical software engineering, systems design, and database modeling delivered for
                 global industry leaders via The Forage.</p>
         </div>
 
-        <div class="simulations-grid">
-            <!-- 1. Walmart USA -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/16.%20Advanced%20Software%20Engineering%20Job.png"
-                        alt="Walmart USA Advanced Software Engineering" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">WALMART USA</span>
-                        <h3>Advanced Software Engineering</h3>
+
+        <!-- Spatial Carousel Deck -->
+        <div class="sim-slider-deck" id="simSliderDeck">
+            <!-- Nav Arrow Prev -->
+            <button class="sim-nav-btn sim-prev-btn" id="simPrevBtn" aria-label="Previous simulation">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Slider Viewport -->
+            <div class="sim-slider-viewport" id="simViewport">
+                <div class="sim-slider-track" id="simTrack">
+
+                    <!-- Slide 1: Walmart USA -->
+                    <div class="sim-slide active" data-index="0">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/16.%20Advanced%20Software%20Engineering%20Job.png"
+                                    alt="Walmart USA Advanced Software Engineering" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">WALMART USA</span>
+                                        <span class="sim-slide-num">01 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Advanced Software Engineering</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> Scalable software architecture using UML &amp;
+                                            SOLID principles</li>
+                                        <li><i class="fas fa-check"></i> Custom Power-of-Two Max Heap data structure
+                                            built in Java</li>
+                                        <li><i class="fas fa-check"></i> Python ETL munging pipeline with SQLite
+                                            relational databases</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/16.%20Advanced%20Software%20Engineering%20Job.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Scalable software architecture using UML &amp; SOLID principles
-                        </li>
-                        <li><i class="fas fa-check"></i> Custom Power-of-Two Max Heap data structure built in Java</li>
-                        <li><i class="fas fa-check"></i> Python ETL munging pipeline with SQLite relational databases
-                        </li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/16.%20Advanced%20Software%20Engineering%20Job.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
+
+                    <!-- Slide 2: JPMorgan Chase -->
+                    <div class="sim-slide" data-index="1">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/18.%20Software%20Engineering%20Job%20Simulation.png"
+                                    alt="JPMorgan Chase Software Engineering" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">JPMORGAN CHASE &amp; CO.</span>
+                                        <span class="sim-slide-num">02 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Software Engineering Program</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> Enterprise backend development in Java, Spring
+                                            &amp; Spring Boot</li>
+                                        <li><i class="fas fa-check"></i> High-performance RESTful APIs integrated with
+                                            SQL &amp; JPA</li>
+                                        <li><i class="fas fa-check"></i> Apache Kafka real-time message streaming
+                                            integration</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/18.%20Software%20Engineering%20Job%20Simulation.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Slide 3: Citi Group -->
+                    <div class="sim-slide" data-index="2">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/21.%20Technology%20Software%20Development%20Job.png"
+                                    alt="Citi Technology Software Development" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">CITI GROUP</span>
+                                        <span class="sim-slide-num">03 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Technology Software Development</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> UML State Diagrams modeling complex loan
+                                            management workflows</li>
+                                        <li><i class="fas fa-check"></i> Machine Learning-based credit risk modeling
+                                            proposal</li>
+                                        <li><i class="fas fa-check"></i> Java market data processors &amp; Python
+                                            financial visualizers</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/21.%20Technology%20Software%20Development%20Job.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Skyscanner -->
+                    <div class="sim-slide" data-index="3">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/19.%20Front-End%20Software%20Engineering%20Job.png"
+                                    alt="Skyscanner Front-End Software Engineering" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">SKYSCANNER</span>
+                                        <span class="sim-slide-num">04 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Front-End Software Engineering</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> Responsive flight scheduling portal built with
+                                            React.js</li>
+                                        <li><i class="fas fa-check"></i> Customized Skyscanner Backpack Design System
+                                            tokens</li>
+                                        <li><i class="fas fa-check"></i> Automated front-end testing for accessibility
+                                            &amp; resilience</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/19.%20Front-End%20Software%20Engineering%20Job.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Wells Fargo -->
+                    <div class="sim-slide" data-index="4">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/20.%20Software%20Engineering%20Job%20Simulation.png"
+                                    alt="Wells Fargo Software Engineering" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">WELLS FARGO</span>
+                                        <span class="sim-slide-num">05 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Software Engineering Virtual Experience</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> Entity Relationship Diagrams (ERD) for
+                                            financial portfolios</li>
+                                        <li><i class="fas fa-check"></i> Java Persistence API (JPA) database entity
+                                            architectures</li>
+                                        <li><i class="fas fa-check"></i> Integrated Spring Framework with relational ORM
+                                            pipelines</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/20.%20Software%20Engineering%20Job%20Simulation.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Commonwealth Bank -->
+                    <div class="sim-slide" data-index="5">
+                        <div class="sim-showcase-card">
+                            <div class="sim-slide-visual">
+                                <img src="assets/images/17.%20Introduction%20to%20Software%20Engineering%20Job.png"
+                                    alt="Commonwealth Bank Software Engineering" loading="lazy">
+                                <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE
+                                    VERIFIED</span>
+                            </div>
+                            <div class="sim-slide-body">
+                                <div>
+                                    <div class="sim-slide-meta">
+                                        <span class="corp-badge">COMMONWEALTH BANK</span>
+                                        <span class="sim-slide-num">06 / 06</span>
+                                    </div>
+                                    <h3 class="sim-slide-title">Software Engineering Program</h3>
+                                    <ul class="simulation-highlights">
+                                        <li><i class="fas fa-check"></i> Security-oriented web applications using modern
+                                            HTML/CSS</li>
+                                        <li><i class="fas fa-check"></i> Financial cybersecurity awareness &amp; threat
+                                            mitigation models</li>
+                                        <li><i class="fas fa-check"></i> Secure web hosting strategies &amp;
+                                            architecture analysis</li>
+                                    </ul>
+                                </div>
+                                <div class="sim-slide-footer">
+                                    <button class="btn-view-credential"
+                                        onclick="openCertificateModal('assets/certificates/17.%20Introduction%20to%20Software%20Engineering%20Job.pdf')">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- 2. JPMorgan Chase -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/18.%20Software%20Engineering%20Job%20Simulation.png"
-                        alt="JPMorgan Chase Software Engineering" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">JPMORGAN CHASE &amp; CO.</span>
-                        <h3>Software Engineering Program</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Enterprise backend development in Java, Spring &amp; Spring
-                            Boot</li>
-                        <li><i class="fas fa-check"></i> High-performance RESTful APIs integrated with SQL &amp; JPA
-                        </li>
-                        <li><i class="fas fa-check"></i> Apache Kafka real-time message streaming integration</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/18.%20Software%20Engineering%20Job%20Simulation.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- Nav Arrow Next -->
+            <button class="sim-nav-btn sim-next-btn" id="simNextBtn" aria-label="Next simulation">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
-            <!-- 3. Citi -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/21.%20Technology%20Software%20Development%20Job.png"
-                        alt="Citi Technology Software Development" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">CITI GROUP</span>
-                        <h3>Technology Software Development</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> UML State Diagrams modeling complex loan management workflows
-                        </li>
-                        <li><i class="fas fa-check"></i> Machine Learning-based credit risk modeling proposal</li>
-                        <li><i class="fas fa-check"></i> Java market data processors &amp; Python financial visualizers
-                        </li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/21.%20Technology%20Software%20Development%20Job.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
+        <!-- Slider Bottom Telemetry Controls -->
+        <div class="sim-slider-controls">
+            <div class="sim-counter-pill">
+                <span class="sim-counter-current" id="simCounterCurrent">01</span>
+                <span class="sim-counter-sep">/</span>
+                <span class="sim-counter-total">06</span>
             </div>
-
-            <!-- 4. Skyscanner -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/19.%20Front-End%20Software%20Engineering%20Job.png"
-                        alt="Skyscanner Front-End Software Engineering" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">SKYSCANNER</span>
-                        <h3>Front-End Software Engineering</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Responsive flight scheduling portal built with React.js</li>
-                        <li><i class="fas fa-check"></i> Customized Skyscanner Backpack Design System tokens</li>
-                        <li><i class="fas fa-check"></i> Automated front-end testing for accessibility &amp; resilience
-                        </li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/19.%20Front-End%20Software%20Engineering%20Job.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
+            <div class="sim-progress-track">
+                <div class="sim-progress-bar" id="simProgressBar"></div>
             </div>
-
-            <!-- 5. Wells Fargo -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/20.%20Software%20Engineering%20Job%20Simulation.png"
-                        alt="Wells Fargo Software Engineering" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">WELLS FARGO</span>
-                        <h3>Software Engineering Virtual Experience</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Entity Relationship Diagrams (ERD) for financial portfolios
-                        </li>
-                        <li><i class="fas fa-check"></i> Java Persistence API (JPA) database entity architectures</li>
-                        <li><i class="fas fa-check"></i> Integrated Spring Framework with relational ORM pipelines</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/20.%20Software%20Engineering%20Job%20Simulation.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Commonwealth Bank -->
-            <div class="simulation-card">
-                <div class="simulation-img-container">
-                    <img src="assets/images/17.%20Introduction%20to%20Software%20Engineering%20Job.png"
-                        alt="Commonwealth Bank Software Engineering" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-shield-halved"></i> FORAGE VERIFIED</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">COMMONWEALTH BANK</span>
-                        <h3>Software Engineering Program</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Security-oriented web applications using modern HTML/CSS</li>
-                        <li><i class="fas fa-check"></i> Financial cybersecurity awareness &amp; threat mitigation
-                            models</li>
-                        <li><i class="fas fa-check"></i> Secure web hosting strategies &amp; architecture analysis</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/17.%20Introduction%20to%20Software%20Engineering%20Job.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
+            <div class="sim-dots-deck" id="simDotsDeck">
+                <button class="sim-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="sim-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="sim-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                <button class="sim-dot" data-slide="3" aria-label="Go to slide 4"></button>
+                <button class="sim-dot" data-slide="4" aria-label="Go to slide 5"></button>
+                <button class="sim-dot" data-slide="5" aria-label="Go to slide 6"></button>
             </div>
         </div>
     </section>
