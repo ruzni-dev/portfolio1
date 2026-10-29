@@ -1492,27 +1492,27 @@ function initProjectStack() {
                 card.style.pointerEvents = 'auto';
                 card.classList.add('active');
             } else if (pos === 1) {
-                // Layer 1 behind
+                // Layer 1 behind (100% visual visibility, zero fade)
                 card.style.transform = `translate3d(${step.x}px, ${step.y}px, 0px) scale(0.97)`;
-                card.style.opacity = '0.7';
+                card.style.opacity = '1';
                 card.style.zIndex = '8';
-                card.style.filter = 'brightness(0.85)';
+                card.style.filter = 'none';
                 card.style.pointerEvents = 'auto';
                 card.classList.remove('active');
             } else if (pos === 2) {
-                // Layer 2 behind
+                // Layer 2 behind (100% visual visibility, zero fade)
                 card.style.transform = `translate3d(${step.x * 2}px, ${step.y * 2}px, 0px) scale(0.94)`;
-                card.style.opacity = '0.45';
+                card.style.opacity = '1';
                 card.style.zIndex = '6';
-                card.style.filter = 'brightness(0.7)';
+                card.style.filter = 'none';
                 card.style.pointerEvents = 'auto';
                 card.classList.remove('active');
             } else if (pos === 3) {
-                // Layer 3 behind
+                // Layer 3 behind (100% visual visibility, zero fade)
                 card.style.transform = `translate3d(${step.x * 3}px, ${step.y * 3}px, 0px) scale(0.91)`;
-                card.style.opacity = '0.25';
+                card.style.opacity = '1';
                 card.style.zIndex = '4';
-                card.style.filter = 'brightness(0.55)';
+                card.style.filter = 'none';
                 card.style.pointerEvents = 'auto';
                 card.classList.remove('active');
             } else if (pos === totalCards - 1) {
@@ -2206,16 +2206,90 @@ function showToastNotification(message) {
 }
 
 /* ===================================================================
-   16. CONTACT FORM
+   16. CONTACT FORM & LUXURY GLASS DROPDOWN
    =================================================================== */
+function initCustomGlassDropdown() {
+    const dropdown = document.getElementById('customProjectDropdown');
+    const trigger = document.getElementById('dropdownTrigger');
+    const selectedText = document.getElementById('dropdownSelected');
+    const menu = document.getElementById('dropdownMenu');
+    const items = document.querySelectorAll('.glass-dropdown-item');
+    const nativeSelect = document.getElementById('projectType');
+
+    if (!dropdown || !trigger || !menu || !nativeSelect) return;
+
+    // Toggle dropdown open/close
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (typeof playAppleSound === 'function') {
+            playAppleSound(isOpen ? 'pop' : 'tap');
+        }
+    });
+
+    // Option item selection
+    items.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const val = item.getAttribute('data-value');
+            const label = item.querySelector('.item-text').textContent;
+
+            // Update native select
+            nativeSelect.value = val;
+            nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+            // Update UI trigger
+            selectedText.textContent = label;
+            selectedText.classList.add('has-value');
+
+            // Update item active state
+            items.forEach(i => {
+                i.classList.remove('selected');
+                i.setAttribute('aria-selected', 'false');
+            });
+            item.classList.add('selected');
+            item.setAttribute('aria-selected', 'true');
+
+            // Close dropdown & clear invalid indicator
+            dropdown.classList.remove('open', 'input-invalid');
+            trigger.setAttribute('aria-expanded', 'false');
+
+            if (typeof playAppleSound === 'function') {
+                playAppleSound('tap');
+            }
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Keyboard support: Escape closes, arrows navigate
+    dropdown.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.focus();
+        }
+    });
+}
+
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
+
+    initCustomGlassDropdown();
 
     const messageField = document.getElementById('yourMessage');
     const messageCount = document.getElementById('messageCount');
     const submitBtn = document.getElementById('submitBtn');
     const contactStatus = document.getElementById('contactStatus');
+    const customDropdown = document.getElementById('customProjectDropdown');
 
     if (messageField && messageCount) {
         messageField.addEventListener('input', () => {
@@ -2250,11 +2324,15 @@ function initContactForm() {
             messageField
         ];
         fields.forEach(f => f.classList.remove('input-invalid'));
+        if (customDropdown) customDropdown.classList.remove('input-invalid');
 
         if (!fullName || !emailAddress || !mobileNumber || !emailSubject || !projectType || !yourMessage) {
             fields.forEach(f => {
                 if (!f.value.trim()) f.classList.add('input-invalid');
             });
+            if (!projectType && customDropdown) {
+                customDropdown.classList.add('input-invalid');
+            }
             if (contactStatus) {
                 contactStatus.className = 'response-msg error';
                 contactStatus.textContent = 'Please complete all required fields before proceeding.';
