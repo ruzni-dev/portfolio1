@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHackerRankFilters();
     initPortfolioFilters();
     initSimulationSlider();
+    initCertCoverflow();
     initModalSystem();
     initContactForm();
     initQuickCopyEmail();
@@ -1215,6 +1216,181 @@ function initSimulationSlider() {
 
     // Initialize state
     goToSlide(0, false);
+    startAutoPlay();
+}
+
+/* ===================================================================
+   13.6. ACCREDITED CERTIFICATIONS 3D SPATIAL COVERFLOW DECK
+   =================================================================== */
+function initCertCoverflow() {
+    const stage = document.getElementById('certStage');
+    const cards = document.querySelectorAll('.cert-3d-card');
+    const chips = document.querySelectorAll('.cert-scrub-chip');
+    const prevBtn = document.getElementById('certPrevBtn');
+    const nextBtn = document.getElementById('certNextBtn');
+    const deck = document.getElementById('certCoverflowDeck');
+
+    if (!stage || cards.length === 0) return;
+
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    let autoPlayTimer = null;
+    const AUTO_PLAY_INTERVAL = 7500;
+
+    function getCircularOffset(i, current, total) {
+        let diff = (i - current) % total;
+        if (diff > total / 2) diff -= total;
+        if (diff <= -total / 2) diff += total;
+        return diff;
+    }
+
+    function updateCoverflow(playSound = true) {
+        cards.forEach((card, i) => {
+            const offset = getCircularOffset(i, currentIndex, totalCards);
+            const isCenter = offset === 0;
+
+            card.classList.toggle('active', isCenter);
+
+            if (isCenter) {
+                // Center active card
+                card.style.transform = 'translateX(0) scale(1) rotateY(0deg) translateZ(0)';
+                card.style.opacity = '1';
+                card.style.zIndex = '20';
+                card.style.filter = 'blur(0px)';
+                card.style.pointerEvents = 'auto';
+            } else if (offset === -1) {
+                // Immediate Left card (joined rope previous)
+                card.style.transform = 'translateX(-56%) scale(0.85) rotateY(16deg) translateZ(-60px)';
+                card.style.opacity = '0.65';
+                card.style.zIndex = '10';
+                card.style.filter = 'blur(0.5px)';
+                card.style.pointerEvents = 'auto';
+            } else if (offset === 1) {
+                // Immediate Right card (joined rope next)
+                card.style.transform = 'translateX(56%) scale(0.85) rotateY(-16deg) translateZ(-60px)';
+                card.style.opacity = '0.65';
+                card.style.zIndex = '10';
+                card.style.filter = 'blur(0.5px)';
+                card.style.pointerEvents = 'auto';
+            } else {
+                // All other cards tucked cleanly behind inside the stage
+                const dir = offset > 0 ? 1 : -1;
+                card.style.transform = `translateX(${dir * 80}%) scale(0.7) translateZ(-140px)`;
+                card.style.opacity = '0';
+                card.style.zIndex = '1';
+                card.style.filter = 'blur(2px)';
+                card.style.pointerEvents = 'none';
+            }
+        });
+
+        // Synchronize Scrubber Chips
+        chips.forEach((chip, i) => {
+            const isActive = i === currentIndex;
+            chip.classList.toggle('active', isActive);
+            chip.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            if (isActive) {
+                chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        });
+
+        if (playSound) {
+            playAppleSound('tap');
+        }
+    }
+
+    function goToCert(index, playSound = true) {
+        currentIndex = (index % totalCards + totalCards) % totalCards;
+        updateCoverflow(playSound);
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(() => {
+            goToCert(currentIndex + 1, false);
+        }, AUTO_PLAY_INTERVAL);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Card click: clicking side card brings it to center
+    cards.forEach((card, idx) => {
+        card.addEventListener('click', (e) => {
+            if (card.classList.contains('active') && e.target.closest('button')) {
+                return;
+            }
+            if (idx !== currentIndex) {
+                e.preventDefault();
+                goToCert(idx);
+                resetAutoPlay();
+            }
+        });
+    });
+
+    // Nav arrows
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goToCert(currentIndex - 1);
+            resetAutoPlay();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goToCert(currentIndex + 1);
+            resetAutoPlay();
+        });
+    }
+
+    // Scrubber Chips
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const idx = parseInt(chip.getAttribute('data-index'), 10);
+            if (!isNaN(idx) && idx !== currentIndex) {
+                goToCert(idx);
+                resetAutoPlay();
+            }
+        });
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    stage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+            if (diff < 0) {
+                goToCert(currentIndex + 1);
+            } else {
+                goToCert(currentIndex - 1);
+            }
+            resetAutoPlay();
+        }
+    }, { passive: true });
+
+    // Pause on hover
+    if (deck) {
+        deck.addEventListener('mouseenter', stopAutoPlay);
+        deck.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    // Initial render
+    updateCoverflow(false);
     startAutoPlay();
 }
 

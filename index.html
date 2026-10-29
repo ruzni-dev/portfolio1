@@ -949,177 +949,219 @@
     </section>
 
     <!-- ===================================================================
-         ACCREDITED CERTIFICATIONS (ACADEMIC & PROFESSIONAL)
+         ACCREDITED CERTIFICATIONS (APPLE visionOS 3D SPATIAL COVERFLOW DECK)
          =================================================================== -->
     <section class="certifications" id="certifications">
         <div class="section-header">
             <span class="section-tag">Accreditations</span>
-            <h2 class="heading">Professional <span>Certifications</span></h2>
-            <p class="section-desc">Certified credentials from Microsoft, University of Moratuwa, and MarsTech
-                validating specialized competence.</p>
+            <h2 class="heading">Specialized competence<br>fully <span class="serif-word">accredited.</span></h2>
+            <p class="section-desc">Certified credentials from Microsoft, University of Moratuwa, and MarsTech validating specialized engineering competence.</p>
         </div>
 
-        <div class="certifications-grid">
-            <!-- 1. Ethical Hacking -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/img15.png" alt="Certified Ethical Hacker (CEH v11)" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MARSTECH</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">CYBER SECURITY</span>
-                        <h3>Certified Ethical Hacker (CEH v11)</h3>
+        <!-- 3D Spatial Coverflow Deck -->
+        <div class="cert-coverflow-deck" id="certCoverflowDeck">
+            <!-- Stage Nav Buttons -->
+            <button class="cert-nav-btn cert-prev-btn" id="certPrevBtn" aria-label="Previous certification">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="cert-nav-btn cert-next-btn" id="certNextBtn" aria-label="Next certification">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- 3D Perspective Stage -->
+            <div class="cert-stage-container" id="certStage">
+                <!-- 1. Ethical Hacking -->
+                <div class="cert-3d-card active" data-index="0">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/img15.png" alt="Certified Ethical Hacker (CEH v11)" loading="lazy">
+                        <span class="cert-badge"><i class="fas fa-shield-halved"></i> MARSTECH</span>
                     </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> White-hat penetration testing &amp; threat intelligence</li>
-                        <li><i class="fas fa-check"></i> Virtualization setup with VMware, VirtualBox, and Kali Linux
-                        </li>
-                        <li><i class="fas fa-check"></i> Social engineering defense &amp; network vulnerability auditing
-                        </li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/img21.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">CYBER SECURITY</span>
+                                <span class="cert-card-num">01 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">Certified Ethical Hacker (CEH v11)</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> White-hat penetration testing &amp; threat intelligence</li>
+                                <li><i class="fas fa-check"></i> Virtualization setup with VMware, VirtualBox &amp; Kali Linux</li>
+                                <li><i class="fas fa-check"></i> Social engineering defense &amp; network vulnerability auditing</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img21.pdf')">
+                                <i class="fas fa-file-pdf"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. AI and Robotics -->
+                <div class="cert-3d-card" data-index="1">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/img14.png" alt="Artificial Intelligence &amp; Robotics" loading="lazy">
+                        <span class="cert-badge"><i class="fas fa-robot"></i> MARSTECH</span>
+                    </div>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">ARTIFICIAL INTELLIGENCE</span>
+                                <span class="cert-card-num">02 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">AI &amp; Robotics 4-Month Master Series</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> Autonomous robotic simulations &amp; sensor feedback</li>
+                                <li><i class="fas fa-check"></i> IoT embedded systems &amp; microcontrollers integration</li>
+                                <li><i class="fas fa-check"></i> Core Machine Learning pipelines &amp; neural reasoning</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img20.pdf')">
+                                <i class="fas fa-file-pdf"></i> Certificate
+                            </button>
+                            <button class="btn-view-credential cert-btn-secondary" onclick="openCertificateModal('assets/certificates/img19.pdf')">
+                                <i class="fas fa-file-lines"></i> Transcript
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Front-End Web Development (Moratuwa) -->
+                <div class="cert-3d-card" data-index="2">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/img35.png" alt="Front-End Web Development - University of Moratuwa" loading="lazy">
+                        <span class="cert-badge"><i class="fas fa-graduation-cap"></i> UOM CODL</span>
+                    </div>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">WEB ARCHITECTURE</span>
+                                <span class="cert-card-num">03 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">Front-End Web Development</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> Advanced HTML5, CSS3, and modern JavaScript ES6+ execution</li>
+                                <li><i class="fas fa-check"></i> Performance optimization for cross-browser web interfaces</li>
+                                <li><i class="fas fa-check"></i> Responsive design methodologies &amp; DOM lifecycle handling</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/img36.pdf')">
+                                <i class="fas fa-file-pdf"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Server-Side Web Programming (Moratuwa) -->
+                <div class="cert-3d-card" data-index="3">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/12.%20Server-side_Web_Programming_E-Certificate.png" alt="Server-Side Web Programming - University of Moratuwa" loading="lazy">
+                        <span class="cert-badge"><i class="fas fa-graduation-cap"></i> UOM CODL</span>
+                    </div>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">BACKEND ENGINEERING</span>
+                                <span class="cert-card-num">04 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">Server-Side Web Programming</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> Dynamic server backends with controllers &amp; routing logic</li>
+                                <li><i class="fas fa-check"></i> Database connectivity, session management &amp; CRUD pipelines</li>
+                                <li><i class="fas fa-check"></i> Server-side authentication and secure request pipelines</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/12.%20Server-side_Web_Programming_E-Certificate.pdf')">
+                                <i class="fas fa-file-pdf"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Software Quality Assurance (Moratuwa) -->
+                <div class="cert-3d-card" data-index="4">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.png" alt="Introduction to Software Quality Assurance" loading="lazy">
+                        <span class="cert-badge"><i class="fas fa-graduation-cap"></i> UOM CODL</span>
+                    </div>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">QUALITY ASSURANCE</span>
+                                <span class="cert-card-num">05 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">Software Quality Assurance</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> Software Testing Life Cycle (STLC) &amp; QA metrics modeling</li>
+                                <li><i class="fas fa-check"></i> Defect triage, bug reporting, and regression verification</li>
+                                <li><i class="fas fa-check"></i> Root cause analysis and automated quality benchmarks</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.pdf')">
+                                <i class="fas fa-file-pdf"></i> View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Foundational C# with Microsoft -->
+                <div class="cert-3d-card" data-index="5">
+                    <div class="cert-card-preview">
+                        <img src="assets/images/07.%20foundational-c-sharp-with-microsoft.png" alt="Foundational C# with Microsoft Developer" loading="lazy">
+                        <span class="cert-badge"><i class="fab fa-microsoft"></i> MICROSOFT</span>
+                    </div>
+                    <div class="cert-card-content">
+                        <div>
+                            <div class="cert-meta-row">
+                                <span class="cert-category">SYSTEMS DEVELOPMENT</span>
+                                <span class="cert-card-num">06 / 06</span>
+                            </div>
+                            <h3 class="cert-card-title">Foundational C# Developer</h3>
+                            <ul class="cert-highlights">
+                                <li><i class="fas fa-check"></i> C# .NET language syntax, operators, and control flows</li>
+                                <li><i class="fas fa-check"></i> Array processing, collections, and robust memory management</li>
+                                <li><i class="fas fa-check"></i> Console systems debugging and exception handling</li>
+                            </ul>
+                        </div>
+                        <div class="cert-card-footer">
+                            <button class="btn-view-credential" onclick="openCertificateModal('assets/certificates/07.%20foundational-c-sharp-with-microsoft.pdf')">
+                                <i class="fas fa-file-pdf"></i> View Certificate
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. AI and Robotics -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/img14.png" alt="Artificial Intelligence &amp; Robotics" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MARSTECH</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">ARTIFICIAL INTELLIGENCE</span>
-                        <h3>AI &amp; Robotics 4-Month Master Series</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Autonomous robotic simulations &amp; sensor feedback</li>
-                        <li><i class="fas fa-check"></i> IoT (Internet of Things) embedded systems integration</li>
-                        <li><i class="fas fa-check"></i> Core concepts in Machine Learning &amp; Neural Reasoning</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/img20.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/img19.pdf')">
-                            <i class="fas fa-file-lines"></i> Transcript
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Front-End Web Development (Moratuwa) -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/img35.png" alt="Front-End Web Development - University of Moratuwa"
-                        loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
-                        <h3>Front-End Web Development</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Advanced HTML5, CSS3, and JavaScript ES6+ execution</li>
-                        <li><i class="fas fa-check"></i> Performance optimization for cross-browser web interfaces</li>
-                        <li><i class="fas fa-check"></i> Responsive design methodologies and DOM lifecycle handling</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/img36.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Server-Side Web Programming (Moratuwa) -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/12.%20Server-side_Web_Programming_E-Certificate.png"
-                        alt="Server-Side Web Programming - University of Moratuwa" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
-                        <h3>Server-Side Web Programming</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Dynamic server backends with controllers and routing logic</li>
-                        <li><i class="fas fa-check"></i> Database connectivity, session management, and CRUD pipelines
-                        </li>
-                        <li><i class="fas fa-check"></i> Server-side authentication and secure request pipelines</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/12.%20Server-side_Web_Programming_E-Certificate.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Software Quality Assurance (Moratuwa) -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.png"
-                        alt="Introduction to Software Quality Assurance" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> UOM CODL</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">UNIVERSITY OF MORATUWA</span>
-                        <h3>Software Quality Assurance</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> Software Testing Life Cycle (STLC) &amp; QA metrics</li>
-                        <li><i class="fas fa-check"></i> Defect triage, bug reporting, and regression verification</li>
-                        <li><i class="fas fa-check"></i> Root cause analysis and automated quality benchmarks</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/13.%20Introduction_to_Software_Quality_Assurance_E-Certificate.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Foundational C# with Microsoft -->
-            <div class="cert-card-luxury">
-                <div class="simulation-img-container">
-                    <img src="assets/images/07.%20foundational-c-sharp-with-microsoft.png"
-                        alt="Foundational C# with Microsoft Developer" loading="lazy">
-                    <span class="simulation-img-badge"><i class="fas fa-award"></i> MICROSOFT</span>
-                </div>
-                <div class="simulation-body">
-                    <div class="simulation-corp-header">
-                        <span class="corp-badge">MICROSOFT &amp; FREECODECAMP</span>
-                        <h3>Foundational C# Developer</h3>
-                    </div>
-                    <ul class="simulation-highlights">
-                        <li><i class="fas fa-check"></i> C# .NET language syntax, operators, and control flows</li>
-                        <li><i class="fas fa-check"></i> Array processing, collections, and robust memory management
-                        </li>
-                        <li><i class="fas fa-check"></i> Console systems debugging and exception handling</li>
-                    </ul>
-                    <div class="simulation-footer-actions">
-                        <button class="btn-view-credential"
-                            onclick="openCertificateModal('assets/certificates/07.%20foundational-c-sharp-with-microsoft.pdf')">
-                            <i class="fas fa-eye"></i> View Certificate
-                        </button>
-                    </div>
-                </div>
+            <!-- Interactive Scrubber Bar -->
+            <div class="cert-scrubber-bar" id="certScrubberBar" role="tablist" aria-label="Certifications Scrubber">
+                <button class="cert-scrub-chip active" data-index="0" role="tab" aria-selected="true">
+                    <span class="chip-num">01</span>
+                    <span class="chip-label">CEH v11</span>
+                </button>
+                <button class="cert-scrub-chip" data-index="1" role="tab" aria-selected="false">
+                    <span class="chip-num">02</span>
+                    <span class="chip-label">AI &amp; Robotics</span>
+                </button>
+                <button class="cert-scrub-chip" data-index="2" role="tab" aria-selected="false">
+                    <span class="chip-num">03</span>
+                    <span class="chip-label">UOM Front-End</span>
+                </button>
+                <button class="cert-scrub-chip" data-index="3" role="tab" aria-selected="false">
+                    <span class="chip-num">04</span>
+                    <span class="chip-label">UOM Server-Side</span>
+                </button>
+                <button class="cert-scrub-chip" data-index="4" role="tab" aria-selected="false">
+                    <span class="chip-num">05</span>
+                    <span class="chip-label">UOM SQA</span>
+                </button>
+                <button class="cert-scrub-chip" data-index="5" role="tab" aria-selected="false">
+                    <span class="chip-num">06</span>
+                    <span class="chip-label">Microsoft C#</span>
+                </button>
             </div>
         </div>
     </section>

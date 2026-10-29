@@ -2422,34 +2422,353 @@ section {
 }
 
 /* ===================================================================
-   ACCREDITED CERTIFICATIONS
+   ACCREDITED CERTIFICATIONS (APPLE visionOS 3D SPATIAL COVERFLOW DECK)
    =================================================================== */
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 2.8rem;
+.certifications {
+    position: relative;
+    overflow: hidden;
 }
 
-.cert-card-luxury {
+.cert-coverflow-deck {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
+    overflow: hidden;
+}
+
+/* Stage Nav Buttons */
+.cert-nav-btn {
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    width: 5rem;
+    height: 5rem;
+    border-radius: var(--radius-full);
+    background: rgba(8, 12, 20, 0.9);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    backdrop-filter: blur(30px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18), 0 12px 30px rgba(0, 0, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--spring-bounce);
+    z-index: 30;
+}
+
+.cert-prev-btn {
+    left: 1.5rem;
+}
+
+.cert-next-btn {
+    right: 1.5rem;
+}
+
+.cert-nav-btn:hover {
+    background: rgba(1, 198, 252, 0.12);
+    border-color: var(--cyan-electric);
+    color: var(--cyan-electric);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 0 22px rgba(1, 198, 252, 0.45);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.cert-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* 3D Perspective Stage */
+.cert-stage-container {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+/* 3D Card */
+.cert-3d-card {
+    position: absolute;
+    width: 410px;
+    max-width: 84vw;
+    height: 465px;
     background: var(--surface-glass);
     border: 1px solid var(--border-glass);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    backdrop-filter: blur(40px) saturate(200%);
-    box-shadow: var(--shadow-glass);
-    transition: var(--spring-bounce);
+    border-radius: 22px;
+    backdrop-filter: blur(45px) saturate(200%);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.45s ease,
+                filter 0.45s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+    will-change: transform, opacity;
 }
 
-.cert-card-luxury:hover {
+.cert-3d-card:hover {
+    border-color: rgba(1, 198, 252, 0.5);
+}
+
+.cert-3d-card.active {
+    border-color: rgba(1, 198, 252, 0.65);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.32),
+                0 25px 65px rgba(0, 0, 0, 0.85),
+                0 0 32px rgba(1, 198, 252, 0.18);
+    cursor: default;
+}
+
+/* Card Preview Visual */
+.cert-card-preview {
+    position: relative;
+    height: 175px;
+    background: #080c14;
+    border-bottom: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    overflow: hidden;
+}
+
+.cert-card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-3d-card.active:hover .cert-card-preview img {
+    transform: scale(1.03);
+}
+
+.cert-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    padding: 0.5rem 1.3rem;
+    border-radius: var(--radius-full);
+    background: rgba(6, 10, 18, 0.9);
+    border: 1px solid rgba(1, 198, 252, 0.4);
+    backdrop-filter: blur(20px);
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cyan-electric);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Card Content Body */
+.cert-card-content {
+    padding: 2.2rem 2.4rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.cert-category {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cyan-electric);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cert-card-num {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.cert-card-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+.cert-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+}
+
+.cert-highlights li {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    line-height: 1.5;
+}
+
+.cert-highlights li i {
+    color: var(--cyan-electric);
+    font-size: 1.15rem;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(1, 198, 252, 0.7));
+}
+
+.cert-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-glass);
+    padding-top: 1.6rem;
+}
+
+.cert-btn-secondary {
+    background: transparent !important;
+    border-color: var(--border-glass) !important;
+    color: var(--text-secondary) !important;
+}
+
+.cert-btn-secondary:hover {
+    background: rgba(1, 198, 252, 0.1) !important;
+    color: var(--cyan-electric) !important;
+    border-color: var(--cyan-electric) !important;
+    box-shadow: 0 0 14px rgba(1, 198, 252, 0.4) !important;
+}
+
+/* Interactive Scrubber Bar (Dock) */
+.cert-scrubber-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin: 2.8rem auto 0;
+    max-width: 920px;
+    padding: 0.75rem 1.2rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(30px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), var(--shadow-glass);
+}
+
+.cert-scrub-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--spring-bounce);
+    white-space: nowrap;
+}
+
+.cert-scrub-chip .chip-num {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.cert-scrub-chip:hover {
+    color: var(--cyan-electric);
+    background: rgba(1, 198, 252, 0.08);
+    border-color: rgba(1, 198, 252, 0.25);
+    transform: translateY(-1px);
+}
+
+.cert-scrub-chip.active {
+    background: var(--cyan-electric);
+    color: #05070a;
     border-color: var(--cyan-electric);
-    box-shadow: var(--shadow-glass-hover);
-    transform: translateY(-6px);
+    font-weight: 700;
+    box-shadow: 0 0 18px rgba(1, 198, 252, 0.55);
 }
 
-.cert-card-luxury .simulation-img-container {
-    height: 230px;
+.cert-scrub-chip.active .chip-num {
+    opacity: 1;
+    color: #05070a;
+}
+
+/* Responsive Rules for Certifications Coverflow */
+@media (max-width: 991px) {
+    .cert-stage-container {
+        height: 520px;
+        perspective: 900px;
+    }
+
+    .cert-3d-card {
+        width: 380px;
+        height: 480px;
+    }
+
+    .cert-nav-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .cert-stage-container {
+        height: 490px;
+        perspective: none;
+    }
+
+    .cert-3d-card {
+        width: 90vw;
+        height: 470px;
+    }
+
+    .cert-scrubber-bar {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0.7rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cert-scrubber-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cert-scrub-chip {
+        flex-shrink: 0;
+        font-size: 1.15rem;
+        padding: 0.65rem 1.3rem;
+    }
 }
 
 /* ===================================================================
