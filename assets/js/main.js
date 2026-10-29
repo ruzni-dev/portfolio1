@@ -1073,13 +1073,15 @@ function initSimulationSlider() {
     const currentNum = document.getElementById('simCounterCurrent');
     const progressBar = document.getElementById('simProgressBar');
     const sliderDeck = document.getElementById('simSliderDeck');
+    const section = document.getElementById('simulations');
 
     if (!track || slides.length === 0) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
     let autoPlayTimer = null;
-    const AUTO_PLAY_INTERVAL = 6500;
+    const AUTO_DELAY = 4500;
+    let isVisible = false;
 
     function goToSlide(index, playSound = true) {
         if (index < 0) index = totalSlides - 1;
@@ -1094,14 +1096,11 @@ function initSimulationSlider() {
             slide.classList.toggle('active', i === currentIndex);
         });
 
-        // Synchronize Corporate Tabs
+        // Synchronize Corporate Tabs if present (NO scrollIntoView)
         tabs.forEach((tab, i) => {
             const isActive = i === currentIndex;
             tab.classList.toggle('active', isActive);
             tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-            if (isActive) {
-                tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
         });
 
         // Synchronize Dots
@@ -1126,9 +1125,10 @@ function initSimulationSlider() {
 
     function startAutoPlay() {
         stopAutoPlay();
+        if (!isVisible) return;
         autoPlayTimer = setInterval(() => {
             goToSlide(currentIndex + 1, false);
-        }, AUTO_PLAY_INTERVAL);
+        }, AUTO_DELAY);
     }
 
     function stopAutoPlay() {
@@ -1142,6 +1142,42 @@ function initSimulationSlider() {
         stopAutoPlay();
         startAutoPlay();
     }
+
+    // Only auto-play when visibly in viewport (Error-Free)
+    const targetElement = sliderDeck || section;
+    if (targetElement && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(targetElement);
+    } else {
+        isVisible = true;
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    if (sliderDeck) {
+        sliderDeck.addEventListener('mouseenter', stopAutoPlay);
+        sliderDeck.addEventListener('mouseleave', () => {
+            if (isVisible) startAutoPlay();
+        });
+    }
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (isVisible) {
+            startAutoPlay();
+        }
+    });
 
     // Button event listeners
     if (prevBtn) {
@@ -1180,12 +1216,6 @@ function initSimulationSlider() {
         });
     });
 
-    // Pause on hover
-    if (sliderDeck) {
-        sliderDeck.addEventListener('mouseenter', stopAutoPlay);
-        sliderDeck.addEventListener('mouseleave', startAutoPlay);
-    }
-
     // Touch swipe support for mobile
     let touchStartX = 0;
     let touchEndX = 0;
@@ -1216,7 +1246,6 @@ function initSimulationSlider() {
 
     // Initialize state
     goToSlide(0, false);
-    startAutoPlay();
 }
 
 /* ===================================================================
@@ -1228,14 +1257,17 @@ function initCertCoverflow() {
     const chips = document.querySelectorAll('.cert-scrub-chip');
     const prevBtn = document.getElementById('certPrevBtn');
     const nextBtn = document.getElementById('certNextBtn');
+    const scrubber = document.getElementById('certScrubberBar');
     const deck = document.getElementById('certCoverflowDeck');
+    const section = document.getElementById('certifications');
 
     if (!stage || cards.length === 0) return;
 
     let currentIndex = 0;
     const totalCards = cards.length;
     let autoPlayTimer = null;
-    const AUTO_PLAY_INTERVAL = 7500;
+    const AUTO_DELAY = 4500;
+    let isVisible = false;
 
     function getCircularOffset(i, current, total) {
         let diff = (i - current) % total;
@@ -1283,13 +1315,13 @@ function initCertCoverflow() {
             }
         });
 
-        // Synchronize Scrubber Chips
+        // Synchronize Scrubber Chips (Local horizontal container scroll only, NEVER window scroll)
         chips.forEach((chip, i) => {
             const isActive = i === currentIndex;
             chip.classList.toggle('active', isActive);
             chip.setAttribute('aria-selected', isActive ? 'true' : 'false');
-            if (isActive) {
-                chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            if (isActive && scrubber) {
+                scrubber.scrollLeft = chip.offsetLeft - (scrubber.offsetWidth / 2) + (chip.offsetWidth / 2);
             }
         });
 
@@ -1305,9 +1337,10 @@ function initCertCoverflow() {
 
     function startAutoPlay() {
         stopAutoPlay();
+        if (!isVisible) return;
         autoPlayTimer = setInterval(() => {
             goToCert(currentIndex + 1, false);
-        }, AUTO_PLAY_INTERVAL);
+        }, AUTO_DELAY);
     }
 
     function stopAutoPlay() {
@@ -1321,6 +1354,42 @@ function initCertCoverflow() {
         stopAutoPlay();
         startAutoPlay();
     }
+
+    // Only auto-play when visibly in viewport (Error-Free)
+    const targetCert = stage || deck || section;
+    if (targetCert && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(targetCert);
+    } else {
+        isVisible = true;
+        startAutoPlay();
+    }
+
+    // Pause on hover
+    if (deck) {
+        deck.addEventListener('mouseenter', stopAutoPlay);
+        deck.addEventListener('mouseleave', () => {
+            if (isVisible) startAutoPlay();
+        });
+    }
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (isVisible) {
+            startAutoPlay();
+        }
+    });
 
     // Card click: clicking side card brings it to center
     cards.forEach((card, idx) => {
@@ -1383,15 +1452,8 @@ function initCertCoverflow() {
         }
     }, { passive: true });
 
-    // Pause on hover
-    if (deck) {
-        deck.addEventListener('mouseenter', stopAutoPlay);
-        deck.addEventListener('mouseleave', startAutoPlay);
-    }
-
     // Initial render
     updateCoverflow(false);
-    startAutoPlay();
 }
 
 /* ===================================================================
