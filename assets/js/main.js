@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMetricsCounter();
     initSkillsDeck();
     initHackerRankFilters();
+    initHackerRankStarsMarquee();
     initProjectStack();
     initSimulationSlider();
     initCertCoverflow();
@@ -1108,14 +1109,90 @@ function initSkillsDeck() {
 }
 
 /* ===================================================================
-   12. HACKERRANK FILTERS
+   12. HACKERRANK SKILLS SPATIAL CAROUSEL DECK & FILTERS
    =================================================================== */
 function initHackerRankFilters() {
+    const deck = document.getElementById('hrSkillsDeck');
+    const viewport = document.getElementById('hrCertsViewport');
+    const track = document.getElementById('hrCertsTrack');
     const tabs = document.querySelectorAll('.hr-tab-btn');
-    const cards = document.querySelectorAll('.hr-cert-card');
+    const cards = Array.from(document.querySelectorAll('.hr-cert-card'));
+    const prevBtn = document.getElementById('hrCertPrevBtn');
+    const nextBtn = document.getElementById('hrCertNextBtn');
+    const currentNum = document.getElementById('hrCertCurrentNum');
+    const totalNum = document.getElementById('hrCertTotalNum');
+    const progressBar = document.getElementById('hrCertProgressBar');
 
-    if (!tabs.length || !cards.length) return;
+    if (!deck || !viewport || !track || !cards.length) return;
 
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    const AUTO_DELAY = 4200;
+    let isVisible = false;
+
+    function getVisibleCards() {
+        return cards.filter(c => !c.classList.contains('hidden'));
+    }
+
+    function getCardStep() {
+        const visibleCards = getVisibleCards();
+        if (visibleCards.length === 0) return 300;
+        const rect = visibleCards[0].getBoundingClientRect();
+        return rect.width + 20; // 20px gap
+    }
+
+    function goToCard(index, playSound = true) {
+        const visibleCards = getVisibleCards();
+        const total = visibleCards.length;
+        if (total === 0) return;
+
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        currentIndex = index;
+
+        const step = getCardStep();
+        const maxOffset = Math.max(0, track.scrollWidth - viewport.clientWidth);
+        let offset = currentIndex * step;
+        if (offset > maxOffset) offset = maxOffset;
+
+        track.style.transform = `translate3d(-${offset}px, 0, 0)`;
+
+        if (currentNum) {
+            currentNum.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+        if (totalNum) {
+            totalNum.textContent = String(total).padStart(2, '0');
+        }
+        if (progressBar) {
+            progressBar.style.width = `${((currentIndex + 1) / total) * 100}%`;
+        }
+
+        if (playSound && typeof playAppleSound === 'function') {
+            playAppleSound('tap');
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        if (!isVisible) return;
+        autoPlayTimer = setInterval(() => {
+            goToCard(currentIndex + 1, false);
+        }, AUTO_DELAY);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Category Tabs Filtering
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
@@ -1137,9 +1214,240 @@ function initHackerRankFilters() {
                     card.classList.add('hidden');
                 }
             });
-            playAppleSound('click');
+
+            // Reset track position to first card of active filter
+            currentIndex = 0;
+            goToCard(0, true);
+            resetAutoPlay();
         });
     });
+
+    // Navigation buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goToCard(currentIndex - 1, true);
+            resetAutoPlay();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goToCard(currentIndex + 1, true);
+            resetAutoPlay();
+        });
+    }
+
+    // Touch Swipe & Mouse Drag Support
+    let startX = 0;
+    let isDragging = false;
+    let dragDistance = 0;
+
+    viewport.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        dragDistance = 0;
+        viewport.style.cursor = 'grabbing';
+        stopAutoPlay();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        dragDistance = e.clientX - startX;
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        viewport.style.cursor = 'grab';
+        if (dragDistance > 45) {
+            goToCard(currentIndex - 1, true);
+        } else if (dragDistance < -45) {
+            goToCard(currentIndex + 1, true);
+        }
+        resetAutoPlay();
+    });
+
+    viewport.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].clientX;
+        stopAutoPlay();
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+        if (diffX > 40) {
+            goToCard(currentIndex - 1, true);
+        } else if (diffX < -40) {
+            goToCard(currentIndex + 1, true);
+        }
+        resetAutoPlay();
+    }, { passive: true });
+
+    // Hover pause
+    deck.addEventListener('mouseenter', stopAutoPlay);
+    deck.addEventListener('mouseleave', () => {
+        if (isVisible) startAutoPlay();
+    });
+
+    // Window / Tab Visibility listener
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else if (isVisible) {
+            startAutoPlay();
+        }
+    });
+
+    // Resize recalculation
+    window.addEventListener('resize', () => {
+        goToCard(currentIndex, false);
+    });
+
+    // IntersectionObserver for Error-Free Autoplay
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(deck);
+    } else {
+        isVisible = true;
+        startAutoPlay();
+    }
+
+    // Initial state
+    goToCard(0, false);
+}
+
+/* ===================================================================
+   12.5. HACKERRANK STARS CONTINUOUS SLIDEABLE MARQUEE
+   =================================================================== */
+function initHackerRankStarsMarquee() {
+    const wrapper = document.getElementById('hrStarsWrapper');
+    const track = document.getElementById('hrStarsTrack');
+    if (!wrapper || !track) return;
+
+    let offset = 0;
+    const baseSpeed = 0.75; // Pixels per frame (slow, readable, smooth)
+    let isDragging = false;
+    let isHovered = false;
+    let startX = 0;
+    let isVisible = false;
+
+    function getHalfWidth() {
+        return track.scrollWidth / 2;
+    }
+
+    function animate() {
+        if (!isDragging && !isHovered && isVisible) {
+            offset -= baseSpeed;
+            const halfWidth = getHalfWidth();
+            if (halfWidth > 0) {
+                if (offset <= -halfWidth) {
+                    offset += halfWidth;
+                } else if (offset > 0) {
+                    offset -= halfWidth;
+                }
+            }
+            track.style.transform = `translate3d(${offset}px, 0, 0)`;
+        }
+        requestAnimationFrame(animate);
+    }
+
+    // Hover pause
+    wrapper.addEventListener('mouseenter', () => {
+        isHovered = true;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        isHovered = false;
+        if (isDragging) {
+            isDragging = false;
+            wrapper.style.cursor = 'grab';
+        }
+    });
+
+    // Mouse Drag events
+    wrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        wrapper.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.clientX;
+        const delta = currentX - startX;
+        startX = currentX;
+        offset += delta;
+
+        const halfWidth = getHalfWidth();
+        if (halfWidth > 0) {
+            if (offset <= -halfWidth) {
+                offset += halfWidth;
+            } else if (offset > 0) {
+                offset -= halfWidth;
+            }
+        }
+        track.style.transform = `translate3d(${offset}px, 0, 0)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            wrapper.style.cursor = 'grab';
+        }
+    });
+
+    // Touch events for mobile
+    wrapper.addEventListener('touchstart', (e) => {
+        if (!e.touches || !e.touches[0]) return;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging || !e.touches || !e.touches[0]) return;
+        const currentX = e.touches[0].clientX;
+        const delta = currentX - startX;
+        startX = currentX;
+        offset += delta;
+
+        const halfWidth = getHalfWidth();
+        if (halfWidth > 0) {
+            if (offset <= -halfWidth) {
+                offset += halfWidth;
+            } else if (offset > 0) {
+                offset -= halfWidth;
+            }
+        }
+        track.style.transform = `translate3d(${offset}px, 0, 0)`;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    // IntersectionObserver to pause RAF when off-screen
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+            });
+        }, { threshold: 0.05 });
+        observer.observe(wrapper);
+    } else {
+        isVisible = true;
+    }
+
+    // Start loop
+    requestAnimationFrame(animate);
 }
 
 /* ===================================================================
